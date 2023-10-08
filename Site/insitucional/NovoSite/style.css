@@ -1,5 +1,5 @@
 body {
-    margin: 0;   
+    margin:  0 0;   
 }
 
 .header  {
@@ -38,8 +38,9 @@ body {
     height: 400px;
     margin: 0;
     background-color: purple;
-    background-image:  url(Imagens/Background.png);
+    background-image: url(Imagens/Background.png);
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .banner .container {
@@ -52,5 +53,32 @@ body {
 
 .banner .container h1{
     margin: 100px 700px 0 0;
-    width: 10%;
+    width: 10% 0;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0% 0; /*ver isso conforme necessidade e ajuste do site*/
+    background-color: black;
+    height: 100px;
+    width: 100%;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 100%;
+    background-color: purple;
+}
+
+.footer .container .listaFooter li{
+    list-style: none;
+    display: inline;
+    padding: 200px;
+    justify-content: space-between;
+
 }
