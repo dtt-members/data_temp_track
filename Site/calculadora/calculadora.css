@@ -1,34 +1,52 @@
 .telaCalculadora {
-  width: 100%;
+  width: 98%;
   height: 400px;
-  margin: 0;
+  margin: 0 1% 0 1%;
   align-items: center;
   text-align: center;
   display: flex;
+  background-color: #f2f2f2;
+  border-radius: 15px;
 }
 .textoCalculadora{
-	width: 50%;
+	width: 40%;
 	align-items: center;
 	text-align: center;
+	margin: 0;
 }
 .telaCalculadora .textoCalculadora h1{
-	margin: 20% 0 0 15%;
+	margin:0 0 0 15%;
+	font-size: 2rem;
+	width: 120%;
 }
 .telaCalculadora .textoCalculadora p{
-	margin: 13% 10% 0 20%;
-	font-size: 120%;
+	margin: 7% 0% 10% 15%;
+	font-size: 1rem;
 	color: #000000;
+	text-align: center;
+	align-items: center;
+	width: 120%;
+}
+.telaCalculadora .textoCalculadora a{
+  background-color: #000099;
+  color: #ffffff;
+  border: 3px solid #000000;
+  text-decoration: none;
+  padding: 5px;
+  font-size: 100%;
+  margin: 0 0 0 50%;
+  min-width: 40%;
 }
 
 .caixaQuestions {
-	margin: 17% 11% 0 0;
+	margin: 5% 5% 5% 0;
 	background-color: #ffffff;
 	color: black;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	height: 500px;
-	width: 550px;
+	height: 90%;
+	width: 45%;
 	text-align: center;
 	border: 5px solid #000000;
 	border-radius: 15px;
@@ -41,28 +59,40 @@
 	font-weight: bold;
 }
 .footer {
-	background-color: #003366;
+	background-color: #ffffff;
 	border: 3px;
 	padding: 1px;
+	
 }
 .input_message {
 	height: 25%;
 	width: 60%;
-	color: #003366;
+	color: #008AFF;
 	background: #f2f2f2;
 	padding: 10px;
 	border-radius: 15px 15px 15px 15px;
 	font-size: 1rem;
-	border: 3px solid #0044ff;
-	margin: 1% 0 0 0;
+	border: 3px solid #008AFF;
+	margin: 0.5% 0 0 0;
 }
 .btnEnviar {
+	border: none;
+	border-radius: 15px;
+	max-width: 15%;
+	padding: 5px;
+	font-size: 1rem;
+	background: #003366;
+	color: #ffffff;
+	width: fit-content;
+}
+.btnVoltar {
 	border: none;
 	border-radius: 15px;
 	width: 15%;
 	padding: 5px;
 	font-size: 1rem;
 	background: #f2f2f2;
+	color: #003366;
 }
 
 .history {
@@ -75,42 +105,40 @@
 
 .userMessage {
 	background-color: #003366;
-	padding: 1rem;
+	padding: 0.7rem;
 	border-radius: 15px 15px 0px 15px;
 	color: white;
 	max-width: 40%;
 	width: fit-content;
 	align-self: end;
 }
-.botMessage2 {
-	background-color: #f2f2f2;
-	padding: 1rem;
-	border-radius: 15px 15px 15px 0px;
-	margin: 0;
-	max-width: 70%;
-	width: fit-content;
-}
 .botMessage {
 	display: flex;
-	align-items: center;
+	text-align: left;
 	background-color: #f2f2f2;
-	padding: 2rem 1rem;
+	padding: 0.7rem;
 	border-radius: 15px 15px 15px 0px;
 	margin: 0;
 	width: fit-content;
-	white-space: nowrap;
+	max-width: 70%;
+/*	white-space: nowrap;
 	overflow: hidden;
 	animation: digitando 1s steps(70) alternate;
+*/}
+.caixaQuestions .caixaHeader p img{
+  width: 11%;
+  height: 8%;
+  margin: 0;
 }
 
-  @keyframes digitando{
+/*  @keyframes digitando{
     from{
       width: 0%;
     }
     to{
       width: 70%;
     }
-  }
+  }*/
 
 .textoCalculadora {
 	color: #003366;
