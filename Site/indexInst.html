@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="insitucional/style.css">
+    <link rel="stylesheet" href="calculadora/calculadora.css">
+    <link rel="stylesheet" href="calculadora/calculadora.js">
 
 </head>
 
@@ -113,9 +115,47 @@
             </div>
         </div>
     </div>
+        div.container
+        <div class="telaCalculadora">
+            <div class="textoCalculadora">
+                <h1>Calculadora Financeira, Como Funciona? </h1>
+                <p>Transformamos a simulação financeira com um simulador inovador em formato de conversa amigável. A
+                    assistente virtual Temp desempenha um papel central, auxiliando os usuários a criar orçamentos
+                    personalizados. Essa abordagem única permite explorar e aprimorar habilidades financeiras de forma
+                    envolvente e acessível, tornando a simulação de orçamento interativa por meio de um chat temático.
+                </p>
+                <a href="#">Contratar Serviços</a>
+            </div>
+            <div class="caixaQuestions" id="div_caixa">
+                <div class="caixaHeader">
+                    <p>
+                        <img src="assistenteVirtual.png">
+                        Assistente Temp
+                    </p>
+                </div>
+                <div class="history" id="div_history">
+                    <div class="botMessage">
+                        Olá! Bem-vindo à Data Temp Track.
+                    </div>
+                    <div class="botMessage" id="bot_message">
+                        Sou o assistente virtual Temp. Gostaria de criar um orçamento para a sua empresa? Tudo o que
+                        preciso é que
+                        você responda algumas perguntas. Vamos começar? A primeira pergunta é:
+                    </div>
+                    <div class="botMessage">
+                        Qual é o seu nome?
+                    </div>
+                </div>
+                <div class="footer" id="div_footer">
+                    <input type="text" class="input_message" id="input_nome" placeholder="Digite aqui">
+                    <button class="btnEnviar" id="btn_enviar" onclick="functionNome()">Enviar</button>
+                </div>
+            </div>
+        </div>
+    
 
     <!-- FOOTER 
-    <div class="footer">
+    <div class="footerIndex">
         <div class="container">
             <ul class="listaFooter">
                 <li>Nosso email</li>

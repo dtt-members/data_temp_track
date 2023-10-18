@@ -76,7 +76,7 @@ h1{
     width: 10% 0;
 }
 
-.footer {
+.footerIndex {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,7 +87,7 @@ h1{
     position: absolute;
 }
 
-.footer .container {
+.footerIndex .container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -96,7 +96,7 @@ h1{
     background-color: purple;
 }
 
-.footer .container .listaFooter li{
+.footerIndex .container .listaFooter li{
     list-style: none;
     display: inline;
     padding: 200px;
