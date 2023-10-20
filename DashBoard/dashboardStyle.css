@@ -188,12 +188,16 @@ border-radius: 15px;
 .tela_dashboard .menu_lateral .config:hover{
     background-color: #ffffff;
     color: #003366;   
+    transition: 1s;
+    cursor: pointer;
 }
 
 .menu_lateral button:hover{
     border-radius: 15px;
     background-color: #ffffff;
     color: #003366;
+    transition: 1s;
+    cursor: pointer;
 }
 
 .tela_dashboard .lousa .text_inicial{
