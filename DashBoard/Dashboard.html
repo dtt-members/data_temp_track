@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="dashboardStyle.css" />
+</head>
+
+<body>
+    <div class="tela-form-ajuda" id="div_tela_form_ajuda">
+        <div class="header-ajuda">
+            <img src="https://cdn-icons-png.flaticon.com/128/1246/1246211.png" onclick="Voltar()" class="voltar">
+        </div>
+        <div class="faixa-form">
+            <img class="logo" src="logo.png" width="15%">
+            <div class="faixa-linha">
+                <img src="telefone.png">
+                <b>Telefone: </b> 11 91824567
+            </div>
+            <div class="faixa-linha">
+                <img src="email.png">
+                <b>Email: </b> datatemptrack@sptech.school
+            </div>
+            <div class="faixa-linha">
+                <img src="horas.png">
+                <b>Horário De Atendimento: </b> Seg-Sex...10h-17h
+            </div>
+        </div>
+        <div class="div-form">
+            <form>
+                <h1>Contate - Nos
+                </h1>
+                <div class="pedaco-formulario">
+                    <input type="texto" id="nome" name="Nome" placeholder="Digite aqui seu nome">
+                </div>
+                <div class="pedaco-formulario">
+                    <input type="email" id="email" name="Email para contato"
+                        placeholder="Digite aqui seu email para contato">
+                </div>
+                <div class="pedaco-formulario">
+                    <input type="text" id="assunto" name="Assunto" placeholder="Digite aqui o assunto">
+                </div>
+                <div class="pedaco-formulario">
+                    <input type="text" id="assunto" name="Descrição do problema"
+                        placeholder="Descreva seu problema"></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+    <div class="tela_dashboard" id="div_tela_dashboard">
+        <div class="menu_lateral">
+            <div class="perfil_img">
+                <img src="https://cdn-icons-png.flaticon.com/512/4211/4211178.png">
+                <div class="perfil_text">
+                    Usuário:<br>
+                    Empresa: <br>
+
+                </div>
+            </div>
+            <button onclick="dataCenter1()">Data Center 01</button>
+            <button onclick="dataCenter1()">Data Center 02</button>
+            <button class="config" onclick="Ajuda()">Ajuda</button>
+        </div>
+        <div class="lousa">
+            <div id="div_text_inicial" class="text_inicial">Escolha um Data Center</div>
+            <div id="div_lousa_invisivel" class="lousa_invisivel">
+                <div id="div_card_linha" class="card_linha">
+                <div id="div_card_unidade" class="card_unidade">
+                    <div class="cima">
+                        <img src="corredor.png" class="imagem_corredor">
+                        <div class="cima-direita">
+                    <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota">
+                </div>
+                </div>
+                <div class="baixo">
+                    Porta 01
+                </div>
+            </div>
+            <div id="div_card_unidade" class="card_unidade">
+                <div class="cima">
+                    <img src="corredor.png" class="imagem_corredor">
+                    <div class="cima-direita">
+                <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota">
+            </div>
+            </div>
+            <div class="baixo">
+                Porta 02
+            </div>
+        </div>
+        <div id="div_card_unidade" class="card_unidade">
+            <div class="cima">
+                <img src="corredor.png" class="imagem_corredor">
+                <div class="cima-direita">
+            <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota">
+        </div>
+        </div>
+        <div class="baixo">
+            Porta 03
+        </div>
+    </div>                
+            </div>
+            <div id="div_card_linha" class="card_linha">
+                <div id="div_card_unidade" class="card_unidade">
+                    <div class="cima">
+                        <img src="corredor.png" class="imagem_corredor">
+                        <div class="cima-direita">
+                    <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota">
+                </div>
+                </div>
+                <div class="baixo">
+                    Corredor 01
+                </div>
+            </div>
+            <div id="div_card_unidade" class="card_unidade">
+                <div class="cima">
+                    <img src="corredor.png" class="imagem_corredor">
+                    <div class="cima-direita">
+                <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota">
+            </div>
+            </div>
+            <div class="baixo">
+                Corredor 02
+            </div>
+        </div>
+        <div id="div_card_unidade" class="card_unidade">
+            <div class="cima">
+                <img src="corredor.png" class="imagem_corredor">
+                <div class="cima-direita">
+            <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota">
+        </div>
+        </div>
+        <div class="baixo">
+            Corredor 03
+        </div>
+    </div>                
+            </div>
+            <div id="div_card_linha" class="card_linha">
+                <div id="div_card_unidade" class="card_unidade">
+                    <div class="cima">
+                        <img src="corredor.png" class="imagem_corredor">
+                        <div class="cima-direita">
+                    <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota">
+                </div>
+                </div>
+                <div class="baixo">
+                Corredor 04
+                </div>
+            </div>
+            <div id="div_card_unidade" class="card_unidade">
+                <div class="cima">
+                    <img src="corredor.png" class="imagem_corredor">
+                    <div class="cima-direita">
+                        <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota">
+                    </div>
+            </div>
+            <div class="baixo">
+                Corredor 05
+            </div>
+        </div>
+        <div id="div_card_unidade" class="card_unidade">
+            <div class="cima">
+                <img src="corredor.png" class="imagem_corredor">
+                <div class="cima-direita">
+            <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota">
+        </div>
+        </div>
+        <div class="baixo">
+            Corredor 06
+        </div>
+    </div>                
+            </div>
+
+        </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script>
+
+    var tela_form_ajuda = document.getElementById('div_tela_form_ajuda');
+    var tela_dashboard = document.getElementById('div_tela_dashboard');
+    var text_inicial = document.getElementById('div_text_inicial');
+    var lousa_invisivel = document.getElementById('div_lousa_invisivel');
+
+
+    function dataCenter1() {
+        text_inicial.style.display = "none";
+        lousa_invisivel.style.display ="flex"
+
+    }
+    function Ajuda() {
+
+        tela_form_ajuda.style.display = "flex";
+        tela_dashboard.style.display = "none";
+
+    }
+    function Voltar() {
+        tela_form_ajuda.style.display = "none";
+        tela_dashboard.style.display = "flex";
+
+    }
+</script>
