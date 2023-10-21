@@ -1,5 +1,5 @@
 .diagrama .container {
-    background-color:  #003366;
+    background-color:  #0216af;
     box-shadow: black 10px 0 10px 0;
     height: 900px;
 }
@@ -223,4 +223,7 @@ h2{
     text-align: center;
     font-family: 'Poppins', sans-serif; 
     padding: 15px;
+}
+.titulo-diagrama{
+color: white;
 }
