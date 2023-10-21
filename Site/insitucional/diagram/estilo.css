@@ -1,13 +1,8 @@
-main {
-    width: 100vw;
-    height: 800px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #fff
+.diagrama .container {
+    background-color:  #003366;
+    box-shadow: black 10px 0 10px 0;
+    height: 900px;
 }
-
 
 .conteiner {
     display: flex;
@@ -15,9 +10,10 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color:  hwb(0 95% 5% / 0.331);
-    width: 50%;
-    height: 700px;
+    background-color: #003366;
+    width: 80vw;
+    height: 800px;
+    margin-left: 20vh;
 }
 
 .cartas-1 {
@@ -56,6 +52,17 @@ main {
     min-height: 1px;
     height: 150px;
     border-radius: 5px;
+    border: solid 5px black;
+    box-shadow: black 2px 0 2px 0;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.cartas-1 .cardpri:hover{
+    background-color: #003366;
+    color: #f2f2f2;
+    transition: 1s;
+    cursor: pointer;
 }
 
 .cartas-1 .cardtwo {
@@ -68,6 +75,11 @@ main {
     min-height: 1px;
     height: 150px;
     border-radius: 5px;
+    border: solid 5px black;
+    box-shadow: black 2px 0 2px 0;
+    transition: 1s;
+    cursor: pointer;
+    
 }
 
 .cartas-1 .cardthere {
@@ -80,6 +92,11 @@ main {
     min-height: 1px;
     height: 150px;
     border-radius: 5px;
+    border: solid 5px black;
+    box-shadow: black 2px 0 2px 0;
+    transition: 1s;
+    cursor: pointer;
+    
 }
 
 /*Segundo bloco*/
@@ -94,6 +111,10 @@ main {
     min-height: 1px;
     height: 150px;
     border-radius: 5px;
+    border: solid 5px black;
+    box-shadow: black 2px 0 2px 0;
+    transition: 1s;
+    cursor: pointer;
 }
 
 .cartas-2 .cardtres {
@@ -106,6 +127,11 @@ main {
     min-height: 1px;
     height: 150px;
     border-radius: 5px;
+    border: solid 5px black;
+    box-shadow: black 2px 0 2px 0;
+    transition: 1s;
+    cursor: pointer;
+    
 }
 
 .cartas-2 .cardquatro {
@@ -118,6 +144,12 @@ main {
     min-height: 1px;
     height: 150px;
     border-radius: 5px;
+    border: solid 5px black;
+    box-shadow: black 2px 0 2px 0;
+    transition: 1s;
+    cursor: pointer;
+    
+
 }
 
 /*Terceiro bloco*/
@@ -132,6 +164,11 @@ main {
     min-height: 1px;
     height: 150px;
     border-radius: 5px;
+    border: solid 5px black;
+    box-shadow: black 2px 0 2px 0;
+    transition: 1s;
+    cursor: pointer;
+    
 }
 
 .cartas-3 .cardsecond {
@@ -144,6 +181,11 @@ main {
     min-height: 1px;
     height: 150px;
     border-radius: 5px;
+    border: solid 5px black;
+    box-shadow: black 2px 0 2px 0;
+    transition: 1s;
+    cursor: pointer;
+    
 }
 
 .cartas-3 .cardterceiro {
@@ -156,6 +198,11 @@ main {
     min-height: 1px;
     height: 150px;
     border-radius: 5px;
+    border: solid 5px black;
+    box-shadow: black 2px 0 2px 0;
+    transition: 1s;
+    cursor: pointer;
+    
 }
 
 section img {
