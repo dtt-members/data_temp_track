@@ -6,7 +6,7 @@ body {
     margin:  0 0;   
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
-    background-color: #003366;
+    background-color: #000000;
 }
 
 html {
@@ -14,7 +14,10 @@ html {
     
 }
 
-
+.listaUm a {
+    color: white;
+    text-decoration: none;
+}
     
 
 .listaUm {
@@ -269,6 +272,7 @@ h1{
     display: flex;
     background-color: rgb(0, 0, 0);
     box-shadow: 0 0 10px 0 black;
+    min-width: 100vh;
 }
 
 .sobrenos .container {
@@ -286,6 +290,7 @@ h1{
     border-bottom: 100px;
     font-size: 40px;
     color: white;
+    
 }
 
 .sobrenos .container .textoNos {
@@ -294,5 +299,6 @@ h1{
     font-size: 25px;
     margin-left: 60%;
     text-shadow: 5px 5px 10px black;
+    display: flex;
 }
 

@@ -6,6 +6,7 @@
   text-align: center;
   display: flex;
   background-color: #484848;
+  min-width: 100vh;
 }
 .textoCalculadora{
 	width: 40%;
