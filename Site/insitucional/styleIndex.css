@@ -152,6 +152,7 @@ h1{
     justify-content: column;
     background-color: #fff;
     margin: 2%;
+    
 }
 
 .form-header {
@@ -211,6 +212,8 @@ h1{
     padding: 0.52rem;
     border-radius: 5px;
     cursor: pointer;
+    
+
 }
 
 .continue-button button {
@@ -283,6 +286,7 @@ h1{
     display: flex;
     width: 80%;
     border-left: 100px;
+    
 }
 
 .sobrenos .container .titulo{
@@ -290,6 +294,7 @@ h1{
     border-bottom: 100px;
     font-size: 40px;
     color: white;
+    
     
 }
 
