@@ -11,5 +11,7 @@ function verificar(){
     // }
     if (usuario == email_certo && senha == senha_certa){
             window.location.href = "../../indexInst.html";
+        } else {
+            alert("Senha ou email não coincidem")
         }
 }

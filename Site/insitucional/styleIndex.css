@@ -329,3 +329,10 @@ h1{
     justify-items: center;
     align-items: center;
 }
+
+.banner .container h1 {
+    justify-content: flex;
+    width: 40vh;
+    margin-top: 200px;
+    margin-left: 9vh;
+}
