@@ -80,7 +80,7 @@ box-sizing: border-box;
 }
 
 .bottao:hover{
-    background:  gray;
+    background:  #003366;
     justify-content: right;
 }
 
