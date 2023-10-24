@@ -39,6 +39,7 @@ box-sizing: border-box;
     display: flex;
     margin: 2% 5% 2% 5%;
     max-width: 100%;
+    justify-content: space-evenly;
     
 }
 
@@ -65,7 +66,7 @@ box-sizing: border-box;
     border-radius: 20px;
     background: rgb(255, 254, 254);
     transition: .4s;
-    justify-self: flex-end;
+    justify-content: space-between;
 
 }
 
@@ -218,6 +219,7 @@ cursor: pointer;
  padding: 2%;
  margin-left: 15%;
  margin-top: 12%;
+ background-color: white;
  
 }
 
@@ -266,7 +268,7 @@ justify-content: space-around;
 }
 
 .lousa{
- background-color: #ffffff;
+ background-color: #0a0a0a;
  height: 100%;
  width: 81%;
  text-align: center;
