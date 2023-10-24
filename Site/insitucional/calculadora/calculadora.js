@@ -1,80 +1,79 @@
-var nome = "";
-var empresa = "";
-var qtdEstantes = "";
-var rackPorEstante = "";
-var medidaRack = "";
-var numServidores = "";
-var area = "";
-var rolarTela = document.getElementById('div_history')
+
+  var nomeCalculadora = "";
+  var empresa = "";
+  var qtdEstantes = "";
+  var rackPorEstante = "";
+  var medidaRack = "";
+  var numServidores = "";
+  var area = "";
+  var rolarTelaCalculadora = document.getElementById('div_history')
 
 
-function functionNome() {
-    nome = input_nome.value;
-    if (nome == "") {
-        div_history.innerHTML += `<div class="botMessage">Por favor digite seu nome </div>`;
-        rolarTela.scrollTop = rolarTela.scrollHeight
+  function functionNome() {
+    nomeCalculadora = input_nome_calculadora.value;
+    if (nomeCalculadora == "") {
+      div_history.innerHTML += `<div class="botMessage">Por favor digite seu nome </div>`;
+      rolarTelaCalculadora.scrollTop = rolarTelaCalculadora.scrollHeight
     } else {
-        div_history.innerHTML += `
-<div class="userMessage"> ${nome}</div>`
-        div_history.innerHTML += `<div class="botMessage" id="divSaudacao">Olá ${nome}! Agora me diga para qual empresa você trabalha?
+      div_history.innerHTML += `
+<div class="userMessage"> ${nomeCalculadora}</div>`
+      div_history.innerHTML += `<div class="botMessage" id="divSaudacao">Olá ${nomeCalculadora}! Agora me diga para qual empresa você trabalha?
 </div>`
-        div_footer.innerHTML = `
+      div_footer.innerHTML = `
 <input type="text" id="input_empresa" class="input_message" placeholder="Digite aqui" >
 <button class="btnEnviar" class="input_message" id="btn_enviar" onclick="functionEmpresa()">Enviar</button>
 <button class="btnVoltar" class="input_message" id="btn_voltar" onclick="voltarNome()">Voltar </button>`;
-
-        rolarTela.scrollTop = rolarTela.scrollHeight
-
+      rolarTelaCalculadora.scrollTop = rolarTelaCalculadora.scrollHeight
     }
-}
+  }
 
 
-function voltarNome() {
+  function voltarNome() {
     div_history.innerHTML += `<div class="userMessage">Voltar</div>
 <div class="botMessage">
 Qual é o seu nome?
 </div>`
-    div_footer.innerHTML = ` <input type="text" id="input_nome" class="input_message" placeholder="Digite aqui">
+    div_footer.innerHTML = ` <input type="text" id="input_nome_calculadora" class="input_message" placeholder="Digite aqui">
 <button class="btnEnviar" class="input_message" id="btn_enviar" onclick="functionNome()">Enviar</button>`
 
-    rolarTela.scrollTop = rolarTela.scrollHeight
-}
+    rolarTelaCalculadora.scrollTop = rolarTelaCalculadora.scrollHeight
+  }
 
 
-function functionEmpresa() {
+  function functionEmpresa() {
     empresa = input_empresa.value;
     if (empresa == "") {
-        div_history.innerHTML += `<div class="botMessage">Por favor digite o nome da empresa </div>`;
-        rolarTela.scrollTop = rolarTela.scrollHeight
+      div_history.innerHTML += `<div class="botMessage">Por favor digite o nome da empresa </div>`;
+      rolarTelaCalculadora.scrollTop = rolarTelaCalculadora.scrollHeight
     } else {
-        div_history.innerHTML += `<div class="userMessage">${empresa} </div>
+      div_history.innerHTML += `<div class="userMessage">${empresa} </div>
 <div class="botMessage"> Que legal, o(a) ${empresa} deve ser sensacional!</div>
 <div class="botMessage">Mas vamos voltar a sua simulação<br>
 Quantas estantes o (a) tem?</div>`;
-        div_footer.innerHTML = `
+      div_footer.innerHTML = `
 <input type="text" class="input_message" id="input_qtd_estantes" placeholder="Digite aqui" >
 <button class="btnEnviar" id="btn_enviar" in
 onclick="functionQtdEstantes()">Enviar</button>
 <button class="btnVoltar" id="btn_voltar" onclick="voltarEmpresa()">Voltar </button>`;
+rolarTelaCalculadora.scrollTop = rolarTelaCalculadora.scrollHeight
     }
-    rolarTela.scrollTop = rolarTela.scrollHeight
-}
+  }
 
 
-function voltarEmpresa() {
+  function voltarEmpresa() {
     div_history.innerHTML += `
 <div class="userMessage">Voltar</div>
-<div class="botMessage">Olá ${nome}! Agora me diga para qual empresa você trabalha?
+<div class="botMessage">Olá ${nomeCalculadora}! Agora me diga para qual empresa você trabalha?
 </div>`
     div_footer.innerHTML = `
 <input type="text" class="input_message" id="input_empresa" placeholder="Digite aqui" >
 <button class="btnEnviar" id="btn_enviar" onclick="functionEmpresa()">Enviar</button>
 <button class="btnVoltar" id="btn_voltar" onclick="voltarNome()">Voltar </button>`;
 
-    rolarTela.scrollTop = rolarTela.scrollHeight
-}
+    rolarTelaCalculadora.scrollTop = rolarTelaCalculadora.scrollHeight
+  }
 
-function functionQtdEstantes() {
+  function functionQtdEstantes() {
     qtdEstantes = Number(input_qtd_estantes.value);
     div_history.innerHTML += ` <div class="userMessage">${qtdEstantes} </div>
 <div class="botMessage">Quantos racks por estante você tem? </div>
@@ -82,9 +81,9 @@ function functionQtdEstantes() {
     div_footer.innerHTML = `<input type="text" class="input_message" id="input_rack_estante" placeholder="Digite aqui" >
 <button class="btnEnviar" id="btn_enviar" in
 onclick="functionRackPorEstante()">Enviar</button> <button class="btnVoltar" id="btn_voltar" onclick="voltarQtdEstantes()">Voltar </button>`
-    rolarTela.scrollTop = rolarTela.scrollHeight
-}
-function voltarQtdEstantes() {
+    rolarTelaCalculadora.scrollTop = rolarTelaCalculadora.scrollHeight
+  }
+  function voltarQtdEstantes() {
     div_history.innerHTML += `<div class="userMessage">Voltar </div>
 <div class="botMessage">
 Quantas estantes o (a) tem? </div>`;
@@ -93,10 +92,10 @@ Quantas estantes o (a) tem? </div>`;
 <button class="btnEnviar" id="btn_enviar" in
 onclick="functionQtdEstantes()">Enviar</button>
 <button class="btnVoltar" id="btn_voltar" onclick="voltarEmpresa()">Voltar </button>`;
-    rolarTela.scrollTop = rolarTela.scrollHeight
-}
+    rolarTelaCalculadora.scrollTop = rolarTelaCalculadora.scrollHeight
+  }
 
-function functionRackPorEstante() {
+  function functionRackPorEstante() {
     rackPorEstante = Number(input_rack_estante.value);
     div_history.innerHTML += `<div class="userMessage"> ${rackPorEstante} </div>
 <div class="botMessage"> Utilizando a unidade de medida para rack's e sevidores (Unidade U)</div>
@@ -106,28 +105,28 @@ function functionRackPorEstante() {
 <input type="text" class="input_message" id="input_medida_rack" placeholder="Digite aqui" >
 <button class="btnEnviar" id="btn_enviar"
 onclick="functionMedidaRack()">Enviar</button><button class="btnVoltar" id="btn_voltar" onclick="voltarRackPorEstante()">Voltar </button>`
-    rolarTela.scrollTop = rolarTela.scrollHeight
-}
-function voltarRackPorEstante() {
+    rolarTelaCalculadora.scrollTop = rolarTelaCalculadora.scrollHeight
+  }
+  function voltarRackPorEstante() {
     div_history.innerHTML += ` <div class="userMessage">Voltar</div>
 <div class="botMessage">Quantos racks por estante você tem? </div>
 `;
     div_footer.innerHTML = `<input type="text" class="input_message" id="input_rack_estante" placeholder="Digite aqui" >
 <button class="btnEnviar" id="btn_enviar"
 onclick="functionRackPorEstante()">Enviar</button> <button class="btnVoltar" id="btn_voltar" onclick="voltarQtdEstantes()">Voltar </button>`
-    rolarTela.scrollTop = rolarTela.scrollHeight
-}
+    rolarTelaCalculadora.scrollTop = rolarTelaCalculadora.scrollHeight
+  }
 
-function functionMedidaRack() {
+  function functionMedidaRack() {
     medidaRack = Number(input_medida_rack.value);
-    div_history.innerHTML += `<div class="userMessage">${medidaRack}</div>
-    <div class="botMessage">Quantos servidores o(a) ${empresa} possui?</div>`;
+div_history.innerHTML += `<div class="userMessage">${medidaRack}</div>
+    <div class="botMessage">Quantos servidores o(a) ${empresa} possui?</div>` ;
     div_footer.innerHTML = `<input type="text" class="input_message" id="input_num_servidores" placeholder="Digite aqui" >
 <button class="btnEnviar" id="btn_enviar"
 onclick="functionNumServidores()">Enviar</button><button class="btnVoltar" id="btn_voltar" onclick="voltarMedidaRack()">Voltar </button>`;
-    rolarTela.scrollTop = rolarTela.scrollHeight
-}
-function voltarMedidaRack() {
+    rolarTelaCalculadora.scrollTop = rolarTelaCalculadora.scrollHeight
+  }
+  function voltarMedidaRack() {
     div_history.innerHTML += `<div class="userMessage"> ${rackPorEstante} </div>
 <div class="botMessage"> Utilizando a unidade de medida para rack's e sevidores (Unidade U)</div>
 <div class="botMessage"> Qual o tamanho médio dos rack's?</div>
@@ -137,32 +136,32 @@ function voltarMedidaRack() {
 <button class="btnEnviar" id="btn_enviar"
 onclick="functionMedidaRack()"> Enviar </button>
 <button class="btnVoltar" id="btn_voltar" onclick="voltarRackPorEstante()"> Voltar </button>`
-    rolarTela.scrollTop = rolarTela.scrollHeight
-}
+    rolarTelaCalculadora.scrollTop = rolarTelaCalculadora.scrollHeight
+  }
 
 
 function functionNumServidores() {
-    numServidores = Number(input_num_servidores.value);
-    div_history.innerHTML += `<div class="userMessage"> ${medidaRack}</div>
+  numServidores = Number(input_num_servidores.value);
+    div_history.innerHTML += `<div class="userMessage"> ${numServidores}</div>
 <div class="botMessage"> Chegamos a ultima pergunta! </div>
 <div class="botMessage"> Qual o tamanho da instalação(m²)</div>
 `;
     div_footer.innerHTML = `<input type="text" class="input_message" id="input_area" placeholder="Digite aqui"> <button class="btnEnviar" id="btn_enviar" onclick="functionArea()"> Enviar</button><button class="btnVoltar" id="btn_voltar" onclick="voltarMedidaRack()">Voltar</button>`;
-    rolarTela.scrollTop = rolarTela.scrollHeight
+    rolarTelaCalculadora.scrollTop = rolarTelaCalculadora.scrollHeight
 }
-function voltarMedidaRack() {
+  function voltarMedidaRack(){
     div_history.innerHTML += `<div class="userMessage"> ${rackPorEstante} </div>
 <div class="botMessage"> Utilizando a unidade de medida para rack's e sevidores (Unidade U)</div>
 <div class="botMessage"> Qual o tamanho médio dos rack's?</div>
-`;
-    div_footer.innerHTML = `
+`; 
+div_footer.innerHTML = `
 <input type="text" class="input_message" id="input_medida_rack" placeholder="Digite aqui" >
 <button class="btnEnviar" id="btn_enviar"
 onclick="functionMedidaRack()"> Enviar </button>
 <button class="btnVoltar" id="btn_voltar" onclick="voltarRackPorEstante()"> Voltar </button>`
-    rolarTela.scrollTop = rolarTela.scrollHeight
-}
-function functionArea() {
+    rolarTelaCalculadora.scrollTop = rolarTelaCalculadora.scrollHeight
+  }
+  function functionArea() {
     area = Number(input_area.value);
     //Contas
     //Quantidade de sensores por rack(Frontal, traseiro, em cima e embaixo)
@@ -201,7 +200,7 @@ function functionArea() {
     var valorSensorArduino = ((valorArduino + valorSensor) * 2) + 100 + 10;
     // nosso preco de sensores e arduinos * nossa margem de lucro no projeto
     var preco = valorSensorArduino + (valorSensorArduino * 0.3);
-
+    
     var despesaEstantes = qtdEstantes * 3500;
     var despesaRack = numServidores * 12050;
     var somaPrejuizo = despesaRack + despesaEstantes;
@@ -209,9 +208,8 @@ function functionArea() {
     div_history.innerHTML += `
 <div class="userMessage">${area}</div>
 <div class="botMessage">Você sabia? Na madrugada de 10 de março de 2021, a empresa OVHcloud, provedora de serviços de hospedagem na nuvem, enfrentou enormes perdas devido a falta de monitoramento de temperatura que gerou um incêndio. O prejuízo totalizou impressionantes US$58 milhões em gastos com seguradoras para cobrir os danos causados pelo incêndio. Além disso, cerca de 160 racks de servidores foram destruídos, resultando na perda de um data center, estimando-se um custo adicional de aproximadamente US$64,4 milhões apenas pelos racks perdidos.</div>`
-    rolarTela.scrollTop = rolarTela.scrollHeight
-    div_history.innerHTML += `<div class="botMessage">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTdIlK2bL49EiOVnEXKJXctdLlsdfwIn2yJw&usqp=CAU" width="100%"></div>
+ div_history.innerHTML +=`<div class="botMessage">
+  <img src="https://www.minhaoperadora.com.br/wp-content/uploads/2021/03/milhoes-de-sites-saem-do-ar-apos-incendio-na-franca.jpeg" width="100%"></div>
 
 <div class="botMessage">Com base em suas informações anteriores, você teria um prejuízos de R$ ${despesaEstantes} em racks e R$ ${despesaRack} em servidores. Tendo um total de R$ ${somaPrejuizo}</div>
 
@@ -219,28 +217,28 @@ function functionArea() {
 <div class="botMessage">Deseja fazer um novo orçamento?</div>
 `;
     div_footer.innerHTML = `<button onclick="sim()" class="btnEnviar"> Sim </button><button onclick="nao()" class="btnVoltar">Não</button>`
-
-}
-function sim() {
+    
+  }
+  function sim() {
     div_history.innerHTML += `<div class="userMessage">Novo Orçamento</div>
 <div class="botMessage">
 Qual é o seu nome?
 </div>`
-    div_footer.innerHTML = ` <input type="text" class="input_message" id="input_nome" placeholder="Digite aqui">
+    div_footer.innerHTML = ` <input type="text" class="input_message" id="input_nome_calculadora placeholder="Digite aqui">
 <button class="btnEnviar" id="btn_enviar" onclick="function()">Enviar</button>`
-    rolarTela.scrollTop = rolarTela.scrollHeight
-}
-function nao() {
+    rolarTelaCalculadora.scrollTop = rolarTelaCalculadora.scrollHeight
+  }
+  function nao() {
     div_history.innerHTML += `<div>Ok então, espero que você tenha gostado</div><div class="botMessage">Volte sempre :)</div>`;
     div_footer.innerHTML = `
 <button class="btnEnviar" id="btn_enviar" onclick="nomeNao()">Novo Orçamento</button>`
 }
-function nomeNao() {
+  function nomeNao(){
     div_history.innerHTML += `<div class="userMessage">Novo Orçamento</div>
 <div class="botMessage">
 Qual é o seu nome?
 </div>`
-    div_footer.innerHTML = ` <input type="text" class="input_message" id="input_nome" placeholder="Digite aqui">
+    div_footer.innerHTML = ` <input type="text" class="input_message" id="input_nome_calculadora" placeholder="Digite aqui">
 <button class="btnEnviar" id="btn_enviar" onclick="function()">Enviar</button>`
-    rolarTela.scrollTop = rolarTela.scrollHeight
-};
+    rolarTelaCalculadora.scrollTop = rolarTelaCalculadora.scrollHeight
+  }

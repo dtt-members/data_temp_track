@@ -10,7 +10,7 @@ function verificar(){
     //     alert('');
     // }
     if (usuario == email_certo && senha == senha_certa){
-            window.location.href = "../../indexInst.html";
+            window.location.href ="../../Dashboard/Dashboard.html";
         } else {
             alert("Senha ou email não coincidem")
         }
