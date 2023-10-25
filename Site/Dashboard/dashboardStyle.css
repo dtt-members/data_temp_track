@@ -247,13 +247,22 @@ display: flex;
 justify-content: space-around;
 }
 .piscar-vermelho-dc{
-  width: 15px;
-  height: 15px;
+  width: 20vh;
+  height: 40px;
   border-radius: 15px;
-  margin-top: 2%;
+  /* margin-top: 2%; */
     animation-name: piscarV;
     animation-duration: 2s;
     animation-iteration-count: infinite;
+}
+
+.piscar-vermelho-dc p{
+    font-weight: bolder;
+    display: flex;
+    margin-top: 10px;
+    /* align-items: center; */
+    justify-content: center;
+    font-size: larger;
 }
 
 @keyframes piscarV {

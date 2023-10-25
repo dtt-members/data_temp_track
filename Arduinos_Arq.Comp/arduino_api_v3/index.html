@@ -30,11 +30,11 @@
             <canvas id="luminosidade"></canvas>
         </section> -->
         <h1>Sensor LM 35 - Temperatura</h1>
-        <section style="width: 100%;">
+        <section style="width: 50%;">
             <canvas id="lm35Temperatura"></canvas>
         </section>
         <h1>Sensor Chave</h1>
-        <section style="width: 100%;">
+        <section style="width: 50%;">
             <canvas id="chave"></canvas>
         </section>
     </div>
@@ -170,7 +170,7 @@
                 type: 'line',
                 data: {
                     datasets: [{
-                        label: 'Temperatura',
+                        label: 'lm35',
                         type: 'line',
                         borderColor: ['#ffd902'],
                         backgroundColor: ['#ffe135']
@@ -210,7 +210,7 @@
                 type: 'line',
                 data: {
                     datasets: [{
-                        label: 'Chave',
+                        label: 'Temperatura ',
                         type: 'line',
                         borderColor: ['#ffd902'],
                         backgroundColor: ['#ffe135']
@@ -273,9 +273,9 @@
 
         setInterval(() => {
             obterDados(dht11Umidade, 'dht11/umidade');
-            // obterDados(dht11Temperatura, 'dht11/temperatura');
             // obterDados(luminosidade, 'luminosidade');
             obterDados(lm35Temperatura, 'lm35/temperatura');
+            // obterDados(dht11Temperatura, 'dht11/temperatura');
             obterDados(chave, 'chave');
         }, 1000);
 

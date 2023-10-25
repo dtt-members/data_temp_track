@@ -4,7 +4,7 @@ const mysql = require('mysql2');
 
 const SERIAL_BAUD_RATE = 9600;
 const SERVIDOR_PORTA = 3000;
-const HABILITAR_OPERACAO_INSERIR = true;
+const HABILITAR_OPERACAO_INSERIR = false;
 
 const serial = async (
     valoresDht11Umidade,
@@ -39,11 +39,11 @@ const serial = async (
     });
     arduino.pipe(new serialport.ReadlineParser({ delimiter: '\r\n' })).on('data', async (data) => {
         const valores = data.split(',');
-        const dht11Umidade = parseFloat(valores[0]);
+        const chave = parseInt(valores[0]);
+        const dht11Umidade = parseFloat(valores[1]);
+        const lm35Temperatura = parseFloat(valores[2]);
         // const dht11Temperatura = parseFloat(valores[1]);
         // const luminosidade = parseFloat(valores[2]);
-        const lm35Temperatura = parseFloat(valores[1]);
-        const chave = parseInt(valores[2]);
 
         valoresDht11Umidade.push(dht11Umidade);
         // valoresDht11Temperatura.push(dht11Temperatura);
