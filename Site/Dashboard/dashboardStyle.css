@@ -232,7 +232,7 @@ cursor: pointer;
 }
 
 .menu_lateral button{
- background-color: #003366;
+ background-color: black;
  color: #ffffff;
  border: none;
  border-top : 1px  #ffffff;
@@ -246,14 +246,16 @@ cursor: pointer;
 display: flex;
 justify-content: space-around;
 }
+
 .piscar-vermelho-dc{
-  width: 20vh;
+  /* width: auto; */
   height: 40px;
   border-radius: 15px;
   /* margin-top: 2%; */
-    animation-name: piscarV;
+    /* animation-name: piscarV;
     animation-duration: 2s;
-    animation-iteration-count: infinite;
+    animation-iteration-count: infinite; */
+    animation: piscarV 2s infinite ease-in-out;
 }
 
 .piscar-vermelho-dc p{
@@ -267,11 +269,11 @@ justify-content: space-around;
 
 @keyframes piscarV {
     0%{
-      background-color: red;
+      color: red;
       opacity: 0.2;
-    }
+    }   
     100% {
-       background-color: red;
+       color: red;
        opacity: 1;
     }
 }
