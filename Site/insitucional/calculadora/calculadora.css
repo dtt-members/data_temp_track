@@ -116,7 +116,7 @@
 	align-self: end;
 }
 .botMessage {
-	display: flex;
+
 	text-align: left;
 	background-color: #f2f2f2;
 	padding: 0.7rem;
@@ -124,10 +124,17 @@
 	margin: 0;
 	width: fit-content;
 	max-width: 70%;
+
 /*	white-space: nowrap;
 	overflow: hidden;
 	animation: digitando 1s steps(70) alternate;
 */}
+
+.negritoCalculadora{
+	font-weight: 700;	
+	margin: 0%;
+	padding: 0%;
+}
 .caixaQuestions .caixaHeader p img{
   width: 11%;
   height: 8%;

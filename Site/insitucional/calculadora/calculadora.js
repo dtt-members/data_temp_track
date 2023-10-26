@@ -13,7 +13,7 @@
     nomeCalculadora = input_nome_calculadora.value;
     if (nomeCalculadora == "") {
       div_history.innerHTML += `<div class="botMessage">Por favor digite seu nome </div>`;
-      rolarTelaCalculadora.scrollTop = rolarTelaCalculadora.scrollHeight
+      rolarTelaCalculadora.scrollTop = rolarTelaCalculadora.scrollHeight;
     } else {
       div_history.innerHTML += `
 <div class="userMessage"> ${nomeCalculadora}</div>`
@@ -23,7 +23,7 @@
 <input type="text" id="input_empresa" class="input_message" placeholder="Digite aqui" >
 <button class="btnEnviar" class="input_message" id="btn_enviar" onclick="functionEmpresa()">Enviar</button>
 <button class="btnVoltar" class="input_message" id="btn_voltar" onclick="voltarNome()">Voltar </button>`;
-      rolarTelaCalculadora.scrollTop = rolarTelaCalculadora.scrollHeight
+      rolarTelaCalculadora.scrollTop = rolarTelaCalculadora.scrollHeight;
     }
   }
 
@@ -49,7 +49,7 @@ Qual é o seu nome?
       div_history.innerHTML += `<div class="userMessage">${empresa} </div>
 <div class="botMessage"> Que legal, o(a) ${empresa} deve ser sensacional!</div>
 <div class="botMessage">Mas vamos voltar a sua simulação<br>
-Quantas estantes o (a) tem?</div>`;
+Quantas estantes o(a) ${empresa} tem?</div>`;
       div_footer.innerHTML = `
 <input type="text" class="input_message" id="input_qtd_estantes" placeholder="Digite aqui" >
 <button class="btnEnviar" id="btn_enviar" in
@@ -86,7 +86,7 @@ onclick="functionRackPorEstante()">Enviar</button> <button class="btnVoltar" id=
   function voltarQtdEstantes() {
     div_history.innerHTML += `<div class="userMessage">Voltar </div>
 <div class="botMessage">
-Quantas estantes o (a) tem? </div>`;
+Quantas estantes o(a) ${empresa} tem? </div>`;
     div_footer.innerHTML = `
 <input type="text" class="input_message" id="input_qtd_estantes" placeholder="Digite aqui" >
 <button class="btnEnviar" id="btn_enviar" in
@@ -188,18 +188,18 @@ onclick="functionMedidaRack()"> Enviar </button>
     var totalSensor = quantEstante + quantSensorCorredor;
     //Valor dos sensores
     // quantidade total de sensores * o preço de custo do sensor
-    var valorSensor = totalSensor * 20;
+    // var valorSensor = totalSensor * 20;
     //Quantidade de arduinos
     // quantidade total de sensores / 2(cada arduino suporte 02 sensores)
     var quantidadeArduino = totalSensor / 2;
     //Valor dos arduinos
     // quantidade total de arduinos * o preço de custo do arduino
-    var valorArduino = quantidadeArduino * 100;
+    //var valorArduino = quantidadeArduino * 100;
     // Nossa porcentagem
     // custo total de arduinos e sensores * nossa margem de lucro dos sensores e arduinos
-    var valorSensorArduino = ((valorArduino + valorSensor) * 2) + 100 + 10;
+    // var valorSensorArduino = ((valorArduino + valorSensor) * 2) + 100 + 10;
     // nosso preco de sensores e arduinos * nossa margem de lucro no projeto
-    var preco = valorSensorArduino + (valorSensorArduino * 0.3);
+   //  var preco = valorSensorArduino + (valorSensorArduino * 0.3);
     
     var despesaEstantes = qtdEstantes * 3500;
     var despesaRack = numServidores * 12050;
@@ -207,15 +207,18 @@ onclick="functionMedidaRack()"> Enviar </button>
 
     div_history.innerHTML += `
 <div class="userMessage">${area}</div>
-<div class="botMessage">Você sabia? Na madrugada de 10 de março de 2021, a empresa OVHcloud, provedora de serviços de hospedagem na nuvem, enfrentou enormes perdas devido a falta de monitoramento de temperatura que gerou um incêndio. O prejuízo totalizou impressionantes US$58 milhões em gastos com seguradoras para cobrir os danos causados pelo incêndio. Além disso, cerca de 160 racks de servidores foram destruídos, resultando na perda de um data center, estimando-se um custo adicional de aproximadamente US$64,4 milhões apenas pelos racks perdidos.</div>`
+<div class="botMessage"><span class="negritoCalculadora">Você sabia? </span></div> `
+    rolarTelaCalculadora.scrollTop = rolarTelaCalculadora.scrollHeight
+    div_history.innerHTML += `
+    <div class="botMessage"> Na madrugada de 10 de março de 2021, a empresa OVHcloud, provedora de serviços de hospedagem na nuvem, enfrentou enormes <span class="negritoCalculadora"> perdas</span> devido a <span class="negritoCalculadora"> falta de monitoramento de temperatura</span> que gerou um incêndio. O <span class="negritoCalculadora">prejuízo </span> totalizou impressionantes <span class="negritoCalculadora"> US$58 milhões em gastos</span> com seguradoras para cobrir os danos causados pelo incêndio. Além disso, cerca de 160 racks de servidores foram destruídos, resultando na perda de um data center, estimando-se um <span class="negritoCalculadora"> custo adicional</span> de aproximadamente <span class="negritoCalculadora"> US$64,4 milhões apenas pelos racks perdidos.</span> </div>`
  div_history.innerHTML +=`<div class="botMessage">
   <img src="https://www.minhaoperadora.com.br/wp-content/uploads/2021/03/milhoes-de-sites-saem-do-ar-apos-incendio-na-franca.jpeg" width="100%"></div>
 
-<div class="botMessage">Com base em suas informações anteriores, você teria um prejuízos de R$ ${despesaEstantes} em racks e R$ ${despesaRack} em servidores. Tendo um total de R$ ${somaPrejuizo}</div>
+<div class="botMessage">Com base em suas informações anteriores, você teria um prejuízos de <span class="negritoCalculadora"> R$ ${despesaEstantes}</span> em racks e <span class="negritoCalculadora"> R$ ${despesaRack}</span> em servidores. Considerando <span class="negritoCalculadora">somente</span> os rack e servidores, sem considerar os <span class="negritoCalculadora">downtimes</span> o (a) ${empresa} teria um perda total de <span class="negritoCalculadora">R$ ${somaPrejuizo}</span></div>
 
-<div class="botMessage">O orçamento necessário para evitar tais prejuízos é de apenas R$${preco}.</div>
 <div class="botMessage">Deseja fazer um novo orçamento?</div>
 `;
+// <div class="botMessage">O orçamento necessário para evitar tais prejuízos é de apenas R$${preco}.</div>
     div_footer.innerHTML = `<button onclick="sim()" class="btnEnviar"> Sim </button><button onclick="nao()" class="btnVoltar">Não</button>`
     
   }
