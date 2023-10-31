@@ -58,9 +58,18 @@
     cursor: pointer;
 }
 
-.cartas-1 .cardpri:hover{
-    background-color: #003366;
-    color: #f2f2f2;
+.cartas-1 .cardpri{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #f2f2f2;
+    width: 29%;
+    min-height: 1px;
+    height: 150px;
+    border-radius: 5px;
+    border: solid 5px black;
+    box-shadow: black 2px 0 2px 0;
     transition: 1s;
     cursor: pointer;
 }
