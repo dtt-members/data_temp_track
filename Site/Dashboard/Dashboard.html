@@ -512,23 +512,7 @@
           </div>
 
           <div class="container-legenda">
-            <div class="legenda">
-              <div class="titulo-legenda">
-                Umidade
-              </div>
-              <div class="linha-legenda">
-                <div class="bom"></div>
-                Ideal: 42% a 57%
-              </div>
-              <div class="linha-legenda">
-                <div class="alert"></div>
-                Não recomendável: 35% a 42% e 57% a 65%
-              </div>
-              <div class="linha-legenda">
-                <div class="perigo"></div>
-                Perígo
-              </div>
-            </div>
+           
             <div class="legenda">
               <div class="titulo-legenda">
                 Temperatura
@@ -546,22 +530,40 @@
                 Perigo
               </div>
             </div>
+
+            <div class="legenda">
+              <div class="titulo-legenda">
+                Umidade
+              </div>
+              <div class="linha-legenda">
+                <div class="bom"></div>
+                Ideal: 42% a 57%
+              </div>
+              <div class="linha-legenda">
+                <div class="alert"></div>
+                Não recomendável: 35% a 42% e 57% a 65%
+              </div>
+              <div class="linha-legenda">
+                <div class="perigo"></div>
+                Perígo
+              </div>
+            </div>
           </div>
           <div class="medicao_atual" id="div_medicao_atual">
-            <div class="medicaoAlert" id="medicaoAlertT"></div>
             <div class="medicaoAlert" id="medicaoAlertU"></div>
+            <div class="medicaoAlert" id="medicaoAlertT"></div>
           </div>
           <div class="container-canvas_01" id="id_container_canvas_01">
-            <canvas id="id_grafico_umidade"></canvas>
             <canvas id="id_grafico_temperatura"></canvas>
+            <canvas id="id_grafico_umidade"></canvas>
           </div>
           <div class="container-canvas_02" id="id_container_canvas_02">
-            <canvas id="id_grafico_umidade2"></canvas>
             <canvas id="id_grafico_temperatura2"></canvas>
+            <canvas id="id_grafico_umidade2"></canvas>
           </div>
           <div class="container-canvas_03" id="id_container_canvas_03">
-            <canvas id="id_grafico_umidade3"></canvas>
             <canvas id="id_grafico_temperatura3"></canvas>
+            <canvas id="id_grafico_umidade3"></canvas>
           </div>
           <div class="tabela_bloqueio" id="div_tabela_bloqueio">
             <div class="linha_bloqueio">
@@ -767,7 +769,8 @@
       medicaoAlertU.style.backgroundColor = "red";
     }
 
-    div_medicao_atual.innerHTML = `<div class="medicaoAlert" id="medicaoAlertT">Temperatura: ${temperaturaAtual1}°C</div><div class="medicaoAlert" id="medicaoAlertU" > Umidade:${umidadeAtual1}%</div>`
+    div_medicao_atual.innerHTML = `<div class="medicaoAlert" id="medicaoAlertT">Temperatura: ${temperaturaAtual1}°C</div>
+    <div class="medicaoAlert" id="medicaoAlertU" > Umidade:${umidadeAtual1}%</div>`
 
 
 
