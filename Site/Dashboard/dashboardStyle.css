@@ -7,7 +7,7 @@ body{
     font-family: 'Poppins', sans-serif;
 }
 
-/*Tela de Perfil*/
+/*Tela de Editar Perfil*/
 .div_tela_perfil{
     width: 100%;
     height: 100vh;
@@ -758,6 +758,12 @@ border-radius: 15px;
     box-sizing: border-box;
     
 }
+
+.lousa_invisivel3 .menu .tamanho{
+    display: flex;
+    width: 15%;
+}
+
 .lousa_invisivel3 .alinhar_lousa3{
   width: 100%;
     height: 100%;
