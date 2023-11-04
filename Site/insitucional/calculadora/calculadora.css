@@ -64,11 +64,12 @@
 	background-color: #ffffff;
 	border: 3px;
 	padding: 1px;
+	height: fit-content;
 }
 
 .input_message {
 	height: 25%;
-	width: 81%;
+	width: 65%;
 	color: #008AFF;
 	background: #f2f2f2;
 	padding: 10px;
@@ -88,6 +89,20 @@
 	color: #ffffff;
 	width: fit-content;
 }
+
+.Abotao{
+	border-radius: 15px;
+	font-size: 1rem;
+	padding: 1%;
+	margin-left: 10%;
+	background: #003366;
+	text-decoration: none;
+	color: #ffffff;
+	width: fit-content;
+	text-align:center;
+}
+
+
 .btnVoltar {
 	border: none;
 	border-radius: 15px;
@@ -116,9 +131,8 @@
 	align-self: end;
 }
 .botMessage {
-
 	text-align: left;
-	background-color: #f2f2f2;
+	background-color: #e0e0e0;
 	padding: 0.7rem;
 	border-radius: 15px 15px 15px 0px;
 	margin: 0;
