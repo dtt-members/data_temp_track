@@ -156,9 +156,17 @@ h1{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin: 5%;
+    margin: 5% 5% 0 5%;
 }
 
+
+.messageErro{
+    margin-top: 1%;
+    margin-bottom: 3%;
+    width: 100%;
+    text-align: center;
+    color: red;
+}
 .input-box {
     display: flex;
     flex-direction: column;
@@ -197,6 +205,9 @@ h1{
 
 .continue-button button {
     background-color: #000000f1;
+    font-size: 0.93rem;
+    font-weight: 500;
+    color: #fff;
 }
 
 .continue-button button a {

@@ -165,7 +165,7 @@
                 <img src="insitucional/Imagens/undraw_join_re_w1lh.svg" alt="">
             </div>
             <div class="form">
-                <form action="#">
+                <div class="form2">
                     <div class="form-header">
                         <div class="title">
                             <h1>Cadastre-se</h1>
@@ -174,66 +174,55 @@
                     <div class="input-group">
                         <div class="input-box">
                             <label for="Razão Social">Razão Social</label>
-                            <input id="Razão Social" type="text" name="Razão Social" placeholder="Digite sua Razão Social"
+                            <input id="input_razaoSocial" type="text" name="Razão Social" placeholder="Digite sua Razão Social"
                                 required>
                         </div>
 
                         <div class="input-box">
                             <label for="CNPJ">CNPJ</label>
-                            <input id="CNPJ" type="number" name="CNPJ" placeholder="XX.XXX.XXX/XXXX-XX"
+                            <input id="input_CNPJ" type="number" name="CNPJ" placeholder="XX.XXX.XXX/XXXX-XX"
                                 required>
                         </div>
 
                         <div class="input-box">
                             <label for="email">Email</label>
-                            <input id="email" type="email" name="email" placeholder="Digite seu email" required>
+                            <input id="input_emailCadastro" type="email" name="email" placeholder="Digite seu email" required>
                         </div>
 
                         <div class="input-box">
                             <label for="number">Telefone Celular</label>
-                            <input id="number" type="number" name="number" placeholder="(xx) x xxxx-xxxx" required>
+                            <input id="input_telefoneCelular" type="number" name="number" placeholder="(xx) x xxxx-xxxx" required>
                         </div>
 
                         <div class="input-box">
                             <label for="number">Telefone Fixo</label>
-                            <input id="number" type="number" name="number" placeholder="(xx) xxxx-xxxx" required>
+                            <input id="input_telefoneFixo" type="number" name="number" placeholder="(xx) xxxx-xxxx" required>
                         </div>
 
                         <div class="input-box">
                             <label for="endereço">Endereço</label>
-                            <input id="endereço" type="text" name="endereço" placeholder="Rua XPTO"
+                            <input id="input_endereco" type="text" name="endereço" placeholder="Rua XPTO"
                                 required>
                         </div>
 
                         <div class="input-box">
                             <label for="password">Senha</label>
-                            <input id="password" type="password" name="password" placeholder="Digite sua senha"
+                            <input id="input_senha" type="password" name="password" placeholder="Digite sua senha"
                                 required>
                         </div>
 
                         <div class="input-box">
                             <label for="password">Confirme sua senha</label>
-                            <input id="password" type="password" name="confirmpassword" placeholder="Confirme sua senha"
+                            <input id="input_confimarSenha" type="password" name="confirmpassword" placeholder="Confirme sua senha"
                                 required>
                         </div>
 
-                        
-
-                        
-
-                        
-
-                       
-
-
-                        
-                        
-                        
                     </div>
+                    <div class="messageErro" id="messageErro"></div>
                     <div class="continue-button">
-                        <button><a href="#">Continuar</a></button>
+                        <button onclick="validarCadastro()">Continuar</button>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>
@@ -309,3 +298,4 @@
 
 </html>
 <script src="./insitucional/calculadora/calculadora.js"></script>
+<script src="./insitucional/Login/scriptLogin.js"></script>
