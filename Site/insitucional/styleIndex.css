@@ -60,6 +60,7 @@ html {
 
 h1{
     font-size: 2rem;
+    margin: 1% 0;
 }
 
 .banner {
@@ -130,8 +131,7 @@ h1{
     display: flex;
     justify-content: column;
     background-color: #fff;
-    margin: 2%;
-    
+    margin: 0.9%;
 }
 
 .form-header {
@@ -156,7 +156,7 @@ h1{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin: 5% 5% 0 5%;
+    margin: 1% 5%;
 }
 
 
@@ -196,8 +196,8 @@ h1{
     width: 100%;
     border: none;
     background-color: #6c63ff;
-    padding: 0.52rem;
-    border-radius: 5px;
+    padding: 2%;
+    border-radius: 5px 5px 0 0 ;
     cursor: pointer;
     
 
@@ -208,6 +208,7 @@ h1{
     font-size: 0.93rem;
     font-weight: 500;
     color: #fff;
+    margin-top: -0.5%;
 }
 
 .continue-button button a {
