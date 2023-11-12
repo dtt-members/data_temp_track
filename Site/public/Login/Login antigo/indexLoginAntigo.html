@@ -1,0 +1,197 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styleIndex.css">
+</head>
+<body>
+  <div class="container">
+    <div class="form-image">
+      <img src="assets/assets/img/undraw_online_stats_0g94.svg" alt="">
+</div>
+    <div class="form" id="form">
+      <form action="#">
+        <div class="form-header" id="form_header">
+          <div class="title">
+            <h1>Cadastre-se</h1>
+  </div>
+          <div class="login-button">
+            <button onclick="fLogin()"><h1>Login</h1></button>
+  </div>
+  </div>
+        <div class="input-group" id="input_group">
+          <div class="input-box">
+            <label for="firstname">Primeiro nome</label>
+            <input id="input_nome" type="text" name="firstname" placeholder="Digite seu primeiro nome" required>
+    </div>
+
+          <div class="input-box">
+            <label for="lastname">Sobrenome</label>
+            <input id="input_sobrenome" type="text" name="lastname" placeholder="Digite seu sobrenome" required>
+    </div>
+
+          <div class="input-box">
+            <label for="email">Email</label>
+            <input id="input_email" type="email" name="email" placeholder="Digite seu emil" required>
+    </div>
+
+          <div class="input-box">
+            <label for="number">Celular</label>
+            <input id="input_celular" type="tel" name="number" placeholder="(xx) xxxx-xxxx" required>
+    </div>
+
+          <div class="input-box">
+            <label for="password">Senha</label>
+            <input id="input_password" type="password" name="password" placeholder="Digite sua senha" required>
+    </div>
+
+          <div class="input-box">
+            <label for="password">Confirme sua senha</label>
+            <input id="input_password2" type="password" name="confirmpassword" placeholder="Digite sua senha" required>
+    </div>
+  </div>
+        <div id="continue_button" class="continue-button">
+          <button onclick="fCadastroLogin()">Continuar</button>
+  </div>
+  </form>
+</div>
+</div>
+</body>
+</html>
+<script>
+ var emailCerto = "datatemptrack@sptech.school";
+  var passwordCerto = "data@123";
+  var nome = "";
+    var sobrenome = "";
+    var celular = "";
+    var password2 = "";
+  var email ="";
+  var password = "";
+  
+  
+  function fCadastroLogin() {
+  nome = input_nome.value;
+  sobrenome = input_sobrenome.value;
+  mail = input_email.value;
+  celular = input_celular.value;
+  password = input_password.value;
+  password2 = input_password2.value;
+alert(`${nome},${sobrenome},${email}, ${celular},${password}, ${password2}`)
+  var possui_especial =
+  password.indexOf('#') >= 0 || password.indexOf('@') >= 0 || password.indexOf('!') >= 0 || password.indexOf('%') >= 0;
+
+  if (nome == "" || sobrenome == "" || email == "" || celular == "" || password == "" || password2 == "") {
+    alert(`Preencha todos os campos`);
+  } else if (password !== password2) {
+    alert(`A confirmação de senha deve ser igual a primeira senha`);
+  } else if (possui_especial) {
+    alert(`Cadastro Realizado`)
+    form_header.innerHTML = `
+    <div class="title">
+    <h1>Login</h1>
+    </div>
+    <div class="login-button">
+    <button onclick="fCadastro()"><h1>Cadastre-se</h1></button>
+    </div>
+    </div>`
+    input_group.innerHTML = `<div class="input-box">
+    <label for="email">Email</label>
+    <input id="input_email" type="email" name="email" placeholder="Digite seu emil" required>
+    </div>
+    <div class="input-box">
+    <label for="password">Senha</label>
+    <input id="input_password" type="password" name="password" placeholder="Digite sua senha" required>
+    </div>`
+    continue_button.innerHTML = `<button onclick="fEntrarDashboard()">Continuar</button>`;
+  } else {
+    alert ('A senha deve possui um desses caracteres especiais #@!%');
+  }
+  }
+
+
+
+  function fLogin() {
+  nome = input_nome.value;
+  sobrenome = input_sobrenome.value;
+  mail = input_email.value;
+  celular = input_celular.value;
+  password = input_password.value;
+  password2 = input_password2.value;
+
+  form_header.innerHTML = `
+  <div class="title">
+  <h1>Login</h1>
+  </div>
+  <div class="login-button">
+  <button onclick="fCadastro()"><h1>Cadastre-se</h1></button>
+  </div>
+  </div>`
+  input_group.innerHTML = `<div class="input-box">
+  <label for="email">Email</label>
+  <input id="input_email" type="email" name="email" placeholder="Digite seu emil" required>
+  </div>
+  <div class="input-box">
+  <label for="password">Senha</label>
+  <input id="input_password" type="password" name="password" placeholder="Digite sua senha" required>
+  </div>`;
+  continue_button.innerHTML = `<button onclick="fEntrarDashboard()">Continuar</button>`
+  }
+
+
+
+
+  function fCadastro() {
+  form_header.innerHTML = `<div class="title">
+  <h1>Cadastre-se</h1>
+  </div>
+  <div class="login-button">
+  <button onclick="fLogin()"><h1>Login</h1></button>
+  </div>
+  </div>`
+  input_group.innerHTML = `        <div class="input-group" id="input_group">
+  <div class="input-box">
+  <label for="firstname">Primeiro nome</label>
+  <input id="input_nome" type="text" name="firstname" placeholder="Digite seu primeiro nome" required>
+  </div>
+
+  <div class="input-box">
+  <label for="lastname">Sobrenome</label>
+  <input id="input_sobrenome" type="text" name="lastname" placeholder="Digite seu sobrenome" required>
+  </div>
+
+  <div class="input-box">
+  <label for="email">Email</label>
+  <input id="input_email" type="email" name="email" placeholder="Digite seu emil" required>
+  </div>
+
+  <div class="input-box">
+  <label for="number">Celular</label>
+  <input id="input_celular" type="tel" name="number" placeholder="(xx) xxxx-xxxx" required>
+  </div>
+
+  <div class="input-box">
+  <label for="password">Senha</label>
+  <input id="input_password" type="password" name="password" placeholder="Digite sua senha" required>
+  </div>
+
+  <div class="input-box">
+  <label for="password">Confirme sua senha</label>
+  <input id="input_password2" type="password" name="confirmpassword" placeholder="Digite sua senha" required>
+  </div>`
+  continue_button.innerHTML = `<button onclick="fCadastroLogin()">Continuar</button>`
+  }
+
+  function fEntrarDashboard() {
+  email = input_email.value;
+  password = input_password.value;
+  if (emailCerto == email && passwordCerto == password) {
+    alert("Entrando na Dashboard")
+  } else {
+    alert(`${nome},${sobrenome}, ${email}, ${celular}, ${celular} , ${password}, ${password2}`);
+  }
+
+  }
+
+</script>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataTempTrack</title>
+    <link rel="shortcut icon" href="./Imagens/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./styleIndex.css">
+    <link rel="stylesheet" href="./calculadora/calculadora.css">
+    <link rel="stylesheet" href="./diagram/estilo.css">
+
+</head>
+
+<body>
+    <!-- HEADER -->
+    <div class="header">
+        <div class="container">
+            <h1>DataTempTrack</h1>
+            <ul class="listaUm">
+                <li><a href="#cadastro">Cadastre-se</a></li>
+                <li><a href="#calculadora">Simulador Financeiro</a></li>
+                <li><a class="login"
+                        href="./Login/tela.html">login</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Header-->
+
+
+    <!-- BANNER -->
+    <div class="banner">
+        <div class="container">
+            <h1>
+                <br><br>Seu Data Center, Nossa Temperatura: Mantendo sua operação sempre no ponto certo <br>
+                <div class="more-button">
+                    <button><a href="#about">Ler mais</a></button>
+                </div>
+            </h1>
+        </div>
+    </div>
+
+    <!-- ABOUT US -->
+
+    <div class="sobrenos" id="about">
+        
+        <div class="container">
+            <div class="titulo">
+                Sobre a DataTempTrack
+            </div>   
+            <div class="sobreNosRestante">   
+                <img class="imagemSobreNos" src="./Imagens/Data-Center-PNG-High-Quality-Image.png">
+                <div class="textoNos">
+                    Em um mundo cada vez mais dependente da tecnologia, os datacenters se tornaram o coração pulsante
+                    das operações empresariais. E, como qualquer sistema complexo, a estabilidade é fundamental. É aqui
+                    que entramos em cena. Na DataTempTrack, somos especialistas em garantir que seu datacenter funcione
+                    com eficiência máxima, mantendo a temperatura ideal. Com uma vasta experiência e uma abordagem
+                    inovadora, fornecemos soluções de monitoramento de temperatura de última geração, projetadas para
+                    manter seu ambiente de operação com desempenho máximo e minimizar os riscos de falha.
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- diagram -->
+
+    <div class="container">
+        <div class="conteiner">
+            <h2 class="titulo-diagrama">Organização de Atividades</h2>
+            <div class="cartas-1">
+                <section class="cardpri">
+                    <img src="./diagram/fotoum.png" alt="">
+                    <p>
+                        Data-Center
+                        <br>sem <br>
+                        monitoramento
+                    </p>
+
+                </section>
+                <section class="cardtwo">
+                    <img src="./diagram/fotodois.png" alt="">
+                    <p>
+                        Data-Center com <br>
+                        ar-condicionados e <br>
+                        racks de servers
+                    </p>
+                </section>
+                <section class="cardthere">
+                    <img src="./diagram/fototres.png" alt="">
+                    <p>
+                        Registro de<br>
+                        todos os<br>
+                        dispositivos
+                    </p>
+                </section>
+            </div>
+            <div class="cartas-2">
+                <section class="carddois">
+                    <img src="./diagram/fotoquatro.png" alt="">
+                    <p>
+                        Instalar
+                        sensores <br>de
+                        umidade em<br>
+                        cada rack
+                    </p>
+                </section>
+                <section class="cardtres">
+                    <img src="./diagram/fotocinco.png" alt="">
+                    <p>
+                        Instalar
+                        sensores <br>de
+                        temperatura<br>
+                        nos servidores
+                    </p>
+                </section>
+                <section class="cardquatro">
+                    <img src="./diagram/fotoseis.png" alt="">
+                    <p>
+                        Armazenar <br>os
+                        dados dos<br>
+                        sensores
+                    </p>
+                </section>
+            </div>
+            <div class="cartas-3">
+                <section class="cardfist">
+                    <img src="./diagram/fotosete.png" alt="">
+                    <p>
+                        Criar uma<br>
+                        dash-board
+                        para<br>
+                        apresentar os
+                        dados
+                    </p>
+                </section>
+                <section class="cardsecond">
+                    <img src="./diagram/fotooito.png" alt="">
+                    <p>
+                        Emitir um alerta <br>para
+                        apresentar os
+                        <br>servers em
+                        risco
+                    </p>
+                </section>
+                <section class="cardterceiro">
+                    <img src="./diagram/fotonove.png" alt="">
+                    <p>
+                        Monitore todos
+                        <br>data centers de
+                        <br>qualquer lugar
+                    </p>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- banner -->
+
+    <div class="telaLogin" id="cadastro">
+        <div class="container">
+            <div class="form-image">
+                <img src="./Imagens/undraw_join_re_w1lh.svg" alt="">
+            </div>
+            <div class="form">
+                <div class="form2">
+                    <div class="form-header">
+                        <div class="title">
+                            <h1>Cadastre-se</h1>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-box">
+                            <label for="Razão Social">Razão Social</label>
+                            <input id="input_razaoSocial" type="text" name="Razão Social" placeholder="Digite sua Razão Social"
+                                required>
+                        </div>
+
+                        <div class="input-box">
+                            <label for="CNPJ">CNPJ</label>
+                            <input id="input_CNPJ" type="number" name="CNPJ" placeholder="XX.XXX.XXX/XXXX-XX"
+                                required>
+                        </div>
+
+                        <div class="input-box">
+                            <label for="email">Email</label>
+                            <input id="input_emailCadastro" type="email" name="email" placeholder="Digite seu email" required>
+                        </div>
+
+                        <div class="input-box">
+                            <label for="number">Telefone Celular</label>
+                            <input id="input_telefoneCelular" type="number" name="number" placeholder="(xx) x xxxx-xxxx" required>
+                        </div>
+
+                        <div class="input-box">
+                            <label for="number">Telefone Fixo</label>
+                            <input id="input_telefoneFixo" type="number" name="number" placeholder="(xx) xxxx-xxxx" required>
+                        </div>
+
+                        <div class="input-box">
+                            <label for="endereçoRua">Endereço</label>
+                            <input id="input_rua" type="text" name="rua" placeholder="Digite a rua"
+                                required>
+                        </div>
+
+                        <div class="input-box">
+                            <label for="cep">CEP</label>
+                            <input id="input_cep" type="number" name="cep" placeholder="Digite seu CEP"
+                                required>
+                        </div>
+
+                        <div class="input-box">
+                            <label for="numeroEnd">N°</label>
+                            <input id="input_numeroEnd" type="number" name="numeroEnd" placeholder="Digite seu número"
+                                required>
+                        </div>
+
+                        <div class="input-box">
+                            <label for="complemento">Complemento</label>
+                            <input id="input_complemento" type="text" name="complemento" placeholder="Digite seu complemento">
+                        </div>
+
+                    </div>
+                    <div class="messageErro" id="messageErro"></div>
+                    <div class="continue-button">
+                        <button onclick="validarCadastro()">Continuar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CALCULADORA -->
+
+    <div class="container" id="calculadora">
+        <div class="telaCalculadora">
+            <div class="textoCalculadora">
+                <h1>Calculadora Financeira, Como Funciona? </h1>
+                <p>Transformamos a simulação financeira com um simulador inovador em formato de conversa amigável. A
+                    assistente virtual Temp desempenha um papel central, auxiliando os usuários a criar orçamentos
+                    personalizados. Essa abordagem única permite explorar e aprimorar habilidades financeiras de
+                    forma
+                    envolvente e acessível, tornando a simulação de orçamento interativa por meio de um chat
+                    temático.
+                </p>
+                <a href="#cadastro">Contratar Serviços</a>
+            </div>
+            <div class="caixaQuestions" id="div_caixa">
+                <div class="caixaHeader">
+                    <p>
+                        <img src="./Imagens/assistenteVirtual.png">
+                        Assistente Temp
+                    </p>
+                </div>
+                <div class="history" id="div_history">
+                    <div class="botMessage">
+                        Olá! Bem-vindo à Data Temp Track.
+                    </div>
+                    <div class="botMessage" id="bot_message">
+                        Sou o assistente virtual Temp. Gostaria de criar um orçamento para a sua empresa? Tudo o que
+                        preciso é que
+                        você responda algumas perguntas. Vamos começar? A primeira pergunta é:
+                    </div>
+                    <div class="botMessage">
+                        Qual é o seu nome?
+                    </div>
+                </div>
+                <div class="footer" id="div_footer">
+                    <input type="text" class="input_message" id="input_nome_calculadora" placeholder="Digite aqui">
+                    <button class="btnEnviar" id="btn_enviar" onclick="functionNome()">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- calculadora -->
+
+    <!-- FOOTER -->
+
+    <div class="rodape">
+        <div class="container">
+            <div class="navegacaoFooter">
+                <p class="p1">Contato <br>DataTempTrack@sptech.com <br>
+                    +55 11 34254-3546
+                </p>
+                <p class="p2"> </p>
+                <p class="p3">Endereço <br>
+                Rua hadoock lobo 595 AV. Paulista </p>
+                <p>
+                    <img src="" alt="">
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+
+
+</body>
+
+</html>
+<script src="./calculadora/calculadora.js"></script>
+<script src="./Login/scriptLogin.js"></script>
