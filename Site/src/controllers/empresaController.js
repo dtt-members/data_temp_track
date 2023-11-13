@@ -19,7 +19,13 @@ function cadastrarEmp(req, res) {
     })
 }
 
+function listar(req, res) {
+    empresaModel.listar().then((resultado) => {
+      res.status(200).json(resultado);
+    });
+  }
 
 module.exports = {
-    cadastrarEmp
+    cadastrarEmp,
+    listar
 }

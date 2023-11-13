@@ -9,6 +9,14 @@ function cadastrarEmp(razaoSocial, cnpj, telefoneCelular, telefoneFixo, emailCad
     return database.executar(enviarEmp);
 }
 
+function listar() {
+    var query = `select * from empresa`;
+  
+    return database.executar(query);
+  }
+
 module.exports = {
-    cadastrarEmp
+    cadastrarEmp,
+    listar
+
 };

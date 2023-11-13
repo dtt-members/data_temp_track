@@ -31,23 +31,35 @@ function validarCadastro(){
     var complementoVar = input_complemento.value;
     
 
+    //validações das input 
     if(razaoSocialVar== "" || cnpjVar == "" || emailCadastroVar == "" || telefoneCelularVar == "" || telefoneFixoVar == "" ||
     ruaVar =="" || cepVar == "" || numeroEndVar == ""){
         messageErro.innerHTML = 'Preencha todos os campos'
+        //Os return servem com uma break, elas impedem da  função continuar
+        return false;
     } else  if(cnpjVar.length != 14){
         messageErro.innerHTML = `Preencha com um cnpj válido`;
+        return false;
     }else if(emailCadastroVar.indexOf('@') < 0 || emailCadastroVar.indexOf('.')< 0){
         messageErro.innerHTML = `Preencha com email válido que contenha '@' e '.com'`;
+        return false;
     }else if(telefoneCelularVar.length != 11){
         messageErro.innerHTML = 'Preencha com telefone celular válido';
+        return false;
     }else if(telefoneFixoVar.length != 10){
         messageErro.innerHTML = 'Preencha com telefone fixo válido';
+        return false;
     }else if (cepVar.length != 8) {
         messageErro.innerHTML = 'Digite um CEP válido';
+        return false;
     }else{
-             // usar esse ultimo else para mostrar a mensagem de cadastro realizado
+        messageErro.innerHTML ="";
+      // usar esse ultimo else para mostrar a mensagem de cadastro realizado
      // Cadastro endereco 
+    }
 
+    //Aqui eu pego as variaveis do cadastro, troco o nome da variavel e envio para a o arquivo endereco na pasta ROUTES
+    // o cadastrarEnd é uma function no arquivo endereco 
     fetch("/endereco/cadastrarEnd", {
         method:"POST",
         headers: {
@@ -57,38 +69,11 @@ function validarCadastro(){
         ruaServer: ruaVar,
         cepServer: cepVar,
         numeroEndServer: numeroEndVar,
-        complementoServer: complementoVar
+        complementoServer: complementoVar,
         })
     } )
      
-  
-  //Aqui vai ser aquela mensagem de cadastro lateral
-    .then(function (resposta) {
-      console.log("resposta: ", resposta);
-
-      if (resposta.ok) {
-        cardErro.style.display = "block";
-
-        mensagem_erro.innerHTML =
-          "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-
-        setTimeout(() => {
-            //Depois de dois segundos vai para a tela de login 
-          window.location = "login.html";
-        }, "2000");
-
-        limparFormulario();
-        finalizarAguardar();
-      } else {
-        throw "Houve um erro ao tentar realizar o cadastro!";
-      }
-    })
-    .catch(function (resposta) {
-      console.log(`#ERRO: ${resposta}`);
-      finalizarAguardar();
-    });
-
-
+// Aqui faço a mesma coisa só que enviando para o arquivo empresa
     fetch("/empresa/cadastrarEmp", {
       method:"POST",
       headers: {
@@ -101,35 +86,25 @@ function validarCadastro(){
       telefoneFixoServer: telefoneFixoVar,
       emailCadastroServer: emailCadastroVar
       })
-  } )
+  } )    
+    .then(function (resposta) {
+    console.log("resposta: ", resposta)});
    
 
- 
-//Aqui vai ser aquela mensagem de cadastro lateral
-  .then(function (resposta) {
-    console.log("resposta: ", resposta);
-
-    if (resposta.ok) {
-      cardErro.style.display = "block";
-
-      mensagem_erro.innerHTML =
-        "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-
-      setTimeout(() => {
-          //Depois de dois segundos vai para a tela de login 
-        window.location = "login.html";
-      }, "2000");
-
-      limparFormulario();
-      finalizarAguardar();
-    } else {
-      throw "Houve um erro ao tentar realizar o cadastro!";
-    }
-  })
-  .catch(function (resposta) {
-    console.log(`#ERRO: ${resposta}`);
-    finalizarAguardar();
-  });
       return false;
 }
-}
+
+
+function listar() {
+    fetch("/empresas/listar", {
+      method: "GET",
+    })
+      .then(function (resposta) {
+        resposta.json().then((empresas) => {
+          empresas.forEach((empresa) => {
+            listaEmpresas.innerHTML += `<option value='${empresa.idEmpresa}'>${empresa.razaoSocial}</option>`;
+          });
+        });
+      })
+      
+  }
