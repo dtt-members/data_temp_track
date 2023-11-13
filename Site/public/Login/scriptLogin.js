@@ -25,15 +25,13 @@ function validarCadastro(){
     var emailCadastroVar = input_emailCadastro.value;
     var telefoneCelularVar = input_telefoneCelular.value;
     var telefoneFixoVar = input_telefoneFixo.value;
-    var ruaVar = input_rua.value;
     var cepVar = input_cep.value;
     var numeroEndVar = input_numeroEnd.value;
     var complementoVar = input_complemento.value;
     
 
     //validações das input 
-    if(razaoSocialVar== "" || cnpjVar == "" || emailCadastroVar == "" || telefoneCelularVar == "" || telefoneFixoVar == "" ||
-    ruaVar =="" || cepVar == "" || numeroEndVar == ""){
+    if(razaoSocialVar== "" || cnpjVar == "" || emailCadastroVar == "" || telefoneCelularVar == "" || telefoneFixoVar == "" ||  cepVar == "" || numeroEndVar == ""){
         messageErro.innerHTML = 'Preencha todos os campos'
         //Os return servem com uma break, elas impedem da  função continuar
         return false;
@@ -66,7 +64,6 @@ function validarCadastro(){
             "Content-Type": 'application/json',
         },
         body: JSON.stringify({
-        ruaServer: ruaVar,
         cepServer: cepVar,
         numeroEndServer: numeroEndVar,
         complementoServer: complementoVar,

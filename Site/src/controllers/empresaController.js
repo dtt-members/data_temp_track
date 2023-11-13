@@ -15,6 +15,7 @@ function cadastrarEmp(req, res) {
     empresaModel.cadastrarEmp( razaoSocial, cnpj, telefoneCelular, telefoneFixo, emailCadastro).then(function(resposta){
         res.status(200).send("Empresa cadastrada com sucesso");
     }).catch(function(erro){
+        console.log(erro);
         res.status(500).json(erro.sqlMessage);
     })
 }
