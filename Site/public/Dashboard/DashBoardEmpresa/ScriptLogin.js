@@ -1,9 +1,9 @@
 function CadastroUser(){    
-    window.location.href = "../"
+    window.location.href = "../../RedirDashboardEmpresa/RegistroUser/cadastroUsuario.html"
 }
 
 function ExcludeUsers(){
-    window.locario.href = "../"
+    window.location.href = "../../RedirDashboardEmpresa/excluirUser/excludeUser.html"
 }
 
 function PesqUsers(){

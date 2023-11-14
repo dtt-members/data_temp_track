@@ -3,53 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../style.css">
+    <title>user's register</title>
+    <link rel="stylesheet" href="../../Login/loginUser/style.css">
 </head>
 <body>
     <div class="container2">
-        <h2>Cadastre-se</h2>
+        <h1>Cadastre-se seu usuário</h1>
+        <h2>Insira todas as informações</h2>
         <div class="login-box2">
             <div class="esquerda">
             <div class="input-container">
-                <label id="labelEmpresa" for="empresa">Empresa</label>
-                <select name="empresas" id="listaEmpresas">
-                    <option selected>Selecione uma empresa</option>
-                </select>
-                 </div>
-            <div class="input-container">
-                <label id="labelNome" for="nome">Nome</label>
+                <label id="labelNome" for="nome">Nome do usuario</label>
                 <input type="text" id="input_nome" name="userName" placeholder="Insira seu nome" required>
             </div>
             <div class="input-container">
-                <label id="labelSobrenome" for="sobrenome">Sobrenome</label>
+                <label id="labelSobrenome" for="sobrenome">Sobrenome do usuario</label>
                 <input type="text" id="input_sobrenome" name="sobrenome" placeholder="Insira seu sobrenome" required>
             </div>
             <div class="input-container">
-                <label id="labelEmail" for="email">Email</label>
+                <label id="labelEmail" for="email">Email do usuario</label>
                 <input type="email" id="input_email" name="email"placeholder="Insira seu email" required>
             </div>
         </div>
         <div class="direita">
                 <div class="input-container">
-                    <label id="labelCpf" for="cpf">CPF</label>
+                    <label id="labelCpf" for="cpf">CPF do usuario</label>
                     <input type="number" id="input_cpf" name="cpf" placeholder="Insira seu CPF" required>
                 </div>
             <div class="input-container">
-                <label id="senha" for="senha">Senha</label>
+                <label id="senha" for="senha">Senha para entrada do usuario</label>
                 <input type="password" id="input_senha" name="senha" placeholder="Insira sua senha" required>
             </div>
             <div class="input-container">
-                <label id="confirmarSenha" for="confirmarSenha">Confirmar senha</label>
+                <label id="confirmarSenha" for="confirmarSenha">Confirme senha do usuario</label>
                 <input type="password"  id="input_confirmarSenha" name="confirmarSenha" placeholder="Confirme sua senha">
                 </div>
             </div>  
-                
-        </div>
-            <button class="button" type="submit" onclick="cadastrarU()">Cadastre-se</button>
-            <a href="../tela.html" class="a">Login</a>
-            <div class="menssageErro" id="menssageErro"> </div>
-    </div>
-</body>
+                </body>
 </html>
 <script src="./cadastroUsuario.js"></script>
