@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../dashboardStyle.css">
+</head>
+
+<body>
+  <div class="tela_dashboard" id="div_tela_dashboard">
+    <div class="menu_lateral">
+      <div class="perfil_img">
+        <img src="https://cdn-icons-png.flaticon.com/512/4211/4211178.png" onclick="chamarPerfil()">
+        <div class="perfil_text">
+          Empresa: Data Temp Track <br>
+
+        </div>
+      </div>
+      <button onclick="CadastroUser()">Cadastrar Usuário</button>
+      <button onclick="ExcludeUsers()">Excluir usuario </button>
+      <button onclick="PesqUsers()">Pesquisar usuários </button>
+      <button class="config" onclick="Ajuda()">Ajuda</button>
+    </div>
+    <div class="lousa">
+      <div id="div_text_inicial" class="text_inicial">
+        Entre com uma opção válida
+      </div>
+      <div id="div_lousa_invisivel" class="lousa_invisivel">
+        <div id="div_card_linha" class="card_linha">
+          <div id="div_card_grande_dc" class="card_grande" onclick="TemUmiDataCenter()">
+            <div class="baixo">
+              Data Center
+            </div>
+          </div>
+        </div>
+</body>
+
+<script src="ScriptLogin.js"></script>
+
+</html>
