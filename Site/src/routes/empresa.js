@@ -7,8 +7,6 @@ router.post("/cadastrarEmp", function (req, res) {
     empresaController.cadastrarEmp(req, res);
 });
 
-router.get("/listar", function (req, res) {
-    empresaController.listar(req, res);
-  });
+
 
 module.exports = router;

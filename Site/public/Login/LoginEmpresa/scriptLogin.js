@@ -1,20 +1,63 @@
-// function verificar() {
-//     var email_certo = 'datatemptrack@gmail.com';
-//     var senha_certa = '12345678';
-//     var usuario = input_usuario.value;
-//     var senha = input_senha.value;
-//     if (usuario.indexOf('@') < 0 || usuario.indexOf('.com') < 0) {
-//         alert('Insira um email válido!');
-//     };
-//     // if (senha.indexOf('@') < 0 && senha.indexOf('#') < 0 && senha.indexOf('&') < 0 && senha.indexOf('*') < 0 && senha.indexOf('!') < 0 && senha.indexOf('_') < 0 && senha.indexOf('-')< 0){
-//     //     alert('');
-//     // }
-//     if (usuario == email_certo && senha == senha_certa) {
-//         window.location.href = "../../Dashboard/Dashboard.html";
-//     } else {
-//         alert("Senha ou email não coincidem")
-//     }
-// }
+function verificar() {
+
+    var emailVar = input_email.value;
+    var senhaVar = input_senha.value;
+
+    if (emailVar == "" || senhaVar == "") {
+        mensagem_erro.innerHTML = "Preencha os campos";
+        return false;
+    }
+    else {
+        mensagem_erro.innerHTML = ""
+    }
+
+    console.log("FORM LOGIN: ", emailVar);
+    console.log("FORM SENHA: ", senhaVar);
+
+    fetch("/usuarios/autenticar", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            emailServer: emailVar,
+            senhaServer: senhaVar
+        })
+    }).then(function (resposta) {
+        console.log("ESTOU NO THEN DO entrar()!")
+
+        if (resposta.ok) {
+            console.log(resposta);
+            res.status(500).json(erro.sqlMessage);
+            resposta.json().then(json => {
+                console.log(json);
+                console.log(JSON.stringify(json));
+                sessionStorage.EMAIL_USUARIO = json.email;
+                sessionStorage.NOME_USUARIO = json.nome;
+                sessionStorage.ID_USUARIO = json.id;
+                sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
+
+                setTimeout(function () {
+                    window.location = "./dashboard/cards.html";
+                }, 1000); // apenas para exibir o loading
+
+            });
+
+        } else {
+
+            console.log("Houve um erro ao tentar realizar o login!");
+
+            resposta.text().then(texto => {
+                console.error(texto);
+            });
+        }
+
+    }).catch(function (erro) {
+        res.status(500).json(erro.sqlMessage);
+    })
+
+    return false;
+}
 
 
 
@@ -28,10 +71,12 @@ function validarCadastro() {
     var cepVar = input_cep.value;
     var numeroEndVar = input_numeroEnd.value;
     var complementoVar = input_complemento.value;
+    var senhaVar = input_senha.value;
+    var confirmarVar = input_confirmarSenha.value;
 
 
     //validações das input 
-    if (razaoSocialVar == "" || cnpjVar == "" || emailCadastroVar == "" || telefoneCelularVar == "" || telefoneFixoVar == "" || cepVar == "" || numeroEndVar == "") {
+    if (razaoSocialVar == "" || cnpjVar == "" || emailCadastroVar == "" || telefoneCelularVar == "" || telefoneFixoVar == "" || cepVar == "" || numeroEndVar == "" || senhaVar == "" || confirmarVar == "") {
         messageErro.innerHTML = 'Preencha todos os campos'
         //Os return servem com uma break, elas impedem da  função continuar
         return false;
@@ -50,8 +95,12 @@ function validarCadastro() {
     } else if (cepVar.length != 8) {
         messageErro.innerHTML = 'Digite um CEP válido';
         return false;
+    } else if(senhaVar.length <8 || confirmarVar.length >14){
+        messageErro.innerHTML = 'A senha deve ter entre 8 e 14 caracteres'
+    } else if(senhaVar != confirmarVar){
+        messageErro.innerHTML = 'Senha diferentes'
     } else {
-        messageErro.innerHTML = "";
+        messageErro.innerHTML = "Empresa cadastrada com sucesso";
         // usar esse ultimo else para mostrar a mensagem de cadastro realizado
         // Cadastro endereco 
     }
@@ -81,7 +130,8 @@ function validarCadastro() {
             cnpjServer: cnpjVar,
             telefoneCelularServer: telefoneCelularVar,
             telefoneFixoServer: telefoneFixoVar,
-            emailCadastroServer: emailCadastroVar
+            emailCadastroServer: emailCadastroVar, 
+            confirmarSenha: confirmarVar,
         })
     })
         .then(function (resposta) {

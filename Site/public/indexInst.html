@@ -198,12 +198,6 @@
                         </div>
 
                         <div class="input-box">
-                            <label for="endereçoRua">Endereço</label>
-                            <input value="Rua dos Alfeneiros" id="input_rua" type="text" name="rua" placeholder="Digite a rua"
-                                required>
-                        </div>
-
-                        <div class="input-box">
                             <label for="cep">CEP</label>
                             <input value="12345678" id="input_cep" type="number" name="cep" placeholder="Digite seu CEP"
                                 required>
@@ -220,8 +214,21 @@
                             <input id="input_complemento" type="text" name="complemento" placeholder="Digite seu complemento">
                         </div>
 
+                        <div class="input-box">
+                            <label for="senha">Senha</label>
+                            <input value="123465789" id="input_senha" type="password" name="senha" placeholder="Crie uma senha"
+                                required>
+                        </div>
+                        <div class="input-box">
+                            <label for="confirmarSenha">Senha</label>
+                            <input value="123465789" id="input_confirmarSenha" type="password" name="confirmarSenha" placeholder="Confirme sua senha"
+                                required>
+                            </div>
+                            <div class="input-box">
+                            <div class="messageErro" id="messageErro"></div>
                     </div>
-                    <div class="messageErro" id="messageErro"></div>
+                </div>
+
                     <div class="continue-button">
                         <button onclick="validarCadastro()">Continuar</button>
                     </div>
@@ -301,4 +308,4 @@
 
 </html>
 <script src="./calculadora/calculadora.js"></script>
-<script src="./Login/scriptLogin.js"></script>
+<script src="./Login/LoginEmpresa/scriptLogin.js"></script>
