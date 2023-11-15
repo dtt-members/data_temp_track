@@ -1,7 +1,11 @@
-/*function verificar() {
+/*Function responsavel por fazer o login de empresa*/
 
+function verificarE() {
     var emailVar = input_email.value;
     var senhaVar = input_senha.value;
+    
+    /*Div que possui a mensagem para entrar na Dashboard*/
+    var mensagemDashboard = document.getElementById('mensagem_logando');
 
     if (emailVar == "" || senhaVar == "") {
         mensagem_erro.innerHTML = "Preencha os campos";
@@ -9,12 +13,13 @@
     }
     else {
         mensagem_erro.innerHTML = ""
+        mensagemDashboard.style.display = "block"
     }
 
     console.log("FORM LOGIN: ", emailVar);
     console.log("FORM SENHA: ", senhaVar);
 
-    fetch("/usuarios/autenticar", {
+    fetch("/empresa/autenticar", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -28,19 +33,22 @@
 
         if (resposta.ok) {
             console.log(resposta);
-            res.status(500).json(erro.sqlMessage);
             resposta.json().then(json => {
                 console.log(json);
                 console.log(JSON.stringify(json));
-                sessionStorage.EMAIL_USUARIO = json.email;
-                sessionStorage.NOME_USUARIO = json.nome;
-                sessionStorage.ID_USUARIO = json.id;
-                sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
+                sessionStorage.EMAILINST_EMPRESA = json.emailInst;
+                sessionStorage.RAZAOSOCIAL_EMPRESA = json.razaoSocial;
+                sessionStorage.CNPJ_EMPRESA = json.cnpj;
+                sessionStorage.IDEMPRESA_EMPRESA = json.idEmpresa;
+                sessionStorage.FONECELL_EMPRESA = json.foneCell;
+                sessionStorage.FONEFIXO_EMPRESA = json.foneFixo;
+                sessionStorage.SENHA_EMPRESA = json.senha;
+                sessionStorage.DATACENTER = JSON.stringify(json.datacenter)
 
                 setTimeout(function () {
-                    window.location = "./dashboard/cards.html";
-                }, 1000); // apenas para exibir o loading
-
+                    window.location = "../../Dashboard/Dashboard.html";
+                    console.log('PASSEI POR AQUI')
+                }, 3000); 
             });
 
         } else {
@@ -49,16 +57,23 @@
 
             resposta.text().then(texto => {
                 console.error(texto);
+                finalizarAguardar(texto);    
             });
+            return false;
         }
 
-    }).catch(function (erro) {
-        res.status(500).json(erro.sqlMessage);
+    }).catch(
+        function (erro) {
+        res.status(500).json(erro.sqlMessage );
     })
 
-    return false;
+
 }
-*/
+
+
+
+
+
 
 
 
@@ -141,85 +156,3 @@ function validarCadastro() {
 
     return false;
 }
-
-
-// function listar() {
-//     fetch("/empresas/listar", {
-//         method: "GET",
-//     })
-//         .then(function (resposta) {
-//             resposta.json().then((empresas) => {
-//                 empresas.forEach((empresa) => {
-//                     listaEmpresas.innerHTML += `<option value='${empresa.idEmpresa}'>${empresa.razaoSocial}</option>`;
-//                 });
-//             });
-//         })
-
-// }
-
-function entrar() {
-    aguardar();
-
-    var emailVar = email_input.value;
-    var senhaVar = senha_input.value;
-
-    if (emailVar == "" || senhaVar == "") {
-        cardErro.style.display = "block"
-        mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-        finalizarAguardar();
-        return false;
-    }
-    else {
-        setInterval(sumirMensagem, 5000)
-    }
-
-    console.log("FORM LOGIN: ", emailVar);
-    console.log("FORM SENHA: ", senhaVar);
-
-    fetch("/usuarios/autenticar", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            emailServer: emailVar,
-            senhaServer: senhaVar
-        })
-    }).then(function (resposta) {
-        console.log("ESTOU NO THEN DO entrar()!")
-
-        if (resposta.ok) {
-            console.log(resposta);
-
-            resposta.json().then(json => {
-                console.log(json);
-                console.log(JSON.stringify(json));
-                sessionStorage.EMAIL_USUARIO = json.email;
-                sessionStorage.NOME_USUARIO = json.nome;
-                sessionStorage.ID_USUARIO = json.id;
-                sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
-
-                // SETEI PARA O PATHHING BASEADO AONDE DEIXE O ARQUIVO, SEM O "href" PORQUE NÃO SEI SE PRECISA DO MESMO
-                setTimeout(function () {
-                    window.location = "../../Dashboard/DashBoardEmpresa/DashboardEmpresa.html";
-                }, 1000); // apenas para exibir o loading
-
-            });
-
-        } else {
-
-            console.log("Houve um erro ao tentar realizar o login!");
-
-            resposta.text().then(texto => {
-                console.error(texto);
-                finalizarAguardar(texto);
-            });
-        }
-
-    }).catch(function (erro) {
-        console.log(erro);
-    })
-
-    return false;
-}
-

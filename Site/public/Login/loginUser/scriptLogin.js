@@ -147,7 +147,7 @@ function entrar() {
                 sessionStorage.EMAIL_USUARIO = json.email;
                 sessionStorage.NOME_USUARIO = json.nome;
                 sessionStorage.ID_USUARIO = json.id;
-                sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
+                sessionStorage.FKENDERECO = JSON.stringify(json.endereco)
 
                 // SETEI PARA O PATHING BASEADO AONDE DEIXE O ARQUIVO, SEM O "href" PORQUE NÃO SEI SE PRECISA DO MESMO
                 setTimeout(function () {
