@@ -1,4 +1,4 @@
-function verificar() {
+/*function verificar() {
 
     var emailVar = input_email.value;
     var senhaVar = input_senha.value;
@@ -58,7 +58,7 @@ function verificar() {
 
     return false;
 }
-
+*/
 
 
 
@@ -131,7 +131,7 @@ function validarCadastro() {
             telefoneCelularServer: telefoneCelularVar,
             telefoneFixoServer: telefoneFixoVar,
             emailCadastroServer: emailCadastroVar, 
-            confirmarSenha: confirmarVar,
+            senhaServer: senhaVar,
         })
     })
         .then(function (resposta) {
