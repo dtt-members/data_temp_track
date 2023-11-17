@@ -1,6 +1,6 @@
 #include "DHT.h"
 #define dht_type DHT11 
-int dht_pin = A2;
+ int dht_pin = A2;
 DHT dht_1 = DHT(dht_pin, dht_type);
 int pinoSensor = 7;
 
