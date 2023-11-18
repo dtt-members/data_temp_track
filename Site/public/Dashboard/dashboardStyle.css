@@ -759,10 +759,6 @@ border-radius: 15px;
     
 }
 
-.lousa_invisivel3 .menu .tamanho{
-    display: flex;
-    width: 15%;
-}
 
 .lousa_invisivel3 .alinhar_lousa3{
   width: 100%;
@@ -775,29 +771,65 @@ border-radius: 15px;
 }
 
 .lousa_invisivel3 .alinhar_lousa3 .menu {
-  width: 100%;
-  height: 3vh;
+  width: 95%;
+  height: 50px;
   display: flex;
-  justify-content: center;
-  padding: 0%;
+  justify-content: space-between;
+  margin: 0 40px;
+
   font-size: 120%;
   font-weight: 500;
 }
 
-.lousa_invisivel3 .alinhar_lousa3 .menu .div_botao_lousa3{
-  color: #000000;
-  justify-content: center;
-  transition: 1s;
-  cursor: pointer;
-  margin: 1%;
-  height: fit-content;
-  border-radius: 5px;
+
+.lousa_invisivel3 .alinhar_lousa3 .menu .tamanho{
+    display: flex;
+    justify-content:flex-start;
+    
 }
 
-.menu .div_botao_lousa3:hover{
+.bottom_voltar{
+    margin-top: 15px;
+    margin-left: 40px;
+   height: 55px;
+   cursor: pointer;
+}
+
+.localizacao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.texto_localizacao{
+    margin-left: 300px;
+    margin-top: 30px;
+    font-size: 40px;
+}
+
+
+.lousa_invisivel3 .alinhar_lousa3 .menu .div_botao_lousa3{
+  display: flex;
+  justify-content:center;
+  margin-top: 25px;
+  margin-left: 100px;
+}
+
+.texto_botao_lousa{
+    color: #000000;
+    padding: 0 25px;
+    transition: 1s;
+    cursor: pointer;
+    height: fit-content;
+    border-radius: 5px;
+}
+
+
+.menu .texto_botao_lousa:hover{
   color: #ffffff;
   background-color: #a0a0a0 ;
-  transition: 1s;
+  transition: 3s;
   cursor: pointer;
 
 }
