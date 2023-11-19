@@ -9,7 +9,11 @@ body {
 
 html {
     scroll-behavior: smooth;
+    min-height: 170vh;
     
+}
+section{
+    min-height: 100vh;
 }
 
 .listaUm a {
@@ -48,7 +52,7 @@ html {
 
 .telaLogin{
     width: 100%;
-    height: 550px;    
+    height: 70vh;    
 }
 .header .container .listaUm .login {
     text-decoration: none;
@@ -69,10 +73,10 @@ h1{
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 770px;
+    height: 100vh;
     margin: 0;
     background-color: black;
-    background-image: url(Imagens/Background.png);
+    background-image: url(./Imagens/R.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -90,13 +94,16 @@ h1{
     margin: 100px 700px 0 0;
     width: 10% 0;
     
+    
 }
 
 .banner .container h1 {
     color: #f2f2f2;
     width: 40vh;
     margin-bottom: 500px; 
-    font-size: 34px
+    font-size: 40px;
+    
+    
     
     /* SÓ AJUSTAR DE ACORDO COM O QUE VC QUER */
 };
@@ -126,6 +133,7 @@ h1{
 
 .form-image img {
     width: 31rem;
+    margin-top: 50px;
 
 }
 
@@ -135,12 +143,16 @@ h1{
     justify-content: column;
     background-color: #fff;
     margin: 0.9%;
+    margin-top: 50px;
 }
 
 .form-header {
     display: flex;
     width: 100%;
     justify-content: center;
+}
+.form2{
+
 }
 
 .form-header h1::after{
@@ -194,25 +206,24 @@ h1{
     color: #000000be;
 }
 
-.continue-button button {
-    width: 100%;
-    border: none;
-    background-color: #6c63ff;
-    padding: 2%;
-    border-radius: 5px 5px 0 0 ;
-    cursor: pointer;
-    
 
-}
 
 .continue-button button {
-    background-color: #000000f1;
+    background-color: #003366;
     font-size: 0.93rem;
     font-weight: 500;
-    color: #fff;
+    color: #ffffff;
     margin-top: -0.5%;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    height: 5vh;
 }
-
+.continue-button button:hover{
+    transition: 1.5s;
+    background-color: rgb(121, 121, 121);
+    color: #000000;
+}
 .continue-button button a {
     text-decoration: none;
     font-size: 0.93rem;
@@ -224,7 +235,7 @@ h1{
     border: none;
     background-color: #000000;
     padding: 0.52rem;
-    border-radius: 5px;
+    
     cursor: pointer;
     
 }
@@ -315,7 +326,7 @@ width: 100%;
     align-items: center;
     justify-content: center;
     background-color: #000000;
-    height: 170px;
+    height: 150px;
 }
 
 .rodape .container {
