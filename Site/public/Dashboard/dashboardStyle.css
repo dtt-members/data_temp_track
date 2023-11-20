@@ -752,7 +752,7 @@ border-radius: 15px;
     height: 100vh;
     display: none;
     justify-content: center;
-    background-color: #ffffff;
+    background-color: #000000;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -806,6 +806,7 @@ border-radius: 15px;
     margin-left: 300px;
     margin-top: 30px;
     font-size: 40px;
+    color: white;
 }
 
 
@@ -817,7 +818,7 @@ border-radius: 15px;
 }
 
 .texto_botao_lousa{
-    color: #000000;
+    color: #ffffff;
     padding: 0 25px;
     transition: 1s;
     cursor: pointer;
@@ -828,17 +829,17 @@ border-radius: 15px;
 
 .menu .texto_botao_lousa:hover{
   color: #ffffff;
-  background-color: #a0a0a0 ;
-  transition: 3s;
+  background-color: #003366;
+  transition: 2s;
   cursor: pointer;
 
 }
 
 .lousa_invisivel3 .alinhar_lousa3 .container-legenda{
-  margin: 5% 0;
+  margin: 5% 10%;
+  width: 80%;
   border-radius: 15px;
-  width: 100%;
-  background-color: #f2f2f2;
+  background-color: #003366;
   text-align: left;
   display: flex;
   justify-content: space-around;
@@ -846,13 +847,13 @@ border-radius: 15px;
 
 .lousa_invisivel3 .alinhar_lousa3 .container-legenda .titulo-legenda{
   font-size:140%;
-  font-weight: 500;
-  width: 0%;
-  height: 20%;
-  color: #000000;
+  color: #ffffff;
   text-align: left;
-  padding: 3.5% 10%;
+  padding: 2% 10%;
+}
 
+ .linha-legenda{
+    color: #ffffff;
 }
 
 .bom{
@@ -893,6 +894,7 @@ border-radius: 15px;
 .lousa_invisivel3 .alinhar_lousa3 .container-canvas_01{
   width: 100%;
   display: flex;
+  justify-content: center;
 }
 .lousa_invisivel3 .alinhar_lousa3 .container-canvas_02{
   width: 100%;
@@ -907,6 +909,8 @@ border-radius: 15px;
   max-width:40%;
   max-height:200px;
   margin: 3%;
+  background-color: #f2f2f2;
+  border-radius: 10px;
   
 }
 
@@ -918,12 +922,14 @@ border-radius: 15px;
   margin: 0;
   justify-content: space-around;
   font-size: 22px;
+  color: white;
+  
 }
 .lousa_invisivel3 .alinhar_lousa3 .medicao_atual .medicaoAtual{
   margin: 0;
-  font-weight:500;
+  
   border-radius: 15px;
-  background-color: white;
+  
 }
 
 .lousa_invisivel3 .alinhar_lousa3 .tabela_bloqueio{
