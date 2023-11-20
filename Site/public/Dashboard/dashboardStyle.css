@@ -891,6 +891,8 @@ border-radius: 15px;
 
 }
 
+
+
 .lousa_invisivel3 .alinhar_lousa3 .container-canvas_01{
   width: 100%;
   display: flex;
@@ -899,10 +901,12 @@ border-radius: 15px;
 .lousa_invisivel3 .alinhar_lousa3 .container-canvas_02{
   width: 100%;
   display: none;
+  justify-content: center;
 }
 .lousa_invisivel3 .alinhar_lousa3 .container-canvas_03{
   width: 100%;
   display: none;
+  justify-content: center;
 }
 
  canvas{
@@ -925,13 +929,6 @@ border-radius: 15px;
   color: white;
   
 }
-.lousa_invisivel3 .alinhar_lousa3 .medicao_atual .medicaoAtual{
-  margin: 0;
-  
-  border-radius: 15px;
-  
-}
-
 .lousa_invisivel3 .alinhar_lousa3 .tabela_bloqueio{
     width: 80%;
     background-color: red;
