@@ -76,7 +76,7 @@
       <img src="https://cdn-icons-png.flaticon.com/128/1246/1246211.png" onclick="Voltar()" class="voltar">
     </div>
     <div class="faixa-form">
-      <img class="logo" src="logo.png" width="15%">
+      
       <div class="faixa-linha">
         <img src="telefone.png">
         <b>Telefone: </b> 11 91824567
@@ -124,8 +124,8 @@
 
         </div>
       </div>
-      <button onclick="dataCenter1()">Data Center 01</button>
-      <button onclick="dataCenter2()">Data Center 02<div class="piscar-vermelho-dc">
+      <button onclick="dataCenter1()"><span><b>Data Center 01</b></span></button>
+      <button onclick="dataCenter2()"><span><b>Data Center 02</b></span><div class="piscar-vermelho-dc">
           <p>ALERTA</p>
         </div></button>
       <button class="config" onclick="Ajuda()">Ajuda</button>
@@ -505,9 +505,9 @@
       <!--Tela Dos Graficos do Data Center -->
       <div id="div_lousa_invisivel3" class="lousa_invisivel3">
         <div class="alinhar_lousa3">
-          
+
           <div class="menu">
-            
+
             <div class="tamanho">
               <img src="undo.png" onclick="dataCenter1()" class="bottom_voltar">
             </div>
@@ -517,21 +517,63 @@
                 PORTA 1
               </div>
             </div>
-            
+
             <div class="div_botao_lousa3">
               <div id="div_botao_lousa3_01" onclick="cincoMinutos()" class="texto_botao_lousa">5 Minutos</div>
               <div id="div_botao_lousa3_02" onclick="umaHora()" class="texto_botao_lousa">1 hora</div>
               <div id="div_botao_lousa3_03" onclick="umDia()" class="texto_botao_lousa">24 horas</div>
             </div>
-            
-            
+
+
             <!--<div class="div_botao_lousa3" id="div_botao_lousa3_01" onclick="cincoMinutos()">5 Minutos</div>
             <div class="div_botao_lousa3" id="div_botao_lousa3_02" onclick="umaHora()">1 hora</div>
             <div class="div_botao_lousa3" id="div_botao_lousa3_03" onclick="umDia()">24 horas</div>-->
-          
+
           </div>
 
-          <div class="container-legenda">
+
+          <div class="dash">
+
+            <div class="regua">
+              <div class="item-regua ideal">
+                <h4>Ideal</h4>
+                <h2>16° a 24°</h2>
+              </div>
+              <div class="item-regua alerta">
+                <h4>Alerta</h4>
+                <h2></h2>
+              </div>
+              <div class="item-regua danger">
+                <h4>Ideal</h4>
+                <h2>&lt;=5°C</h2>
+              </div>
+            
+              <div class="item-regua espaco">
+                <h4>Ideal</h4>
+                <h2>&lt;=5°C</h2>
+              </div>
+            
+              <div class="item-regua ideal">
+                <h4>Ideal</h4>
+                <h2>&gt;=22°C</h2>
+              </div>
+              <div class="item-regua alerta">
+                <h4>Alerta</h4>
+                <h2>&gt;=23°C</h2>
+              </div>
+              <div class="item-regua danger">
+                <h4>Ideal</h4>
+                <h2>&lt;=5°C</h2>
+              </div>
+            </div>
+
+
+
+
+
+          </div>
+
+          <!--<div class="container-legenda">
            
             <div class="legenda">
               <div class="titulo-legenda">
@@ -568,7 +610,7 @@
                 Perígo
               </div>
             </div>
-          </div>
+          </div>-->
           <div class="medicao_atual" id="div_medicao_atual">
             <div class="medicaoAlert" id="medicaoAlertU"></div>
             <div class="" id="medicaoAlertT"></div>
@@ -1010,6 +1052,7 @@
       label: 'Umidade (%)',
       backgroundColor: 'blue',
       borderColor: 'blue',
+      color: 'white',
       data: [51,
         50,
         50,
@@ -1168,6 +1211,7 @@
       label: 'Temperatura (°C)',
       backgroundColor: 'rgb(255, 99, 132)',
       borderColor: 'rgb(255, 99, 132)',
+
       data: [19.03,
         19.12,
         19.27,
@@ -1249,155 +1293,155 @@
 
   function obterDadosGrafico(idDataCenter) {
 
-alterarTitulo(idDataCenter)
+    alterarTitulo(idDataCenter)
 
-if (proximaAtualizacao != undefined) {
-    clearTimeout(proximaAtualizacao);
-}
+    if (proximaAtualizacao != undefined) {
+      clearTimeout(proximaAtualizacao);
+    }
 
-fetch(`/medidas/ultimas/${idDataCenter}`, { cache: 'no-store' }).then(function (response) {
-    if (response.ok) {
+    fetch(`/medidas/ultimas/${idDataCenter}`, { cache: 'no-store' }).then(function (response) {
+      if (response.ok) {
         response.json().then(function (resposta) {
-            console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-            resposta.reverse();
+          console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+          resposta.reverse();
 
-            plotarGrafico(resposta, idDataCenter);
+          plotarGrafico(resposta, idDataCenter);
 
         });
-    } else {
+      } else {
         console.error('Nenhum dado encontrado ou erro na API');
-    }
-})
-    .catch(function (error) {
+      }
+    })
+      .catch(function (error) {
         console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-    });
-}
+      });
+  }
 
-// Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
-// Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
-// A função *plotarGrafico* também invoca a função *atualizarGrafico*
-function plotarGrafico(resposta, idDataCenter) {
+  // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
+  // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
+  // A função *plotarGrafico* também invoca a função *atualizarGrafico*
+  function plotarGrafico(resposta, idDataCenter) {
 
-console.log('iniciando plotagem do gráfico...');
+    console.log('iniciando plotagem do gráfico...');
 
-// Criando estrutura para plotar gráfico - labels
-let labels = [];
+    // Criando estrutura para plotar gráfico - labels
+    let labels = [];
 
-// Criando estrutura para plotar gráfico - dados
-let dados = {
-    labels: labels,
-    datasets: [{
+    // Criando estrutura para plotar gráfico - dados
+    let dados = {
+      labels: labels,
+      datasets: [{
         label: 'Umidade',
         data: [],
         fill: false,
         borderColor: 'rgb(75, 192, 192)',
         tension: 0.1
-    },
-    {
+      },
+      {
         label: 'Temperatura',
         data: [],
         fill: false,
         borderColor: 'rgb(199, 52, 52)',
         tension: 0.1
-    }]
-};
+      }]
+    };
 
-console.log('----------------------------------------------')
-console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
-console.log(resposta)
+    console.log('----------------------------------------------')
+    console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+    console.log(resposta)
 
-// Inserindo valores recebidos em estrutura para plotar o gráfico
-for (i = 0; i < resposta.length; i++) {
-    var registro = resposta[i];
-    labels.push(registro.momento_grafico);
-    dados.datasets[0].data.push(registro.umidade);
-    dados.datasets[1].data.push(registro.temperatura);
-}
+    // Inserindo valores recebidos em estrutura para plotar o gráfico
+    for (i = 0; i < resposta.length; i++) {
+      var registro = resposta[i];
+      labels.push(registro.momento_grafico);
+      dados.datasets[0].data.push(registro.umidade);
+      dados.datasets[1].data.push(registro.temperatura);
+    }
 
-console.log('----------------------------------------------')
-console.log('O gráfico será plotado com os respectivos valores:')
-console.log('Labels:')
-console.log(labels)
-console.log('Dados:')
-console.log(dados.datasets)
-console.log('----------------------------------------------')
+    console.log('----------------------------------------------')
+    console.log('O gráfico será plotado com os respectivos valores:')
+    console.log('Labels:')
+    console.log(labels)
+    console.log('Dados:')
+    console.log(dados.datasets)
+    console.log('----------------------------------------------')
 
-// Criando estrutura para plotar gráfico - config
-const config = {
-    type: 'line',
-    data: dados,
-};
+    // Criando estrutura para plotar gráfico - config
+    const config = {
+      type: 'line',
+      data: dados,
+    };
 
-// Adicionando gráfico criado em div na tela
-let myChart = new Chart(
-    document.getElementById(`myChartCanvas${idDataCenter}`),
-    config
-);
+    // Adicionando gráfico criado em div na tela
+    let myChart = new Chart(
+      document.getElementById(`myChartCanvas${idDataCenter}`),
+      config
+    );
 
-setTimeout(() => atualizarGrafico(idDataCenter, dados, myChart), 2000);
-}
-
-
-// Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
-// buscando a última medida inserida em tabela contendo as capturas, 
-
-//     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
-//     Para ajustar o "select", ajuste o comando sql em src/models
-function atualizarGrafico(idDataCenter, dados, myChart) {
+    setTimeout(() => atualizarGrafico(idDataCenter, dados, myChart), 2000);
+  }
 
 
+  // Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
+  // buscando a última medida inserida em tabela contendo as capturas, 
 
-fetch(`/medidas/tempo-real/${idDataCenter}`, { cache: 'no-store' }).then(function (response) {
-    if (response.ok) {
+  //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
+  //     Para ajustar o "select", ajuste o comando sql em src/models
+  function atualizarGrafico(idDataCenter, dados, myChart) {
+
+
+
+    fetch(`/medidas/tempo-real/${idDataCenter}`, { cache: 'no-store' }).then(function (response) {
+      if (response.ok) {
         response.json().then(function (novoRegistro) {
 
-            obterdados(idDataCenter);
-            // alertar(novoRegistro, idAquario);
-            console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
-            console.log(`Dados atuais do gráfico:`);
-            console.log(dados);
+          obterdados(idDataCenter);
+          // alertar(novoRegistro, idAquario);
+          console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+          console.log(`Dados atuais do gráfico:`);
+          console.log(dados);
 
-            let avisoCaptura = document.getElementById(`avisoCaptura${idDataCenter}`)
-            avisoCaptura.innerHTML = ""
+          let avisoCaptura = document.getElementById(`avisoCaptura${idDataCenter}`)
+          avisoCaptura.innerHTML = ""
 
 
-            if (novoRegistro[0].momento_grafico == dados.labels[dados.labels.length - 1]) {
-                console.log("---------------------------------------------------------------")
-                console.log("Como não há dados novos para captura, o gráfico não atualizará.")
-                avisoCaptura.innerHTML = "<i class='fa-solid fa-triangle-exclamation'></i> Foi trazido o dado mais atual capturado pelo sensor. <br> Como não há dados novos a exibir, o gráfico não atualizará."
-                console.log("Horário do novo dado capturado:")
-                console.log(novoRegistro[0].momento_grafico)
-                console.log("Horário do último dado capturado:")
-                console.log(dados.labels[dados.labels.length - 1])
-                console.log("---------------------------------------------------------------")
-            } else {
-                // tirando e colocando valores no gráfico
-                dados.labels.shift(); // apagar o primeiro
-                dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
+          if (novoRegistro[0].momento_grafico == dados.labels[dados.labels.length - 1]) {
+            console.log("---------------------------------------------------------------")
+            console.log("Como não há dados novos para captura, o gráfico não atualizará.")
+            avisoCaptura.innerHTML = "<i class='fa-solid fa-triangle-exclamation'></i> Foi trazido o dado mais atual capturado pelo sensor. <br> Como não há dados novos a exibir, o gráfico não atualizará."
+            console.log("Horário do novo dado capturado:")
+            console.log(novoRegistro[0].momento_grafico)
+            console.log("Horário do último dado capturado:")
+            console.log(dados.labels[dados.labels.length - 1])
+            console.log("---------------------------------------------------------------")
+          } else {
+            // tirando e colocando valores no gráfico
+            dados.labels.shift(); // apagar o primeiro
+            dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
 
-                dados.datasets[0].data.shift();  // apagar o primeiro de umidade
-                dados.datasets[0].data.push(novoRegistro[0].umidade); // incluir uma nova medida de umidade
+            dados.datasets[0].data.shift();  // apagar o primeiro de umidade
+            dados.datasets[0].data.push(novoRegistro[0].umidade); // incluir uma nova medida de umidade
 
-                dados.datasets[1].data.shift();  // apagar o primeiro de temperatura
-                dados.datasets[1].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
+            dados.datasets[1].data.shift();  // apagar o primeiro de temperatura
+            dados.datasets[1].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
 
-                myChart.update();
-            }
+            myChart.update();
+          }
 
-            // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-            proximaAtualizacao = setTimeout(() => atualizarGrafico(idDataCenter, dados, myChart), 2000);
+          // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+          proximaAtualizacao = setTimeout(() => atualizarGrafico(idDataCenter, dados, myChart), 2000);
         });
-    } else {
+      } else {
         console.error('Nenhum dado encontrado ou erro na API');
         // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
         proximaAtualizacao = setTimeout(() => atualizarGrafico(idDataCenter, dados, myChart), 2000);
-    }
-})
-    .catch(function (error) {
+      }
+    })
+      .catch(function (error) {
         console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-    });
+      });
 
-}
+  }
 
 
 

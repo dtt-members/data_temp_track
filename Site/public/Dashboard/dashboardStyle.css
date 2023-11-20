@@ -1,27 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
-body{
+body {
     margin: 0%;
     box-sizing: border-box;
     padding: 0;
     font-family: 'Poppins', sans-serif;
 }
 
+button span{
+    font-family: sans-serif;
+}
+
 /*Tela de Editar Perfil*/
-.div_tela_perfil{
+.div_tela_perfil {
     width: 100%;
     height: 100vh;
     display: none;
-    justify-content: center ;
+    justify-content: center;
     background-color: #003366;
 }
-.div_tela_perfil  .voltar{
+
+.div_tela_perfil .voltar {
     height: 7%;
     position: absolute;
     margin-right: 90%;
     margin-top: 2%;
 }
-.div_tela_perfil .pconteiner{
+
+.div_tela_perfil .pconteiner {
     width: 50%;
     height: 100%;
     background-color: white;
@@ -33,19 +39,19 @@ body{
     display: flex;
     justify-content: center;
     margin: 10px;
-    
+
 
 }
 
-.nome{
+.nome {
     display: flex;
     margin: 2% 5% 2% 5%;
     max-width: 100%;
     justify-content: space-evenly;
-    
+
 }
 
-.div_tela_perfil .pconteiner .nome .editar{
+.div_tela_perfil .pconteiner .nome .editar {
     width: 25px;
     margin: 10px;
     border: none;
@@ -53,51 +59,53 @@ body{
 
 
 
-.pconteiner .image .foto{
+.pconteiner .image .foto {
     width: 60px;
     padding-right: 10px;
 }
 
-.div_tela_perfil .pconteiner .nome .paragrafo{
+.div_tela_perfil .pconteiner .nome .paragrafo {
     font-size: 130%;
     font-family: sans-serif;
-    
+
 }
 
-.bottao{
+.bottao {
     border-radius: 20px;
     background: rgb(255, 254, 254);
     transition: .4s;
     justify-content: space-between;
 
+
 }
 
 
-
-.campo{
-   width: 20%;
-   height: 38px;
-   border-radius: 10px;
-   margin:2% 5%;
+.campo {
+    width: 20%;
+    height: 38px;
+    border-radius: 10px;
+    margin: 2% 5%;
 }
 
-.bottao:hover{
-    background:  #003366;
+.bottao:hover {
+    background: #003366;
     justify-content: right;
 }
 
 
 /*Tela de perfil*/
 
-.tela-form-ajuda{
+.tela-form-ajuda {
     width: 100vw;
-    height: 90vh;
+    height: 100vh;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     display: none;
     flex-direction: column;
+    background-color: #000000;
 }
+
 .tela-form-ajuda .header-ajuda {
     width: 2%;
     justify-content: flex-start;
@@ -106,16 +114,16 @@ body{
     align-items: left;
 }
 
-.tela-form-ajuda .header-ajuda .voltar{
+.tela-form-ajuda .header-ajuda .voltar {
     height: 70%;
 }
 
-.tela-form-ajuda .logo{
+.tela-form-ajuda .logo {
     margin-top: -15%;
 
 }
 
-.tela-form-ajuda .faixa-form{
+.tela-form-ajuda .faixa-form {
     background-color: #003366;
     color: #f2f2f2;
     height: 53%;
@@ -124,36 +132,41 @@ body{
     justify-content: center;
     flex-direction: column;
 }
-.tela-form-ajuda .faixa-form .faixa-linha{
+
+.tela-form-ajuda .faixa-form .faixa-linha {
     width: 70%;
-    display: flex;    
-   align-items: center;
-   text-align: left;
-   font-size: 150%;
-   height: 20%;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    font-size: 150%;
+    height: 20%;
 }
-.tela-form-ajuda .faixa-form .faixa-linha img{
+
+.tela-form-ajuda .faixa-form .faixa-linha img {
     margin: 0 2% 0 2%;
     height: 45%;
 }
 
-.tela-form-ajudaq .faixa-form .faixa-form b{
+.tela-form-ajudaq .faixa-form .faixa-form b {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-.tela-form-ajuda .div-form form{
+
+.tela-form-ajuda .div-form form {
     width: 100%;
     padding: 4%;
 }
-.tela-form-ajuda .div-form h1{
-   margin: 2%  2% 5% 1%;
-   box-sizing: border-box;
-   padding: 0;
-   color: #003366;
+
+.tela-form-ajuda .div-form h1 {
+    margin: 2% 2% 5% 1%;
+    box-sizing: border-box;
+    padding: 0;
+    color: #003366;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.tela-form-ajuda .div-form{
+
+.tela-form-ajuda .div-form {
     background-color: #ffffff;
     width: 45%;
     height: 80vh;
@@ -165,7 +178,8 @@ body{
     border-radius: 30px;
     border: 2px solid black;
 }
-.tela-form-ajuda .div-form button{
+
+.tela-form-ajuda .div-form button {
     background-color: #003366;
     color: #ffffff;
     border: none;
@@ -178,89 +192,92 @@ body{
     cursor: pointer;
 }
 
-.tela-form-ajuda .div-form button:hover{
-background-color:#ffffff;
-color: #003366;
-transition: 1s;
-cursor: pointer;
+.tela-form-ajuda .div-form button:hover {
+    background-color: #ffffff;
+    color: #003366;
+    transition: 1s;
+    cursor: pointer;
 }
-.tela-form-ajuda .div-form .pedaco-formulario{
+
+.tela-form-ajuda .div-form .pedaco-formulario {
     color: black;
     padding: 2%;
     width: 100%;
     justify-content: flex-start;
 }
 
-.tela-form-ajuda .div-form .pedaco-formulario input{
+.tela-form-ajuda .div-form .pedaco-formulario input {
     border: none;
     border-bottom: 2px solid #003366;
     width: 90%;
     margin: 2% 0;
 }
 
-.tela_dashboard{
- display: flex;
- height: 100vh;
- 
-}
-
-.menu_lateral{
- background-color: #003366;
- display: flex;
- flex-direction: column;
- width: 18.5%;
- height: mim-content;  
- padding: 0 0.9%;
+.tela_dashboard {
+    display: flex;
+    height: 100vh;
 
 }
 
-.menu_lateral .perfil_img img{
- border: 2px solid #ffffff;
- width: 60%;
- border-radius: 30px;
- padding: 2%;
- margin-left: 15%;
- margin-top: 12%;
- background-color: white;
- 
-}
-
-
-.menu_lateral .perfil_img .perfil_text{
- font-size: 110%;
- margin: 15% 0 15% 0;
- color: #f2f2f2;
+.menu_lateral {
+    background-color: #003366;
+    display: flex;
+    flex-direction: column;
+    width: 18.5%;
+    height: mim-content;
+    padding: 0 0.9%;
 
 }
 
-.menu_lateral button{
- background-color: black;
- color: #ffffff;
- border: none;
- border-top : 1px  #ffffff;
- border-bottom: 1px #ffffff;
- padding: 1rem;
- font-size: 100%;
- text-align: left; 
- margin: -1% -7% 0 -7%;
- transition: 1s;
- cursor: pointer;
-display: flex;
-justify-content: space-around;
+.menu_lateral .perfil_img img {
+    border: 2px solid #ffffff;
+    width: 60%;
+    border-radius: 30px;
+    padding: 2%;
+    margin-left: 15%;
+    margin-top: 12%;
+    background-color: white;
+
 }
 
-.piscar-vermelho-dc{
-  /* width: auto; */
-  height: 40px;
-  border-radius: 15px;
-  /* margin-top: 2%; */
+
+
+
+.menu_lateral .perfil_img .perfil_text {
+    font-size: 110%;
+    margin: 15% 0 15% 0;
+    color: #f2f2f2;
+
+}
+
+.menu_lateral button {
+    background-color: black;
+    color: #ffffff;
+    border: none;
+    border-top: 1px #ffffff;
+    border-bottom: 1px #ffffff;
+    padding: 1rem;
+    font-size: 100%;
+    text-align: left;
+    margin: -1% -7% 0 -7%;
+    transition: 1s;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-around;
+}
+
+.piscar-vermelho-dc {
+    /* width: auto; */
+    height: 40px;
+    border-radius: 15px;
+    /* margin-top: 2%; */
     /* animation-name: piscarV;
     animation-duration: 2s;
     animation-iteration-count: infinite; */
     animation: piscarV 2s infinite ease-in-out;
 }
 
-.piscar-vermelho-dc p{
+.piscar-vermelho-dc p {
     font-weight: bolder;
     display: flex;
     margin-top: 10px;
@@ -270,51 +287,52 @@ justify-content: space-around;
 }
 
 @keyframes piscarV {
-    0%{
-      color: red;
-      opacity: 0.2;
-    }   
+    0% {
+        color: red;
+        opacity: 0.2;
+    }
+
     100% {
-       color: red;
-       opacity: 1;
+        color: red;
+        opacity: 1;
     }
 }
 
-.lousa{
- background-color: #0a0a0a;
- height: 100%;
- width: 81%;
- text-align: center;
- align-items: center;
+.lousa {
+    background-color: #0a0a0a;
+    height: 100%;
+    width: 81%;
+    text-align: center;
+    align-items: center;
 
-}   
-
-.tela_dashboard .menu_lateral .config{
-background-color: #003366;
-color: #ffffff;
-text-align: left; 
-font-size: 110%;
-margin: 20vh 0 -10px 0;
-border: none;
-transition: 1s;
-cursor: pointer;
-position: relative;
-padding-top: 5%;    
-border-radius: 15px;
-}           
-
-.tela_dashboard .menu_lateral .config:hover{
-    background-color: #ffffff;
-    color: #003366;   
 }
 
-.menu_lateral button:hover{
+.tela_dashboard .menu_lateral .config {
+    background-color: #003366;
+    color: #ffffff;
+    text-align: left;
+    font-size: 110%;
+    margin: 20vh 0 -10px 0;
+    border: none;
+    transition: 1s;
+    cursor: pointer;
+    position: relative;
+    padding-top: 5%;
+    border-radius: 15px;
+}
+
+.tela_dashboard .menu_lateral .config:hover {
+    background-color: #ffffff;
+    color: #003366;
+}
+
+.menu_lateral button:hover {
     border-radius: 15px;
     background-color: #ffffff;
     color: #003366;
 }
 
-.tela_dashboard .lousa .text_inicial{
+.tela_dashboard .lousa .text_inicial {
     color: #f2f2f2;
     margin-top: 20%;
     font-size: 300%;
@@ -325,8 +343,8 @@ border-radius: 15px;
 
 
 
-/*Tela dos corredores e portas */ 
-.lousa_invisivel{   
+/*Tela dos corredores e portas */
+.lousa_invisivel {
     width: 100%;
     height: 100vh;
     display: none;
@@ -334,7 +352,7 @@ border-radius: 15px;
     flex-direction: column;
 }
 
-.lousa_invisivel .card_linha{
+.lousa_invisivel .card_linha {
     margin: 1% 0;
     width: 100%;
     height: 30%;
@@ -342,9 +360,9 @@ border-radius: 15px;
     justify-content: space-around;
 }
 
-.lousa_invisivel .card_linha .card_grande{
-  background-color: #f2f2f2;
-  color: #ffffff;
+.lousa_invisivel .card_linha .card_grande {
+    background-color: #f2f2f2;
+    color: #ffffff;
     width: 80%;
     height: 95%;
     margin: 0.5%;
@@ -356,13 +374,15 @@ border-radius: 15px;
     cursor: pointer;
     background-position: center;
 }
-.lousa_invisivel .card_linha .card_grande:hover{
-  color: #ffffff;
-  transition: 1.5s;
-  cursor: pointer;
-  font-size: 150%;
+
+.lousa_invisivel .card_linha .card_grande:hover {
+    color: #ffffff;
+    transition: 1.5s;
+    cursor: pointer;
+    font-size: 150%;
 }
-.lousa_invisivel .card_linha .card_grande .baixo{
+
+.lousa_invisivel .card_linha .card_grande .baixo {
     height: fit-content;
     border-radius: 0 0 15px 15px;
     font-size: 200%;
@@ -373,7 +393,7 @@ border-radius: 15px;
 }
 
 
-.lousa_invisivel .card_linha .card_unidade{
+.lousa_invisivel .card_linha .card_unidade {
     background-color: #f2f2f2;
     width: 30%;
     height: 95%;
@@ -384,44 +404,45 @@ border-radius: 15px;
     transition: 1s;
     cursor: pointer;
 }
-.lousa_invisivel .card_linha .card_unidade:hover{
+
+.lousa_invisivel .card_linha .card_unidade:hover {
     background-color: #003366;
     color: #ffffff;
     transition: 1s;
     cursor: pointer;
 }
- 
-.lousa_invisivel .card_linha .card_unidade .cima .cima-direita .imagem_gota{
+
+.lousa_invisivel .card_linha .card_unidade .cima .cima-direita .imagem_gota {
     padding: 6% 0 6% 6%;
-    margin-top: 5%; 
+    margin-top: 5%;
     width: 30px;
     position: relative;
     justify-content: center;
 
 }
 
-.lousa_invisivel .card_linha .card_unidade .cima .cima-direita{
+.lousa_invisivel .card_linha .card_unidade .cima .cima-direita {
     margin-top: 5%;
     margin-left: -2%;
-    height:50%;
+    height: 50%;
 }
 
-.lousa_invisivel .card_linha .card_unidade .cima .imagem_corredor{
+.lousa_invisivel .card_linha .card_unidade .cima .imagem_corredor {
     padding: 5% 0 5% 5%;
     width: 90px;
     height: 90px;
     margin-left: 1%;
 }
 
-.lousa_invisivel .card_linha .card_unidade .cima{
+.lousa_invisivel .card_linha .card_unidade .cima {
     height: 50%;
     flex-direction: row;
-    border-radius: 15px 15px 0 0 ;
-    display: flex;   
-    justify-content:center
+    border-radius: 15px 15px 0 0;
+    display: flex;
+    justify-content: center
 }
 
-.lousa_invisivel .card_linha .card_unidade .baixo{
+.lousa_invisivel .card_linha .card_unidade .baixo {
     height: fit-content;
     border-radius: 0 0 15px 15px;
     font-size: 200%;
@@ -433,7 +454,7 @@ border-radius: 15px;
 
 
 
-.lousa_invisivel1{   
+.lousa_invisivel1 {
     width: 100%;
     height: 100vh;
     display: none;
@@ -441,7 +462,7 @@ border-radius: 15px;
     flex-direction: column;
 }
 
-.lousa_invisivel1 .card_linha{
+.lousa_invisivel1 .card_linha {
     margin: 1% 0;
     width: 100%;
     height: 30%;
@@ -449,9 +470,9 @@ border-radius: 15px;
     justify-content: space-around;
 }
 
-.lousa_invisivel1 .card_linha .card_grande{
+.lousa_invisivel1 .card_linha .card_grande {
     background-color: #f2f2f2;
-  color: #ffffff;
+    color: #ffffff;
     width: 80%;
     height: 95%;
     margin: 0.5%;
@@ -463,13 +484,15 @@ border-radius: 15px;
     cursor: pointer;
     background-position: center;
 }
-.lousa_invisivel1 .card_linha .card_grande:hover{
-  color: #ffffff;
-  transition: 1.5s;
-  cursor: pointer;
-  font-size: 150%;
+
+.lousa_invisivel1 .card_linha .card_grande:hover {
+    color: #ffffff;
+    transition: 1.5s;
+    cursor: pointer;
+    font-size: 150%;
 }
-.lousa_invisivel1 .card_linha .card_grande .baixo{
+
+.lousa_invisivel1 .card_linha .card_grande .baixo {
     height: fit-content;
     border-radius: 0 0 15px 15px;
     font-size: 200%;
@@ -480,7 +503,7 @@ border-radius: 15px;
 }
 
 
-.lousa_invisivel1 .card_linha .card_unidade{
+.lousa_invisivel1 .card_linha .card_unidade {
     background-color: #f2f2f2;
     width: 30%;
     height: 95%;
@@ -491,62 +514,64 @@ border-radius: 15px;
     transition: 1s;
     cursor: pointer;
 }
-.lousa_invisivel1 .card_linha .card_unidade:hover{
+
+.lousa_invisivel1 .card_linha .card_unidade:hover {
     background-color: #003366;
     color: #ffffff;
     transition: 1s;
     cursor: pointer;
 }
- 
-.lousa_invisivel1 .card_linha .card_unidade .cima .cima-direita .imagem_gota{
+
+.lousa_invisivel1 .card_linha .card_unidade .cima .cima-direita .imagem_gota {
     padding: 6% 0 6% 6%;
-    margin-top: 5%; 
+    margin-top: 5%;
     width: 30px;
     position: relative;
     justify-content: center;
 
 }
 
-.lousa_invisivel1 .card_linha .card_unidade .cima .cima-direita{
+.lousa_invisivel1 .card_linha .card_unidade .cima .cima-direita {
     margin-top: 5%;
     margin-left: -2%;
-    height:50%;
+    height: 50%;
 }
 
-.lousa_invisivel1 .card_linha .card_unidade .cima .imagem_corredor{
+.lousa_invisivel1 .card_linha .card_unidade .cima .imagem_corredor {
     padding: 5% 0 5% 5%;
     width: 90px;
     height: 90px;
     margin-left: 1%;
 }
 
-.lousa_invisivel1 .card_linha .card_unidade .cima{
+.lousa_invisivel1 .card_linha .card_unidade .cima {
     height: 50%;
     flex-direction: row;
-    border-radius: 15px 15px 0 0 ;
-    display: flex;   
-    justify-content:center
+    border-radius: 15px 15px 0 0;
+    display: flex;
+    justify-content: center
 }
 
-.lousa_invisivel1 .card_linha .card_unidade .baixo{
+.lousa_invisivel1 .card_linha .card_unidade .baixo {
     height: fit-content;
     border-radius: 0 0 15px 15px;
     font-size: 200%;
     align-items: center;
     padding: 5%;
-} 
+}
 
 
 
 /*Tela dos Racks*/
-.lousa_invisivel2{   
+.lousa_invisivel2 {
     width: 100%;
     height: 100vh;
     display: none;
     justify-content: center;
     flex-direction: column;
 }
-.lousa_invisivel2 .card_linha{
+
+.lousa_invisivel2 .card_linha {
     margin: 1% 0;
     width: 100%;
     height: 30%;
@@ -554,9 +579,9 @@ border-radius: 15px;
     justify-content: space-around;
 }
 
-.lousa_invisivel2 .card_linha .card_grande{
-  background-color: #f2f2f2;
-  color: #ffffff;
+.lousa_invisivel2 .card_linha .card_grande {
+    background-color: #f2f2f2;
+    color: #ffffff;
     width: 80%;
     height: 95%;
     margin: 0.5%;
@@ -568,13 +593,15 @@ border-radius: 15px;
     cursor: pointer;
     background-position: center;
 }
-.lousa_invisivel2 .card_linha .card_grande:hover{
-  color: #ffffff;
-  transition: 1.5s;
-  cursor: pointer;
-  font-size: 150%;
+
+.lousa_invisivel2 .card_linha .card_grande:hover {
+    color: #ffffff;
+    transition: 1.5s;
+    cursor: pointer;
+    font-size: 150%;
 }
-.lousa_invisivel2 .card_linha .card_grande .baixo{
+
+.lousa_invisivel2 .card_linha .card_grande .baixo {
     height: fit-content;
     border-radius: 0 0 15px 15px;
     font-size: 200%;
@@ -584,7 +611,7 @@ border-radius: 15px;
 }
 
 
-.lousa_invisivel2 .card_linha .card_unidade{
+.lousa_invisivel2 .card_linha .card_unidade {
     background-color: #f2f2f2;
     width: 30%;
     height: 95%;
@@ -595,44 +622,45 @@ border-radius: 15px;
     transition: 1s;
     cursor: pointer;
 }
-.lousa_invisivel2 .card_linha .card_unidade:hover{
+
+.lousa_invisivel2 .card_linha .card_unidade:hover {
     background-color: #003366;
     color: #ffffff;
     transition: 1s;
     cursor: pointer;
 }
- 
-.lousa_invisivel2 .card_linha .card_unidade .cima .cima-direita .imagem_gota{
+
+.lousa_invisivel2 .card_linha .card_unidade .cima .cima-direita .imagem_gota {
     padding: 6% 0 6% 6%;
-    margin-top: 5%; 
+    margin-top: 5%;
     width: 30px;
     position: relative;
     justify-content: center;
 
 }
 
-.lousa_invisivel2 .card_linha .card_unidade .cima .cima-direita{
+.lousa_invisivel2 .card_linha .card_unidade .cima .cima-direita {
     margin-top: 5%;
     margin-left: -2%;
-    height:50%;
+    height: 50%;
 }
 
-.lousa_invisivel2 .card_linha .card_unidade .cima .imagem_corredor{
+.lousa_invisivel2 .card_linha .card_unidade .cima .imagem_corredor {
     padding: 5% 0 5% 5%;
     width: 90px;
     height: 90px;
     margin-left: 1%;
 }
 
-.lousa_invisivel2 .card_linha .card_unidade .cima{
+.lousa_invisivel2 .card_linha .card_unidade .cima {
     height: 50%;
     flex-direction: row;
-    border-radius: 15px 15px 0 0 ;
-    display: flex;   
-    justify-content:center
+    border-radius: 15px 15px 0 0;
+    display: flex;
+    justify-content: center
 }
 
-.lousa_invisivel2 .card_linha .card_unidade .baixo{
+.lousa_invisivel2 .card_linha .card_unidade .baixo {
     height: fit-content;
     border-radius: 0 0 15px 15px;
     font-size: 200%;
@@ -643,14 +671,15 @@ border-radius: 15px;
 
 
 
-.lousa_invisivel2_2{   
+.lousa_invisivel2_2 {
     width: 100%;
     height: 100vh;
     display: none;
     justify-content: center;
     flex-direction: column;
 }
-.lousa_invisivel2_2 .card_linha{
+
+.lousa_invisivel2_2 .card_linha {
     margin: 1% 0;
     width: 100%;
     height: 30%;
@@ -658,9 +687,9 @@ border-radius: 15px;
     justify-content: space-around;
 }
 
-.lousa_invisivel2_2 .card_linha .card_grande{
-  background-color: #f2f2f2;
-  color: #ffffff;
+.lousa_invisivel2_2 .card_linha .card_grande {
+    background-color: #f2f2f2;
+    color: #ffffff;
     width: 80%;
     height: 95%;
     margin: 0.5%;
@@ -672,13 +701,15 @@ border-radius: 15px;
     cursor: pointer;
     background-position: center;
 }
-.lousa_invisivel2_2 .card_linha .card_grande:hover{
-  color: #ffffff;
-  transition: 1.5s;
-  cursor: pointer;
-  font-size: 150%;
+
+.lousa_invisivel2_2 .card_linha .card_grande:hover {
+    color: #ffffff;
+    transition: 1.5s;
+    cursor: pointer;
+    font-size: 150%;
 }
-.lousa_invisivel2_2 .card_linha .card_grande .baixo{
+
+.lousa_invisivel2_2 .card_linha .card_grande .baixo {
     height: fit-content;
     border-radius: 0 0 15px 15px;
     font-size: 200%;
@@ -688,7 +719,7 @@ border-radius: 15px;
 }
 
 
-.lousa_invisivel2_2 .card_linha .card_unidade{
+.lousa_invisivel2_2 .card_linha .card_unidade {
     background-color: #f2f2f2;
     width: 30%;
     height: 95%;
@@ -699,44 +730,45 @@ border-radius: 15px;
     transition: 1s;
     cursor: pointer;
 }
-.lousa_invisivel2_2 .card_linha .card_unidade:hover{
+
+.lousa_invisivel2_2 .card_linha .card_unidade:hover {
     background-color: #003366;
     color: #ffffff;
     transition: 1s;
     cursor: pointer;
 }
- 
-.lousa_invisivel2_2 .card_linha .card_unidade .cima .cima-direita .imagem_gota{
+
+.lousa_invisivel2_2 .card_linha .card_unidade .cima .cima-direita .imagem_gota {
     padding: 6% 0 6% 6%;
-    margin-top: 5%; 
+    margin-top: 5%;
     width: 30px;
     position: relative;
     justify-content: center;
 
 }
 
-.lousa_invisivel2_2 .card_linha .card_unidade .cima .cima-direita{
+.lousa_invisivel2_2 .card_linha .card_unidade .cima .cima-direita {
     margin-top: 5%;
     margin-left: -2%;
-    height:50%;
+    height: 50%;
 }
 
-.lousa_invisivel2_2 .card_linha .card_unidade .cima .imagem_corredor{
+.lousa_invisivel2_2 .card_linha .card_unidade .cima .imagem_corredor {
     padding: 5% 0 5% 5%;
     width: 90px;
     height: 90px;
     margin-left: 1%;
 }
 
-.lousa_invisivel2_2 .card_linha .card_unidade .cima{
+.lousa_invisivel2_2 .card_linha .card_unidade .cima {
     height: 50%;
     flex-direction: row;
-    border-radius: 15px 15px 0 0 ;
-    display: flex;   
-    justify-content:center
+    border-radius: 15px 15px 0 0;
+    display: flex;
+    justify-content: center
 }
 
-.lousa_invisivel2_2 .card_linha .card_unidade .baixo{
+.lousa_invisivel2_2 .card_linha .card_unidade .baixo {
     height: fit-content;
     border-radius: 0 0 15px 15px;
     font-size: 200%;
@@ -748,7 +780,7 @@ border-radius: 15px;
 
 /*tela grafico dashboard*/
 .lousa_invisivel3 {
-  width: 100%;
+    width: 100%;
     height: 100vh;
     display: none;
     justify-content: center;
@@ -756,12 +788,12 @@ border-radius: 15px;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
+
 }
 
 
-.lousa_invisivel3 .alinhar_lousa3{
-  width: 100%;
+.lousa_invisivel3 .alinhar_lousa3 {
+    width: 100%;
     height: 100%;
     justify-content: center;
     margin: 0;
@@ -771,38 +803,38 @@ border-radius: 15px;
 }
 
 .lousa_invisivel3 .alinhar_lousa3 .menu {
-  width: 95%;
-  height: 50px;
-  display: flex;
-  justify-content: space-between;
-  margin: 0 40px;
-
-  font-size: 120%;
-  font-weight: 500;
-}
-
-
-.lousa_invisivel3 .alinhar_lousa3 .menu .tamanho{
+    width: 95%;
+    height: 50px;
     display: flex;
-    justify-content:flex-start;
-    
+    justify-content: space-between;
+    margin: 0 40px;
+
+    font-size: 120%;
+    font-weight: 500;
 }
 
-.bottom_voltar{
+
+.lousa_invisivel3 .alinhar_lousa3 .menu .tamanho {
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+.bottom_voltar {
     margin-top: 15px;
     margin-left: 40px;
-   height: 55px;
-   cursor: pointer;
+    height: 55px;
+    cursor: pointer;
 }
 
-.localizacao{
+.localizacao {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
 
-.texto_localizacao{
+.texto_localizacao {
     margin-left: 300px;
     margin-top: 30px;
     font-size: 40px;
@@ -810,14 +842,14 @@ border-radius: 15px;
 }
 
 
-.lousa_invisivel3 .alinhar_lousa3 .menu .div_botao_lousa3{
-  display: flex;
-  justify-content:center;
-  margin-top: 25px;
-  margin-left: 100px;
+.lousa_invisivel3 .alinhar_lousa3 .menu .div_botao_lousa3 {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    margin-left: 100px;
 }
 
-.texto_botao_lousa{
+.texto_botao_lousa {
     color: #ffffff;
     padding: 0 25px;
     transition: 1s;
@@ -827,109 +859,115 @@ border-radius: 15px;
 }
 
 
-.menu .texto_botao_lousa:hover{
-  color: #ffffff;
-  background-color: #003366;
-  transition: 2s;
-  cursor: pointer;
+.menu .texto_botao_lousa:hover {
+    color: #ffffff;
+    background-color: #003366;
+    transition: 2s;
+    cursor: pointer;
 
 }
 
-.lousa_invisivel3 .alinhar_lousa3 .container-legenda{
-  margin: 5% 10%;
-  width: 80%;
-  border-radius: 15px;
-  background-color: #003366;
-  text-align: left;
-  display: flex;
-  justify-content: space-around;
+.lousa_invisivel3 .alinhar_lousa3 .container-legenda {
+    margin: 5% 10%;
+    width: 80%;
+    border-radius: 15px;
+    background-color: #003366;
+    text-align: left;
+    display: flex;
+    justify-content: space-around;
 }
 
-.lousa_invisivel3 .alinhar_lousa3 .container-legenda .titulo-legenda{
-  font-size:140%;
-  color: #ffffff;
-  text-align: left;
-  padding: 2% 10%;
+.lousa_invisivel3 .alinhar_lousa3 .container-legenda .titulo-legenda {
+    font-size: 140%;
+    color: #ffffff;
+    text-align: left;
+    padding: 2% 10%;
 }
 
- .linha-legenda{
+.linha-legenda {
     color: #ffffff;
 }
 
-.bom{
-  background-color: green;
-  width: 15px;
-  height: 15px;
-  border-radius: 15px;
-  margin-left: 5%;
-  margin-right: 0.5%;
-}
-.alert{
-  background-color: yellow;
-  width: 15px;
-  height: 15px;
-  border-radius: 15px;
-  margin-left: 5%;
-  margin-right: 0.5%;
-}
-.perigo{
-  background-color: red;
-  width: 15px;
-  height: 15px;
-  border-radius: 15px;
-  margin-left: 5%;
-  margin-right: 0.5%;
-  
+.bom {
+    background-color: green;
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    margin-left: 5%;
+    margin-right: 0.5%;
 }
 
-.lousa_invisivel3 .alinhar_lousa3 .container-legenda .legenda .linha-legenda{
-  display: flex;
-  width: 90%;
-  text-align: left;
-  padding: 0 5%;
-  margin-bottom: 1%;
+.alert {
+    background-color: yellow;
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    margin-left: 5%;
+    margin-right: 0.5%;
+}
+
+.perigo {
+    background-color: red;
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    margin-left: 5%;
+    margin-right: 0.5%;
 
 }
 
+.lousa_invisivel3 .alinhar_lousa3 .container-legenda .legenda .linha-legenda {
+    display: flex;
+    width: 90%;
+    text-align: left;
+    padding: 0 5%;
+    margin-bottom: 1%;
+
+}
 
 
-.lousa_invisivel3 .alinhar_lousa3 .container-canvas_01{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-.lousa_invisivel3 .alinhar_lousa3 .container-canvas_02{
-  width: 100%;
-  display: none;
-  justify-content: center;
-}
-.lousa_invisivel3 .alinhar_lousa3 .container-canvas_03{
-  width: 100%;
-  display: none;
-  justify-content: center;
+
+.lousa_invisivel3 .alinhar_lousa3 .container-canvas_01 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
- canvas{
-  max-width:40%;
-  max-height:200px;
-  margin: 3%;
-  background-color: #f2f2f2;
-  border-radius: 10px;
-  
+.lousa_invisivel3 .alinhar_lousa3 .container-canvas_02 {
+    width: 100%;
+    display: none;
+    justify-content: center;
 }
 
-.lousa_invisivel3 .alinhar_lousa3 .medicao_atual{
-  display: flex;
-  width: 100%;
-  height: fit-content;
-  padding: 0;
-  margin: 0;
-  justify-content: space-around;
-  font-size: 22px;
-  color: white;
-  
+.lousa_invisivel3 .alinhar_lousa3 .container-canvas_03 {
+    width: 100%;
+    display: none;
+    justify-content: center;
 }
-.lousa_invisivel3 .alinhar_lousa3 .tabela_bloqueio{
+
+canvas {
+    max-width: 40%;
+    max-height: 200px;
+    margin: 3%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    
+
+}
+
+.lousa_invisivel3 .alinhar_lousa3 .medicao_atual {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    padding: 0;
+    margin: 0;
+    justify-content: space-around;
+    font-size: 22px;
+    color: white;
+
+}
+
+.lousa_invisivel3 .alinhar_lousa3 .tabela_bloqueio {
     width: 80%;
     background-color: red;
     margin-left: 10%;
@@ -940,7 +978,7 @@ border-radius: 15px;
     flex-direction: column;
 }
 
-.lousa_invisivel3 .alinhar_lousa3 .tabela_bloqueio .linha_bloqueio{
+.lousa_invisivel3 .alinhar_lousa3 .tabela_bloqueio .linha_bloqueio {
     background-color: #003366;
     height: 5%;
     margin: 0;
@@ -951,7 +989,8 @@ border-radius: 15px;
     display: flex;
     justify-content: space-around;
 }
-.lousa_invisivel3 .alinhar_lousa3 .tabela_bloqueio .linha_bloqueio_dados{
+
+.lousa_invisivel3 .alinhar_lousa3 .tabela_bloqueio .linha_bloqueio_dados {
     background-color: #f2f2f2;
     margin: 0;
     padding: 0;
@@ -960,4 +999,43 @@ border-radius: 15px;
     height: 7%;
     display: flex;
     justify-content: space-around;
+}
+
+.dash {
+    margin-top: 100px;
+    margin-left: 150px;
+}
+
+.regua {
+    display: flex;
+margin-right: 150px;
+
+}
+
+
+.item-regua {
+
+    padding: 5px;
+    width: 15%;
+    margin: 5px;
+    text-align: center;
+    padding-top: 15px;
+    border-radius: 12px;
+
+}
+
+.ideal {
+    background-color: #88da2c;
+}
+
+.alerta {
+    background-color: #e9e640;
+}
+
+.danger {
+    background-color: rgb(190, 0, 0);
+}
+
+.espaco {
+    background-color: black;
 }
