@@ -151,9 +151,6 @@ h1{
     width: 100%;
     justify-content: center;
 }
-.form2{
-
-}
 
 .form-header h1::after{
     
@@ -284,22 +281,21 @@ h1{
 
 .sobrenos .container {
     background-color: rgb(0, 0, 0);
-    height: 850px;
+    height: 880px;
     display: flex;
     width: 90%;
-
     flex-direction: column;
 }
 
 .sobrenos .container .titulo{
     border-left: 10px;
-    border-bottom: 100px;
     font-size: 40px;
     color: white;
     height: 7%;
     display: flex;
     justify-content: center;
-width: 100%;
+    width: 100%;
+    margin-top: 100px;
     
 }
 .sobrenos .container .sobreNosRestante{

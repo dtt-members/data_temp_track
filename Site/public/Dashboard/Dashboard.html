@@ -541,7 +541,7 @@
               </div>
               <div class="item-regua alerta">
                 <h4>Alerta</h4>
-                <h2></h2>
+                <h2>12° a 15° <br>e<br/> 25° a 28° </h2>
               </div>
               <div class="item-regua danger">
                 <h4>Ideal</h4>
@@ -613,7 +613,7 @@
           </div>-->
           <div class="medicao_atual" id="div_medicao_atual">
             <div class="medicaoAlert" id="medicaoAlertU"></div>
-            <div class="" id="medicaoAlertT"></div>
+            <div class="medicaoAlerta" id="medicaoAlertT"></div>
           </div>
           <div class="container-canvas_01" id="id_container_canvas_01">
             <canvas id="id_grafico_temperatura"></canvas>
@@ -1031,6 +1031,11 @@
     '23:00',
   ];
 
+
+  Chart.defaults.borderColor = '#f2f2f2';
+  Chart.defaults.color = '#fff';
+ 
+
   const data = {
     labels: label,
     datasets: [{
@@ -1128,7 +1133,7 @@
     '3min',
     '2min',
     '1min',
-    'Minuto atual',
+    'Min atual',
   ];
 
   const label5 = [
@@ -1172,15 +1177,15 @@
     '3min',
     '2min',
     '1min',
-    'Minuto atual',
+    'Min atual',
   ];
 
   const data4 = {
     labels: label4,
     datasets: [{
       label: 'Temperatura (°C)',
-      backgroundColor: 'rgb(255, 99, 132)',
-      borderColor: 'rgb(255, 99, 132)',
+      backgroundColor: 'green',
+      borderColor: 'green',
       data: [19.78,
         20.04,
         20.88,
@@ -1194,8 +1199,8 @@
     labels: label5,
     datasets: [{
       label: 'Temperatura (°C)',
-      backgroundColor: 'rgb(255, 99, 132)',
-      borderColor: 'rgb(255, 99, 132)',
+      backgroundColor: 'green',
+      borderColor: 'green',
       data: [21.26,
         20.79,
         20.43,
@@ -1209,8 +1214,8 @@
     labels: label6,
     datasets: [{
       label: 'Temperatura (°C)',
-      backgroundColor: 'rgb(255, 99, 132)',
-      borderColor: 'rgb(255, 99, 132)',
+      backgroundColor: 'green',
+      borderColor: 'green',
 
       data: [19.03,
         19.12,
@@ -1242,8 +1247,8 @@
     labels: label7,
     datasets: [{
       label: 'Temperatura (°C)',
-      backgroundColor: 'rgb(255, 99, 132)',
-      borderColor: 'rgb(255, 99, 132)',
+      backgroundColor: 'green',
+      borderColor: 'green',
       data: [19.78,
         20.04,
         20.88,
