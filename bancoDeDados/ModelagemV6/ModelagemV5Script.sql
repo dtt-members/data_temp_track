@@ -125,3 +125,24 @@ SELECT * FROM usuario;
 SELECT * FROM permissoes;
 
 SELECT max(idEndereco) FROM endereco;
+
+insert unidadedatacenter values
+(1,1000001,'datacenter1');
+
+insert into ambiente values 
+(null,1,1000001,'corredor');
+
+insert into uddMedida values
+(null,'C°');
+
+insert into sensor values
+(null,'dht11',null,null);
+
+insert into hist values
+(null,1,'2023-11-20 20:39','25.0'),
+(null,1,'2023-11-19 14:30','20.0'),
+(null,1,'2023-11-18 11:23','23.3');
+
+
+
+
