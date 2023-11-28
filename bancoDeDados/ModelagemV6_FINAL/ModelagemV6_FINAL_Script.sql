@@ -1,3 +1,5 @@
+drop database DataBaseTrack;
+
 CREATE DATABASE DataBaseTrack;
 
 use DataBaseTrack;
@@ -21,23 +23,15 @@ create table empresa (
     constraint fkEndereco foreign key (fkEndereco) references endereco(idEndereco)
 )auto_increment = 1000001;
 
-create table permissoes(
-	idPerm int primary key auto_increment,
-    descPerm varchar(120)
-) auto_increment = 10;
-
 create table usuario (
-	idUsuario int auto_increment,
-    fkEmp int,
-    primary key (idUsuario, fkEmp, fkPerm),
+	idUsuario int auto_increment primary key,
     nome varchar(45),
     sobrenome varchar(45),
     emailInst varchar(45),
     cpf char (11),
     senha varchar(70),
-    fkPerm int,
-    constraint fkEmp foreign key (fkEmp) references empresa(idEmpresa),
-    constraint fkPerm foreign key (fkPerm) references permissoes(idPerm)
+    fkEmp int,
+    constraint fkEmp foreign key (fkEmp) references empresa(idEmpresa)
 ) auto_increment = 1000;
 
 -- inicio da modelagem de dashboard
@@ -49,6 +43,10 @@ create table unidadeDataCenter(
     unidDataCenter varchar(20),
     constraint fkEmpUnidade foreign key (fkEmp) references empresa(idEmpresa)
 );
+
+insert into unidadeDataCenter values (1, 1000001, 'Unidade 1'), (2, 1000001, 'unidade');
+
+select * from unidadeDataCenter;
 
 create table ambiente (
 	idAmb int auto_increment,
@@ -85,11 +83,6 @@ create table hist (
     dadoCap Decimal(14,2)
 );
 
--- inserts de exemplo, para fixar (comentar depois)
-
-insert into permissoes(descPerm) values 
-('Padrão - O usuario só tera permissão para ver as temperaturas no momento e o historico na aplicação web');
-
 -- insert das empresas:
 insert into endereco(CEP, numeroEnd, complemente) values 
 ('12345678', '800', 'segundo andar');
@@ -112,11 +105,11 @@ select * from usuario join empresa
 		join permissoes 
 			on fkPerm = idPerm;
             
-            
 DROP DATABASE databasetrack;
 
 SELECT * FROM empresa;
 
+SELECT * FROM endereco;
 SELECT * FROM endereco;
 
 SELECT * FROM usuario;
@@ -141,6 +134,13 @@ insert into hist values
 (null,1,'2023-11-20 20:39','25.0'),
 (null,1,'2023-11-19 14:30','20.0'),
 (null,1,'2023-11-18 11:23','23.3');
+
+select * from unidadeDataCenter
+ where fkEmp = 1000001;
+ 
+ 
+ select * from usuario join empresa 
+	on idEmpresa = fkEmp;
 
 
 

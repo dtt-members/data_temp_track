@@ -13,8 +13,8 @@ function autenticar(email, senha) {
 
 function cadastrarEmp(razaoSocial, cnpj, telefoneCelular, telefoneFixo, emailCadastro, senha) {
     var enviarEmp = `
-        INSERT INTO empresa (razaoSocial, cnpj, foneCell, foneFixo, emailInst, senha) VALUES
-         ('${razaoSocial}' , '${cnpj}' , '${telefoneCelular}' , '${telefoneFixo}', '${emailCadastro}' , '${senha}');`;
+        INSERT INTO empresa (razaoSocial, cnpj, foneCell, foneFixo, emailInst, senha, fkEndereco) VALUES
+         ('${razaoSocial}' , '${cnpj}' , '${telefoneCelular}' , '${telefoneFixo}', '${emailCadastro}' , '${senha}', (select max(idEndereco) from endereco));`;
     console.log("Executando a instrução SQL: \n" + enviarEmp);
     return database.executar(enviarEmp);
 }
