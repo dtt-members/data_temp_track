@@ -28,7 +28,6 @@ function cadastrarU(){
     }else if(senhaVar != confirmarSenhaVar){
         menssageErro.innerHTML = `Senha diferentes`;
     }else{
-        window.location.href = "../../../Dashboard/Dashboard.html";
     }
 
 
@@ -60,7 +59,7 @@ function cadastrarU(){
   
             setTimeout(() => {
                 //Depois de dois segundos vai para a tela de login 
-              window.location = "login.html";
+                window.location.href = "../../../Dashboard/Dashboard.html";
             }, "2000");
   
             limparFormulario();
@@ -75,20 +74,4 @@ function cadastrarU(){
         });
   
       return false;
-    }
-  
-    function listar() {
-      fetch("/empresas/listar", {
-        method: "GET",
-      })
-        .then(function (resposta) {
-          resposta.json().then((empresas) => {
-            empresas.forEach((empresa) => {
-              listaEmpresas.innerHTML += `<option value='${empresa.id}'>${empresa.cnpj}</option>`;
-            });
-          });
-        })
-        .catch(function (resposta) {
-          console.log(`#ERRO: ${resposta}`);
-        });
     }

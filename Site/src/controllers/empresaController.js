@@ -59,12 +59,9 @@ function cadastrarEmp(req, res) {
     var telefoneCelular = req.body.telefoneCelularServer;
     var telefoneFixo = req.body.telefoneFixoServer;
     var senha = req.body.senhaServer;
+    
 
-    if (ReadableStreamDefaultController == undefined) {
-        res.status(400).send("Sua empresa está undefined!");
-    }
-
-    empresaModel.cadastrarEmp( razaoSocial, cnpj, telefoneCelular, telefoneFixo, emailCadastro, senha).then(function(resposta){
+    empresaModel.cadastrarEmp(razaoSocial, cnpj, telefoneCelular, telefoneFixo, emailCadastro, senha).then(function(resposta){
         res.status(200).send("Empresa cadastrada com sucesso");
     }).catch(function(erro){
         console.log(erro);

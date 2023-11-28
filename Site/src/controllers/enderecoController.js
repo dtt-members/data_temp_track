@@ -6,9 +6,9 @@ function cadastrarEnd(req, res) {
     var numeroEnd = req.body.numeroEndServer;
     var complemento = req.body.complementoServer;
 
-    if (ReadableStreamDefaultController == undefined) {
-        res.status(400).send("Seu endereco está undefined!");
-    }
+    // if (ReadableStreamDefaultController == undefined) {
+    //     res.status(400).send("Seu endereco está undefined!");
+    // }
 
     enderecoModel.cadastrarEnd(cep, numeroEnd, complemento).then(function(resposta){
         res.status(200).send("Endereco cadastrado com sucesso");

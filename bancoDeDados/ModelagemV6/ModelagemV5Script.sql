@@ -117,7 +117,6 @@ DROP DATABASE databasetrack;
 
 SELECT * FROM empresa;
 
-
 SELECT * FROM endereco;
 
 SELECT * FROM usuario;
@@ -142,6 +141,8 @@ insert into hist values
 (null,1,'2023-11-20 20:39','25.0'),
 (null,1,'2023-11-19 14:30','20.0'),
 (null,1,'2023-11-18 11:23','23.3');
+
+
 
 
 
