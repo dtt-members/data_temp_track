@@ -1,5 +1,6 @@
 var empresaModel = require("../models/empresaModel");
 var dataCenterModel = require("../models/dataCenterModel");
+var enderecoModel = require
 
 function autenticar(req, res) {
     var email = req.body.emailServer;
@@ -59,6 +60,7 @@ function cadastrarEmp(req, res) {
     var telefoneCelular = req.body.telefoneCelularServer;
     var telefoneFixo = req.body.telefoneFixoServer;
     var senha = req.body.senhaServer;
+    
     
 
     empresaModel.cadastrarEmp(razaoSocial, cnpj, telefoneCelular, telefoneFixo, emailCadastro, senha).then(function(resposta){
