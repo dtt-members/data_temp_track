@@ -46,7 +46,7 @@ function verificarE() {
                 sessionStorage.DATACENTER = JSON.stringify(json.datacenter)
 
                 setTimeout(function () {
-                    window.location = "../../Dashboard/Dashboard.html";
+                    window.location = "../../Dashboard/DashBoardEmpresa/DashboardEmpresa.html";
                     console.log('PASSEI POR AQUI')
                 }, 3000); 
             });

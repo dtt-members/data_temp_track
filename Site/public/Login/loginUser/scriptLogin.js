@@ -1,24 +1,3 @@
-// function verificar() {
-//     var email_certo = 'datatemptrack@gmail.com';
-//     var senha_certa = '12345678';
-//     var usuario = input_usuario.value;
-//     var senha = input_senha.value;
-//     if (usuario.indexOf('@') < 0 || usuario.indexOf('.com') < 0) {
-//         alert('Insira um email válido!');
-//     };
-//     // if (senha.indexOf('@') < 0 && senha.indexOf('#') < 0 && senha.indexOf('&') < 0 && senha.indexOf('*') < 0 && senha.indexOf('!') < 0 && senha.indexOf('_') < 0 && senha.indexOf('-')< 0){
-//     //     alert('');
-//     // }
-//     if (usuario == email_certo && senha == senha_certa) {
-//         window.location.href = "../../Dashboard/Dashboard.html";
-//     } else {
-//         alert("Senha ou email não coincidem")
-//     }
-// }
-
-
-
-
 function validarCadastro() {
     var razaoSocialVar = input_razaoSocial.value;
     var cnpjVar = input_CNPJ.value;
@@ -108,25 +87,19 @@ function listar() {
 }
 
 function entrar() {
-    aguardar();
 
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
 
     if (emailVar == "" || senhaVar == "") {
-        cardErro.style.display = "block"
-        mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-        finalizarAguardar();
+        alert("Mensagem de erro para todos os campos em branco")
         return false;
-    }
-    else {
-        setInterval(sumirMensagem, 5000)
     }
 
     console.log("FORM LOGIN: ", emailVar);
     console.log("FORM SENHA: ", senhaVar);
 
-    fetch("/usuarios/autenticar", {
+    fetch("/usuario/autenticar", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -144,14 +117,14 @@ function entrar() {
             resposta.json().then(json => {
                 console.log(json);
                 console.log(JSON.stringify(json));
-                sessionStorage.EMAIL_USUARIO = json.email;
+                sessionStor1000001age.EMAIL_USUARIO = json.email;
                 sessionStorage.NOME_USUARIO = json.nome;
                 sessionStorage.ID_USUARIO = json.id;
                 sessionStorage.FKENDERECO = JSON.stringify(json.endereco)
 
                 // SETEI PARA O PATHING BASEADO AONDE DEIXE O ARQUIVO, SEM O "href" PORQUE NÃO SEI SE PRECISA DO MESMO
                 setTimeout(function () {
-                    window.location = "../../Dashboard/DashBoardEmpresa/DashboardEmpresa.html";
+                    window.location = "../../Dashboard/Dashboard.html";
                 }, 1000); // apenas para exibir o loading
 
             });
@@ -162,7 +135,6 @@ function entrar() {
 
             resposta.text().then(texto => {
                 console.error(texto);
-                finalizarAguardar(texto);
             });
         }
 

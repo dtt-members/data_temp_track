@@ -1,44 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>user's register</title>
     <link rel="stylesheet" href="../../Login/loginUser/style.css">
 </head>
+
 <body>
     <div class="container2">
         <h1>Cadastre-se seu usuário</h1>
         <h2>Insira todas as informações</h2>
         <div class="login-box2">
             <div class="esquerda">
-            <div class="input-container">
-                <label id="labelNome" for="nome">Nome do usuario</label>
-                <input type="text" id="input_nome" name="userName" placeholder="Insira seu nome" required>
+                <div class="input-container">
+                    <label id="labelNome"  for="nome">Nome do usuario</label>
+                    <input type="text" id="input_nome" value="arthur" name="userName" placeholder="Insira seu nome" required>
+                </div>
+                <div class="input-container">
+                    <label id="labelSobrenome" for="sobrenome">Sobrenome do usuario</label>
+                    <input type="text" id="input_sobrenome" value="antonio" name="sobrenome" placeholder="Insira seu sobrenome"
+                        required>
+                </div>
+                <div class="input-container">
+                    <label id="labelEmail" for="email">Email do usuario</label>
+                    <input type="email" id="input_email" value="arthur@gmail.com" name="email" placeholder="Insira seu email" required>
+                </div>
             </div>
-            <div class="input-container">
-                <label id="labelSobrenome" for="sobrenome">Sobrenome do usuario</label>
-                <input type="text" id="input_sobrenome" name="sobrenome" placeholder="Insira seu sobrenome" required>
-            </div>
-            <div class="input-container">
-                <label id="labelEmail" for="email">Email do usuario</label>
-                <input type="email" id="input_email" name="email"placeholder="Insira seu email" required>
-            </div>
-        </div>
-        <div class="direita">
+            <div class="direita">
                 <div class="input-container">
                     <label id="labelCpf" for="cpf">CPF do usuario</label>
-                    <input type="number" id="input_cpf" name="cpf" placeholder="Insira seu CPF" required>
+                    <input type="number" id="input_cpf" value="57030727860" name="cpf" placeholder="Insira seu CPF" required>
                 </div>
-            <div class="input-container">
-                <label id="senha" for="senha">Senha para entrada do usuario</label>
-                <input type="password" id="input_senha" name="senha" placeholder="Insira sua senha" required>
+                <div class="input-container">
+                    <label id="senha" for="senha">Senha para entrada do usuario</label>
+                    <input type="password" id="input_senha" value="123456789" name="senha" placeholder="Insira sua senha" required>
+                </div>
+                <div class="input-container">
+                    <label id="confirmarSenha" for="confirmarSenha">Confirme senha do usuario</label>
+                    <input type="password" id="input_confirmarSenha" value="123456789" name="confirmarSenha"
+                        placeholder="Confirme sua senha">
+                </div>
             </div>
-            <div class="input-container">
-                <label id="confirmarSenha" for="confirmarSenha">Confirme senha do usuario</label>
-                <input type="password"  id="input_confirmarSenha" name="confirmarSenha" placeholder="Confirme sua senha">
-                </div>
-            </div>  
-                </body>
+            <button onclick="cadastrarU()">
+                cadastrar usuario
+            </button>
+</body>
+
 </html>
 <script src="./cadastroUsuario.js"></script>
