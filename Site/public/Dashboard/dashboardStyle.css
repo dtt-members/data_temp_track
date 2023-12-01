@@ -264,6 +264,9 @@ button span{
     cursor: pointer;
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    border-radius: 20px;
 }
 
 .piscar-vermelho-dc {
