@@ -117,10 +117,11 @@ function entrar() {
             resposta.json().then(json => {
                 console.log(json);
                 console.log(JSON.stringify(json));
-                sessionStor1000001age.EMAIL_USUARIO = json.email;
+                sessionStorage.EMAIL_USUARIO = json.email;
                 sessionStorage.NOME_USUARIO = json.nome;
                 sessionStorage.ID_USUARIO = json.id;
-                sessionStorage.FKENDERECO = JSON.stringify(json.endereco)
+                sessionStorage.FK_EMPRESA = json.fkEmp;
+
 
                 // SETEI PARA O PATHING BASEADO AONDE DEIXE O ARQUIVO, SEM O "href" PORQUE NÃO SEI SE PRECISA DO MESMO
                 setTimeout(function () {

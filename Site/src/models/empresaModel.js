@@ -19,7 +19,16 @@ function cadastrarEmp(razaoSocial, cnpj, telefoneCelular, telefoneFixo, emailCad
     return database.executar(enviarEmp);
 }
 
+function buscarAquariosPorEmpresa(empresaId) {
+
+    instrucaoSql = `select * from unidadeDataCenter where fk_empresa = ${empresaId}`;
+  
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+  }
+
 module.exports = {
     autenticar,
-    cadastrarEmp
+    cadastrarEmp,
+    buscarAquariosPorEmpresa
 };
