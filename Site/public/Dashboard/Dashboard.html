@@ -76,7 +76,7 @@
       <img src="undo.png" onclick="Voltar()" class="voltar">
     </div>
     <div class="faixa-form">
-      
+
       <div class="faixa-linha">
         <img src="telefone.png">
         <b>Telefone: </b> 11 91824567
@@ -125,10 +125,13 @@
         </div>
       </div>
       <button onclick="dataCenter1()"><span><b>Data Center 01</b></span></button>
-      <button onclick="dataCenter2()"><span><b>Data Center 02</b></span><div class="piscar-vermelho-dc">
+      <button onclick="dataCenter2()"><span><b>Data Center 02</b></span>
+        <div class="piscar-vermelho-dc">
           <p>ALERTA</p>
-        </div></button>
-      <button class="config" onclick="Ajuda()">Ajuda</button>
+        </div>
+      </button>
+      <button class="config" onclick="Ajuda()">Ajuda</button><br><br>
+      <button onclick="redirecionarTuto()">Entenda o site</button>
     </div>
     <div class="lousa">
       <div id="div_text_inicial" class="text_inicial">
@@ -541,18 +544,18 @@
               </div>
               <div class="item-regua alerta">
                 <h4>Alerta</h4>
-                <h2>12° a 15° <br>e<br/> 25° a 28° </h2>
+                <h2>12° a 15° <br>e<br /> 25° a 28° </h2>
               </div>
               <div class="item-regua danger">
                 <h4>Ideal</h4>
                 <h2>&lt;=5°C</h2>
               </div>
-            
+
               <div class="item-regua espaco">
                 <h4>Ideal</h4>
                 <h2>&lt;=5°C</h2>
               </div>
-            
+
               <div class="item-regua ideal">
                 <h4>Ideal</h4>
                 <h2>&gt;=22°C</h2>
@@ -1034,7 +1037,7 @@
 
   Chart.defaults.borderColor = '#f2f2f2';
   Chart.defaults.color = '#fff';
- 
+
 
   const data = {
     labels: label,
@@ -1296,21 +1299,21 @@
 
 
 
-  function obterDadosGrafico(idDataCenter) {
+  function obterDadosGrafico(idAmb) {
 
-    alterarTitulo(idDataCenter)
+    alterarTitulo(idAmb)
 
     if (proximaAtualizacao != undefined) {
       clearTimeout(proximaAtualizacao);
     }
 
-    fetch(`/medidas/ultimas/${idDataCenter}`, { cache: 'no-store' }).then(function (response) {
+    fetch(`/medidas/ultimas/${idAmb}`, { cache: 'no-store' }).then(function (response) {
       if (response.ok) {
         response.json().then(function (resposta) {
           console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
           resposta.reverse();
-
-          plotarGrafico(resposta, idDataCenter);
+            
+          plotarGrafico(resposta, idAmb);
 
         });
       } else {
@@ -1325,32 +1328,73 @@
   // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
   // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
   // A função *plotarGrafico* também invoca a função *atualizarGrafico*
-  function plotarGrafico(resposta, idDataCenter) {
+  function plotarGrafico(resposta, idAmb) {
 
     console.log('iniciando plotagem do gráfico...');
 
     // Criando estrutura para plotar gráfico - labels
-    let labels = [];
+    const label3 = [
+      '00:00',
+      '01:00',
+      '02:00',
+      '03:00',
+      '04:00',
+      '05:00',
+      '06:00',
+      '07:00',
+      '08:00',
+      '09:00',
+      '10:00',
+      '11:00',
+      '12:00',
+      '13:00',
+      '14:00',
+      '15:00',
+      '16:00',
+      '17:00',
+      '18:00',
+      '19:00',
+      '20:00',
+      '21:00',
+      '22:00',
+      '23:00',
+    ];
 
+    Chart.defaults.borderColor = '#f2f2f2';
+    Chart.defaults.color = '#fff';
     // Criando estrutura para plotar gráfico - dados
-    let dados = {
-      labels: labels,
+    const data3 = {
+      labels: label3,
       datasets: [{
-        label: 'Umidade',
-        data: [],
-        fill: false,
-        borderColor: 'rgb(75, 192, 192)',
-        tension: 0.1
-      },
-      {
-        label: 'Temperatura',
-        data: [],
-        fill: false,
-        borderColor: 'rgb(199, 52, 52)',
-        tension: 0.1
+        label: 'Umidade (%)',
+        backgroundColor: 'blue',
+        borderColor: 'blue',
+        data: [56,
+          56,
+          56,
+          56,
+          55,
+          54,
+          53,
+          53,
+          52,
+          52,
+          51,
+          50,
+          49,
+          48,
+          49,
+          50,
+          50,
+          51,
+          51,
+          51,
+          52,
+          53,
+          54,
+          55],
       }]
     };
-
     console.log('----------------------------------------------')
     console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
     console.log(resposta)
@@ -1372,20 +1416,26 @@
     console.log('----------------------------------------------')
 
     // Criando estrutura para plotar gráfico - config
-    const config = {
+    const config3 = {
       type: 'line',
-      data: dados,
-    };
+      data: data3,
+      options: {}
+    }
 
     // Adicionando gráfico criado em div na tela
     let myChart = new Chart(
-      document.getElementById(`myChartCanvas${idDataCenter}`),
+      document.getElementById(`myChartCanvas${idAmb}`),
       config
     );
+    /*nosso new chart*/
+    const grafico_umidade3 = new Chart(document.getElementById('id_grafico_umidade3'), config3);
+
 
     setTimeout(() => atualizarGrafico(idDataCenter, dados, myChart), 2000);
   }
 
+
+  /*Alterar depois para atualizar gráficos*/
 
   // Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
   // buscando a última medida inserida em tabela contendo as capturas, 
@@ -1448,6 +1498,8 @@
 
   }
 
+  function redirecionarTuto(){
+    window.location.href = "Dashboard_tutorial/tutorial.html"
+  }
 
-
-</script>
+</script> 

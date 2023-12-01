@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial Dashboard</title>
+    <link rel="stylesheet" href="styleTutorial.css">
+</head>
+<body>
+    <img src="../undo.png" onclick="voltar()">
+    <div class="tudo">
+        <br>
+        <div class="container">
+            <h1 style="text-align: center; margin-top: 5vh;">Tutorial do site</h1>
+            <div class="escrito">
+                <p>
+                    Quando o login for realizado com sucesso o usuário será redirecionado para a dashboard, lá é possível acessar os dados do usuário, selecionar o Data Center que deseja que tenha os dados visualizados, entrar em contato com a equipe e acessar um tutorial de como utilizar o site, como demonstra a figura abaixo:
+                    <br><br>
+                    <div class="imagem">
+                        <img src="./dash_menu.png" style="height: 500px; width: 200px;">
+                    </div>
+                    <br><br>
+                    Ao selecionar um dos Data Centers a tela ao lado muda para exibir as opções que existem dentro do mesmo. No exemplo será mostrado um caso de um Data Center que possui 2 portas e 3 corredores como opções de visualização.
+                    <br><br>
+                    <div class="imagem">
+                        <img src="./dash.png">
+                    </div>
+                    <br><br>
+                    Selecionando uma das opções na tela o usuário se encontrara com a visualização dos dados. Dentro dessa tela tem as informações da temperatura e humidade do local, e em caso do local selecionado for uma porta, também será mostrado um log de quando e quantas vezes a porta foi aberta. Existem opções de ver os dados de 5 minutos, 1 hora e 24 horas atras. 
+                    <br><br>
+                    <div class="imagem">
+                        <img src="./dash_graficos.png">
+                    </div>
+                </p>
+            </div>
+        </div>
+        <br>
+    </div>
+</body>
+</html>
+<script>
+    function voltar(){
+        window.location = '../Dashboard.html';
+    }
+</script>

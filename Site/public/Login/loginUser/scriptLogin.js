@@ -87,25 +87,19 @@ function listar() {
 }
 
 function entrar() {
-    aguardar();
 
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
 
     if (emailVar == "" || senhaVar == "") {
-        cardErro.style.display = "block"
-        mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-        finalizarAguardar();
+        alert("Mensagem de erro para todos os campos em branco")
         return false;
-    }
-    else {
-        setInterval(sumirMensagem, 5000)
     }
 
     console.log("FORM LOGIN: ", emailVar);
     console.log("FORM SENHA: ", senhaVar);
 
-    fetch("/usuarios/autenticar", {
+    fetch("/usuario/autenticar", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -130,7 +124,7 @@ function entrar() {
 
                 // SETEI PARA O PATHING BASEADO AONDE DEIXE O ARQUIVO, SEM O "href" PORQUE NÃO SEI SE PRECISA DO MESMO
                 setTimeout(function () {
-                    window.location = "../../Dashboard/DashBoardEmpresa/DashboardEmpresa.html";
+                    window.location = "../../Dashboard/Dashboard.html";
                 }, 1000); // apenas para exibir o loading
 
             });
@@ -141,7 +135,6 @@ function entrar() {
 
             resposta.text().then(texto => {
                 console.error(texto);
-                finalizarAguardar(texto);
             });
         }
 
