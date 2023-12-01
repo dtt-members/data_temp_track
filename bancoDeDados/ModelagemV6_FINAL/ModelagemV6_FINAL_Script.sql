@@ -27,8 +27,8 @@ create table usuario (
 	idUsuario int auto_increment primary key,
     nome varchar(45),
     sobrenome varchar(45),
-    emailInst varchar(45),
-    cpf char (11),
+    emailInst varchar(45) unique,
+    cpf char (11) unique,
     senha varchar(70),
     fkEmp int,
     constraint fkEmp foreign key (fkEmp) references empresa(idEmpresa)
@@ -44,8 +44,12 @@ create table unidadeDataCenter(
     constraint fkEmpUnidade foreign key (fkEmp) references empresa(idEmpresa)
 );
 
-insert into unidadeDataCenter values (1, 1000001, 'Unidade 1'), (2, 1000001, 'unidade');
+insert into unidadeDataCenter values (1, 1000001, 'DataCenter2'), (2, 1000001, 'Datacenter 1');
+
 select * from unidadeDataCenter where fkEmp = '1000001';
+
+select * from empresa;
+select * from usuario;
 
 select * from unidadeDataCenter;
 
@@ -62,11 +66,6 @@ create table ambiente (
 );
 
 -- Inicio tabelas de Sensores
-
-create table uddMedida(
-	idUdd int primary key auto_increment,
-    tipoMedida varchar(2)
-);
 
 create table sensor(
 	idSensor int primary key auto_increment,
@@ -111,7 +110,9 @@ describe hist;
 
 create view login
 as
-select idUsuario, nome, fkEmp from usuario where emailInst = 'arthur@gmail.com' AND senha = '123456789';
+select idUsuario, nome, emailInst, fkEmp from usuario where emailInst = 'arthur@gmail.com' AND senha = '123456789';
+
+drop view login;
 
 select * from login;
 
