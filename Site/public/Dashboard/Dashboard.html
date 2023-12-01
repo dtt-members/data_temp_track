@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Dashboard</title>
   <link rel="stylesheet" type="text/css" href="dashboardStyle.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -22,7 +22,6 @@
         <h3>Nome Completo:</h3>
         <div class="nome">
           <p class="paragrafo" id="receptor">
-            Afonso
           </p>
           <input class="campo" id="div_nome_perfil" style="display: none;" type="text">
           <button onclick="editarnome()" class="bottao">
@@ -35,7 +34,6 @@
         <h3>Email:</h3>
         <div class="nome">
           <p class="paragrafo" id="receptor2">
-            afonso@gmail.com
           </p>
           <input class="campo" id="div_email_perfil" style="display: none;" type="text">
           <button onclick="editaremail()" class="bottao">
@@ -92,9 +90,9 @@
     </div>
     <div class="div-form">
       <!--<form--->
-        <h1>Contate - Nos
-        </h1>
-        <!--<div class="pedaco-formulario">
+      <h1>Contate - Nos
+      </h1>
+      <!--<div class="pedaco-formulario">
           <input type="text" id="nome" name="Nome" placeholder="Digite aqui seu nome">
         </div>
         <div class="pedaco-formulario">
@@ -109,69 +107,69 @@
         <button type="submit">Enviar</button>
       </form>
     </div>--->
-  </div>
-
-
-
-  <!--Tela inicial -->
-  <div class="tela_dashboard" id="div_tela_dashboard">
-    <div class="menu_lateral">
-      <div class="perfil_img">
-        <img src="https://cdn-icons-png.flaticon.com/512/4211/4211178.png" onclick="chamarPerfil()">
-        <div class="perfil_text">
-          Usuário: Afonso<br>
-          Empresa: Data Temp Track <br>
-
-        </div>
-      </div>
-      <button onclick="dataCenter1()"><span><b>Data Center 01</b></span></button>
-      <button onclick="dataCenter2()"><span><b>Data Center 02</b></span>
-        <div class="piscar-vermelho-dc">
-          <p>ALERTA</p>
-        </div>
-      </button>
-      <button class="config" onclick="Ajuda()">Ajuda</button><br><br>
-      <button onclick="redirecionarTuto()">Entenda o site</button>
     </div>
-    <div class="lousa">
-      <div id="div_text_inicial" class="text_inicial">
-        Escolha um Data Center
-      </div>
-      <div id="div_lousa_invisivel" class="lousa_invisivel">
-        <div id="div_card_linha" class="card_linha">
-          <div id="div_card_grande_dc" class="card_grande" onclick="TemUmiDataCenter()">
-            <div class="baixo">
-              Data Center
-            </div>
+
+
+
+    <!--Tela inicial -->
+    <div class="tela_dashboard" id="div_tela_dashboard">
+      <div class="menu_lateral">
+        <div class="perfil_img">
+          <img src="https://cdn-icons-png.flaticon.com/512/4211/4211178.png" onclick="chamarPerfil()">
+          <div class="perfil_text">
+            Usuário: Afonso<br>
+            Empresa: Data Temp Track <br>
+
           </div>
         </div>
-        <div id="div_card_linha" class="card_linha">
-          <div id="div_card_unidade" class="card_unidade" onclick="TemUmiDataCenter1()">
-            <div class="cima">
-              <img src="https://cdn-icons-png.flaticon.com/128/566/566489.png" class="imagem_corredor">
-              <div class="cima-direita">
-                <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota">
-                <img src="temperatura.png" class="imagem_gota">
+        <button onclick="dataCenter1()"><span><b>Data Center 01</b></span></button>
+        <button onclick="dataCenter2()"><span><b>Data Center 02</b></span>
+          <div class="piscar-vermelho-dc">
+            <p>ALERTA</p>
+          </div>
+        </button>
+        <button class="config" onclick="Ajuda()">Ajuda</button><br><br>
+        <button onclick="redirecionarTuto()">Entenda o site</button>
+      </div>
+      <div class="lousa">
+        <div id="div_text_inicial" class="text_inicial">
+          Escolha um Data Center
+        </div>
+        <div id="div_lousa_invisivel" class="lousa_invisivel">
+          <div id="div_card_linha" class="card_linha">
+            <div id="div_card_grande_dc" class="card_grande" onclick="TemUmiDataCenter()">
+              <div class="baixo">
+                Data Center
               </div>
             </div>
-            <div class="baixo">
-              Porta 01
-            </div>
           </div>
-          <div id="div_card_unidade" class="card_unidade" onclick="TemUmiDataCenter1()">
-            <div class="cima">
-              <img src="https://cdn-icons-png.flaticon.com/128/566/566489.png" class="imagem_corredor">
-              <div class="cima-direita">
-                <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota">
-                <img src="temperatura.png" class="imagem_gota">
+          <div id="div_card_linha" class="card_linha">
+            <div id="div_card_unidade" class="card_unidade" onclick="TemUmiDataCenter1()">
+              <div class="cima">
+                <img src="https://cdn-icons-png.flaticon.com/128/566/566489.png" class="imagem_corredor">
+                <div class="cima-direita">
+                  <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota">
+                  <img src="temperatura.png" class="imagem_gota">
+                </div>
+              </div>
+              <div class="baixo">
+                Porta 01
               </div>
             </div>
-            <div class="baixo">
-              Porta 02
+            <div id="div_card_unidade" class="card_unidade" onclick="TemUmiDataCenter1()">
+              <div class="cima">
+                <img src="https://cdn-icons-png.flaticon.com/128/566/566489.png" class="imagem_corredor">
+                <div class="cima-direita">
+                  <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota">
+                  <img src="temperatura.png" class="imagem_gota">
+                </div>
+              </div>
+              <div class="baixo">
+                Porta 02
+              </div>
             </div>
-          </div>
 
-          <!-- <div id="div_card_unidade" class="card_unidade" onclick="TemUmiDataCenter1()">
+            <!-- <div id="div_card_unidade" class="card_unidade" onclick="TemUmiDataCenter1()">
             <div class="cima">
               <img src="https://cdn-icons-png.flaticon.com/128/566/566489.png" class="imagem_corredor">
               <div class="cima-direita">
@@ -183,72 +181,72 @@
               Porta 03
             </div>
           </div> -->
-        </div>
-        <div id="div_card_linha" class="card_linha">
-          <div id="div_card_unidade" class="card_unidade" onclick="chamarRack()">
-            <div class="cima">
-              <img src="corredor.png" class="imagem_corredor">
-              <div class="cima-direita">
-                <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota"> <img
-                  src="temperatura.png" class="imagem_gota">
+          </div>
+          <div id="div_card_linha" class="card_linha">
+            <div id="div_card_unidade" class="card_unidade" onclick="chamarRack()">
+              <div class="cima">
+                <img src="corredor.png" class="imagem_corredor">
+                <div class="cima-direita">
+                  <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota"> <img
+                    src="temperatura.png" class="imagem_gota">
+                </div>
+              </div>
+              <div class="baixo">
+                Corredor 01
               </div>
             </div>
-            <div class="baixo">
-              Corredor 01
-            </div>
-          </div>
-          <div id="div_card_unidade" class="card_unidade" onclick="chamarRack()">
-            <div class="cima">
-              <img src="corredor.png" class="imagem_corredor">
-              <div class="cima-direita">
-                <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota">
-                <img src="temperatura.png" class="imagem_gota">
+            <div id="div_card_unidade" class="card_unidade" onclick="chamarRack()">
+              <div class="cima">
+                <img src="corredor.png" class="imagem_corredor">
+                <div class="cima-direita">
+                  <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota">
+                  <img src="temperatura.png" class="imagem_gota">
+                </div>
+              </div>
+              <div class="baixo">
+                Corredor 02
               </div>
             </div>
-            <div class="baixo">
-              Corredor 02
-            </div>
-          </div>
-          <div id="div_card_unidade" class="card_unidade" onclick="chamarRack()">
-            <div class="cima">
-              <img src="corredor.png" class="imagem_corredor">
-              <div class="cima-direita">
-                <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota">
-                <img src="temperatura.png" class="imagem_gota">
+            <div id="div_card_unidade" class="card_unidade" onclick="chamarRack()">
+              <div class="cima">
+                <img src="corredor.png" class="imagem_corredor">
+                <div class="cima-direita">
+                  <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota">
+                  <img src="temperatura.png" class="imagem_gota">
+                </div>
               </div>
-            </div>
-            <div class="baixo">
-              Corredor 03
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- FIM DATA CENTER 1 -->
-
-
-      <div id="div_lousa_invisivel1" class="lousa_invisivel1">
-        <div id="div_card_linha" class="card_linha">
-          <div id="div_card_grande_dc" class="card_grande" onclick="TemUmiDataCenter()">
-            <div class="baixo">
-              Data Center
+              <div class="baixo">
+                Corredor 03
+              </div>
             </div>
           </div>
         </div>
-        <div id="div_card_linha" class="card_linha">
-          <div id="div_card_unidade" class="card_unidade" onclick="TemUmiDataCenter1()">
-            <div class="cima">
-              <img src="https://cdn-icons-png.flaticon.com/128/566/566489.png" class="imagem_corredor">
-              <div class="cima-direita">
-                <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota">
-                <img src="temperatura.png" class="imagem_gota">
+
+        <!-- FIM DATA CENTER 1 -->
+
+
+        <div id="div_lousa_invisivel1" class="lousa_invisivel1">
+          <div id="div_card_linha" class="card_linha">
+            <div id="div_card_grande_dc" class="card_grande" onclick="TemUmiDataCenter()">
+              <div class="baixo">
+                Data Center
               </div>
             </div>
-            <div class="baixo">
-              Porta 01
-            </div>
           </div>
-          <!-- <div id="div_card_unidade" class="card_unidade" onclick="TemUmiDataCenter1()">
+          <div id="div_card_linha" class="card_linha">
+            <div id="div_card_unidade" class="card_unidade" onclick="TemUmiDataCenter1()">
+              <div class="cima">
+                <img src="https://cdn-icons-png.flaticon.com/128/566/566489.png" class="imagem_corredor">
+                <div class="cima-direita">
+                  <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota">
+                  <img src="temperatura.png" class="imagem_gota">
+                </div>
+              </div>
+              <div class="baixo">
+                Porta 01
+              </div>
+            </div>
+            <!-- <div id="div_card_unidade" class="card_unidade" onclick="TemUmiDataCenter1()">
             <div class="cima">
               <img src="https://cdn-icons-png.flaticon.com/128/566/566489.png" class="imagem_corredor">
               <div class="cima-direita">
@@ -261,7 +259,7 @@
             </div>
           </div> -->
 
-          <!-- <div id="div_card_unidade" class="card_unidade" onclick="TemUmiDataCenter1()">
+            <!-- <div id="div_card_unidade" class="card_unidade" onclick="TemUmiDataCenter1()">
             <div class="cima">
               <img src="https://cdn-icons-png.flaticon.com/128/566/566489.png" class="imagem_corredor">
               <div class="cima-direita">
@@ -273,36 +271,36 @@
               Porta 03
             </div>
           </div> -->
-        </div>
-        <div id="div_card_linha" class="card_linha">
-          <div id="div_card_unidade" class="card_unidade" onclick="chamarRack()">
-            <div class="cima">
-              <img src="corredor.png" class="imagem_corredor">
-              <div class="cima-direita">
-                <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota"> <img
-                  src="temperatura.png" class="imagem_gota">
-              </div>
-            </div>
-            <div class="baixo">
-              Corredor 01
-            </div>
           </div>
-          <div id="div_card_unidade" class="card_unidade" onclick="chamarRackAlert()">
-            <div class="cima">
-              <img src="corredor.png" class="imagem_corredor">
-              <div class="cima-direita">
-                <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota">
-                <img src="temperatura.png" class="imagem_gota">
+          <div id="div_card_linha" class="card_linha">
+            <div id="div_card_unidade" class="card_unidade" onclick="chamarRack()">
+              <div class="cima">
+                <img src="corredor.png" class="imagem_corredor">
+                <div class="cima-direita">
+                  <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota"> <img
+                    src="temperatura.png" class="imagem_gota">
+                </div>
+              </div>
+              <div class="baixo">
+                Corredor 01
               </div>
             </div>
-            <div class="baixo">
-              <div class="piscar-vermelho-dc">
-                <p>ALERTA</p>
+            <div id="div_card_unidade" class="card_unidade" onclick="chamarRackAlert()">
+              <div class="cima">
+                <img src="corredor.png" class="imagem_corredor">
+                <div class="cima-direita">
+                  <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota">
+                  <img src="temperatura.png" class="imagem_gota">
+                </div>
               </div>
-              Corredor 02
+              <div class="baixo">
+                <div class="piscar-vermelho-dc">
+                  <p>ALERTA</p>
+                </div>
+                Corredor 02
+              </div>
             </div>
-          </div>
-          <!-- <div id="div_card_unidade" class="card_unidade" onclick="chamarRack()">
+            <!-- <div id="div_card_unidade" class="card_unidade" onclick="chamarRack()">
             <div class="cima">
               <img src="corredor.png" class="imagem_corredor">
               <div class="cima-direita">
@@ -314,59 +312,59 @@
               Corredor 03
             </div>
           </div> -->
+          </div>
         </div>
-      </div>
 
 
 
-      <!--Tela dos Corredores -->
-      <div id="div_lousa_invisivel2" class="lousa_invisivel2">
-        <div id="div_card_linha" class="card_linha">
-          <div id="div_card_grande_corredor" class="card_grande" onclick="TemUmiDataCenter()">
-            <div class="baixo">
-              Corredor 01
-            </div>
-          </div>
-        </div>
-        <div id="div_card_linha" class="card_linha">
-          <div id="div_card_unidade" class="card_unidade" onclick="TemUmiDataCenter()">
-            <div class="cima">
-              <img src="rack.png" class="imagem_corredor">
-              <div class="cima-direita">
-                <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota">
-                <img src="temperatura.png" class="imagem_gota">
+        <!--Tela dos Corredores -->
+        <div id="div_lousa_invisivel2" class="lousa_invisivel2">
+          <div id="div_card_linha" class="card_linha">
+            <div id="div_card_grande_corredor" class="card_grande" onclick="TemUmiDataCenter()">
+              <div class="baixo">
+                Corredor 01
               </div>
             </div>
-            <div class="baixo">
-              Rack 0001
-            </div>
           </div>
-          <div id="div_card_unidade" class="card_unidade" onclick="TemUmiDataCenter()">
-            <div class="cima">
-              <img src="rack.png" class="imagem_corredor">
-              <div class="cima-direita">
-                <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota">
-                <img src="temperatura.png" class="imagem_gota">
+          <div id="div_card_linha" class="card_linha">
+            <div id="div_card_unidade" class="card_unidade" onclick="TemUmiDataCenter()">
+              <div class="cima">
+                <img src="rack.png" class="imagem_corredor">
+                <div class="cima-direita">
+                  <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota">
+                  <img src="temperatura.png" class="imagem_gota">
+                </div>
+              </div>
+              <div class="baixo">
+                Rack 0001
               </div>
             </div>
-            <div class="baixo">
-              Rack 0002
-            </div>
-          </div>
-          <div id="div_card_unidade" class="card_unidade" onclick="TemUmiDataCenter()">
-            <div class="cima">
-              <img src="rack.png" class="imagem_corredor">
-              <div class="cima-direita">
-                <img src="https://cdn-icons-png.flaticon.com/128/7  28/728093.png" class="imagem_gota">
-                <img src="temperatura.png" class="imagem_gota">
+            <div id="div_card_unidade" class="card_unidade" onclick="TemUmiDataCenter()">
+              <div class="cima">
+                <img src="rack.png" class="imagem_corredor">
+                <div class="cima-direita">
+                  <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota">
+                  <img src="temperatura.png" class="imagem_gota">
+                </div>
+              </div>
+              <div class="baixo">
+                Rack 0002
               </div>
             </div>
-            <div class="baixo">
-              Rack 0003
+            <div id="div_card_unidade" class="card_unidade" onclick="TemUmiDataCenter()">
+              <div class="cima">
+                <img src="rack.png" class="imagem_corredor">
+                <div class="cima-direita">
+                  <img src="https://cdn-icons-png.flaticon.com/128/7  28/728093.png" class="imagem_gota">
+                  <img src="temperatura.png" class="imagem_gota">
+                </div>
+              </div>
+              <div class="baixo">
+                Rack 0003
+              </div>
             </div>
           </div>
-        </div>
-        <!-- <div id="div_card_linha" class="card_linha">
+          <!-- <div id="div_card_linha" class="card_linha">
           <div id="div_card_unidade" class="card_unidade" onclick="TemUmiDataCenter()">
             <div class="cima">
               <img src="rack.png" class="imagem_corredor">
@@ -404,68 +402,68 @@
             </div>
           </div>
         </div> -->
-      </div>
-
-
-
-
-
-      <div id="div_lousa_invisivel2_2" class="lousa_invisivel2_2">
-        <div id="div_card_linha" class="card_linha">
-          <div id="div_card_grande_corredor" class="card_grande" onclick="TemUmiDataCenter()">
-            <div class="baixo">
-              Corredor 01
-            </div>
-          </div>
         </div>
-        <div id="div_card_linha" class="card_linha">
-          <div id="div_card_unidade" class="card_unidade" onclick="TemUmiDataCenter()">
-            <div class="cima">
-              <img src="rack.png" class="imagem_corredor">
-              <div class="cima-direita">
-                <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota">
-                <img src="temperatura.png" class="imagem_gota">
+
+
+
+
+
+        <div id="div_lousa_invisivel2_2" class="lousa_invisivel2_2">
+          <div id="div_card_linha" class="card_linha">
+            <div id="div_card_grande_corredor" class="card_grande" onclick="TemUmiDataCenter()">
+              <div class="baixo">
+                Corredor 01
               </div>
-            </div>
-            <div class="baixo">
-              <div class="piscar-vermelho-dc">
-                <p>ALERTA</p>
-              </div>
-              Rack 0001
             </div>
           </div>
-          <div id="div_card_unidade" class="card_unidade" onclick="TemUmiDataCenter()">
-            <div class="cima">
-              <img src="rack.png" class="imagem_corredor">
-              <div class="cima-direita">
-                <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota">
-                <img src="temperatura.png" class="imagem_gota">
+          <div id="div_card_linha" class="card_linha">
+            <div id="div_card_unidade" class="card_unidade" onclick="TemUmiDataCenter()">
+              <div class="cima">
+                <img src="rack.png" class="imagem_corredor">
+                <div class="cima-direita">
+                  <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota">
+                  <img src="temperatura.png" class="imagem_gota">
+                </div>
+              </div>
+              <div class="baixo">
+                <div class="piscar-vermelho-dc">
+                  <p>ALERTA</p>
+                </div>
+                Rack 0001
               </div>
             </div>
-            <div class="baixo">
-              <div class="piscar-vermelho-dc">
-                <p>ALERTA</p>
+            <div id="div_card_unidade" class="card_unidade" onclick="TemUmiDataCenter()">
+              <div class="cima">
+                <img src="rack.png" class="imagem_corredor">
+                <div class="cima-direita">
+                  <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota">
+                  <img src="temperatura.png" class="imagem_gota">
+                </div>
               </div>
-              Rack 0002
+              <div class="baixo">
+                <div class="piscar-vermelho-dc">
+                  <p>ALERTA</p>
+                </div>
+                Rack 0002
+              </div>
+            </div>
+            <div id="div_card_unidade" class="card_unidade" onclick="TemUmiDataCenter()">
+              <div class="cima">
+                <img src="rack.png" class="imagem_corredor">
+                <div class="cima-direita">
+                  <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota">
+                  <img src="temperatura.png" class="imagem_gota">
+                </div>
+              </div>
+              <div class="baixo">
+                <div class="piscar-vermelho-dc">
+                  <p>ALERTA</p>
+                </div>
+                Rack 0003
+              </div>
             </div>
           </div>
-          <div id="div_card_unidade" class="card_unidade" onclick="TemUmiDataCenter()">
-            <div class="cima">
-              <img src="rack.png" class="imagem_corredor">
-              <div class="cima-direita">
-                <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota">
-                <img src="temperatura.png" class="imagem_gota">
-              </div>
-            </div>
-            <div class="baixo">
-              <div class="piscar-vermelho-dc">
-                <p>ALERTA</p>
-              </div>
-              Rack 0003
-            </div>
-          </div>
-        </div>
-        <!-- <div id="div_card_linha" class="card_linha">
+          <!-- <div id="div_card_linha" class="card_linha">
           <div id="div_card_unidade" class="card_unidade" onclick="TemUmiDataCenter()">
             <div class="cima">
               <img src="rack.png" class="imagem_corredor">
@@ -503,80 +501,80 @@
             </div>
           </div>
         </div> -->
-      </div>
+        </div>
 
-      <!--Tela Dos Graficos do Data Center -->
-      <div id="div_lousa_invisivel3" class="lousa_invisivel3">
-        <div class="alinhar_lousa3">
+        <!--Tela Dos Graficos do Data Center -->
+        <div id="div_lousa_invisivel3" class="lousa_invisivel3">
+          <div class="alinhar_lousa3">
 
-          <div class="menu">
+            <div class="menu">
 
-            <div class="tamanho">
-              <img src="undo.png" onclick="dataCenter1()" class="bottom_voltar">
-            </div>
-
-            <div class="localizacao">
-              <div class="texto_localizacao">
-                PORTA 1
+              <div class="tamanho">
+                <img src="undo.png" onclick="dataCenter1()" class="bottom_voltar">
               </div>
-            </div>
 
-            <div class="div_botao_lousa3">
-              <div id="div_botao_lousa3_01" onclick="cincoMinutos()" class="texto_botao_lousa">5 Minutos</div>
-              <div id="div_botao_lousa3_02" onclick="umaHora()" class="texto_botao_lousa">1 hora</div>
-              <div id="div_botao_lousa3_03" onclick="umDia()" class="texto_botao_lousa">24 horas</div>
-            </div>
+              <div class="localizacao">
+                <div class="texto_localizacao">
+                  PORTA 1
+                </div>
+              </div>
+
+              <div class="div_botao_lousa3">
+                <div id="div_botao_lousa3_01" onclick="cincoMinutos()" class="texto_botao_lousa">5 Minutos</div>
+                <div id="div_botao_lousa3_02" onclick="umaHora()" class="texto_botao_lousa">1 hora</div>
+                <div id="div_botao_lousa3_03" onclick="umDia()" class="texto_botao_lousa">24 horas</div>
+              </div>
 
 
-            <!--<div class="div_botao_lousa3" id="div_botao_lousa3_01" onclick="cincoMinutos()">5 Minutos</div>
+              <!--<div class="div_botao_lousa3" id="div_botao_lousa3_01" onclick="cincoMinutos()">5 Minutos</div>
             <div class="div_botao_lousa3" id="div_botao_lousa3_02" onclick="umaHora()">1 hora</div>
             <div class="div_botao_lousa3" id="div_botao_lousa3_03" onclick="umDia()">24 horas</div>-->
 
-          </div>
-
-
-          <div class="dash">
-
-            <div class="regua">
-              <div class="item-regua ideal">
-                <h4>Ideal</h4>
-                <h2>16° a 24°</h2>
-              </div>
-              <div class="item-regua alerta">
-                <h4>Alerta</h4>
-                <h2>12° a 15° <br>e<br /> 25° a 28° </h2>
-              </div>
-              <div class="item-regua danger">
-                <h4>Ideal</h4>
-                <h2>&lt;=5°C</h2>
-              </div>
-
-              <div class="item-regua espaco">
-                <h4>Ideal</h4>
-                <h2>&lt;=5°C</h2>
-              </div>
-
-              <div class="item-regua ideal">
-                <h4>Ideal</h4>
-                <h2>&gt;=22°C</h2>
-              </div>
-              <div class="item-regua alerta">
-                <h4>Alerta</h4>
-                <h2>&gt;=23°C</h2>
-              </div>
-              <div class="item-regua danger">
-                <h4>Ideal</h4>
-                <h2>&lt;=5°C</h2>
-              </div>
             </div>
 
 
+            <div class="dash">
+
+              <div class="regua">
+                <div class="item-regua ideal">
+                  <h4>Ideal</h4>
+                  <h2>16° a 24°</h2>
+                </div>
+                <div class="item-regua alerta">
+                  <h4>Alerta</h4>
+                  <h2>12° a 15° <br>e<br /> 25° a 28° </h2>
+                </div>
+                <div class="item-regua danger">
+                  <h4>Ideal</h4>
+                  <h2>&lt;=5°C</h2>
+                </div>
+
+                <div class="item-regua espaco">
+                  <h4>Ideal</h4>
+                  <h2>&lt;=5°C</h2>
+                </div>
+
+                <div class="item-regua ideal">
+                  <h4>Ideal</h4>
+                  <h2>&gt;=22°C</h2>
+                </div>
+                <div class="item-regua alerta">
+                  <h4>Alerta</h4>
+                  <h2>&gt;=23°C</h2>
+                </div>
+                <div class="item-regua danger">
+                  <h4>Ideal</h4>
+                  <h2>&lt;=5°C</h2>
+                </div>
+              </div>
 
 
 
-          </div>
 
-          <!--<div class="container-legenda">
+
+            </div>
+
+            <!--<div class="container-legenda">
            
             <div class="legenda">
               <div class="titulo-legenda">
@@ -614,47 +612,47 @@
               </div>
             </div>
           </div>-->
-          <div class="medicao_atual" id="div_medicao_atual">
-            <div class="medicaoAlert" id="medicaoAlertU"></div>
-            <div class="medicaoAlerta" id="medicaoAlertT"></div>
-          </div>
-          <div class="container-canvas_01" id="id_container_canvas_01">
-            <canvas id="id_grafico_temperatura"></canvas>
-            <canvas id="id_grafico_umidade"></canvas>
-          </div>
-          <div class="container-canvas_02" id="id_container_canvas_02">
-            <canvas id="id_grafico_temperatura2"></canvas>
-            <canvas id="id_grafico_umidade2"></canvas>
-          </div>
-          <div class="container-canvas_03" id="id_container_canvas_03">
-            <canvas id="id_grafico_temperatura3"></canvas>
-            <canvas id="id_grafico_umidade3"></canvas>
-          </div>
-          <div class="tabela_bloqueio" id="div_tabela_bloqueio">
-            <div class="linha_bloqueio">
-              <div>Porta</div>
-              <div>Data</div>
-              <div>Hora</div>
-              <div>Situação</div>
+            <div class="medicao_atual" id="div_medicao_atual">
+              <div class="medicaoAlert" id="medicaoAlertU"></div>
+              <div class="medicaoAlerta" id="medicaoAlertT"></div>
+            </div>
+            <div class="container-canvas_01" id="id_container_canvas_01">
+              <canvas id="id_grafico_temperatura"></canvas>
+              <canvas id="id_grafico_umidade"></canvas>
+            </div>
+            <div class="container-canvas_02" id="id_container_canvas_02">
+              <canvas id="id_grafico_temperatura2"></canvas>
+              <canvas id="id_grafico_umidade2"></canvas>
+            </div>
+            <div class="container-canvas_03" id="id_container_canvas_03">
+              <canvas id="id_grafico_temperatura3"></canvas>
+              <canvas id="id_grafico_umidade3"></canvas>
+            </div>
+            <div class="tabela_bloqueio" id="div_tabela_bloqueio">
+              <div class="linha_bloqueio">
+                <div>Porta</div>
+                <div>Data</div>
+                <div>Hora</div>
+                <div>Situação</div>
+              </div>
+
+              <div class="linha_bloqueio_dados">
+                <div>01</div>
+                <div>24/10/2023</div>
+                <div>16:20:27</div>
+                <div>Aberta</div>
+              </div>
+              <div class="linha_bloqueio_dados">
+                <div>02</div>
+                <div>24/10/2023</div>
+                <div>13:00:23</div>
+                <div>Aberta</div>
+              </div>
             </div>
 
-            <div class="linha_bloqueio_dados">
-              <div>01</div>
-              <div>24/10/2023</div>
-              <div>16:20:27</div>
-              <div>Aberta</div>
-            </div>
-            <div class="linha_bloqueio_dados">
-              <div>02</div>
-              <div>24/10/2023</div>
-              <div>13:00:23</div>
-              <div>Aberta</div>
-            </div>
+
           </div>
-
-
         </div>
-      </div>
 </body>
 
 </html>
@@ -1312,7 +1310,7 @@
         response.json().then(function (resposta) {
           console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
           resposta.reverse();
-            
+
           plotarGrafico(resposta, idAmb);
 
         });
@@ -1498,8 +1496,8 @@
 
   }
 
-  function redirecionarTuto(){
+  function redirecionarTuto() {
     window.location.href = "Dashboard_tutorial/tutorial.html"
   }
 
-</script> 
+</script>
