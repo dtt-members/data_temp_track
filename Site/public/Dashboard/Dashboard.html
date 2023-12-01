@@ -91,10 +91,10 @@
       </div>
     </div>
     <div class="div-form">
-      <!--<form--->
+      <form>
         <h1>Contate - Nos
         </h1>
-        <!--<div class="pedaco-formulario">
+        <div class="pedaco-formulario">
           <input type="text" id="nome" name="Nome" placeholder="Digite aqui seu nome">
         </div>
         <div class="pedaco-formulario">
@@ -108,7 +108,7 @@
         </div>
         <button type="submit">Enviar</button>
       </form>
-    </div>--->
+    </div>
   </div>
 
 
@@ -130,8 +130,7 @@
           <p>ALERTA</p>
         </div>
       </button>
-      <button class="config" onclick="Ajuda()">Ajuda</button><br><br>
-      <button onclick="redirecionarTuto()">Entenda o site</button>
+      <button class="config" onclick="Ajuda()">Ajuda</button>
     </div>
     <div class="lousa">
       <div id="div_text_inicial" class="text_inicial">
@@ -1422,7 +1421,7 @@
       options: {}
     }
 
-    // Adicionando gráfico criado em div na tela
+    // Adicionando gráfico criado em div na tela       
     let myChart = new Chart(
       document.getElementById(`myChartCanvas${idAmb}`),
       config
@@ -1442,21 +1441,21 @@
 
   //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
   //     Para ajustar o "select", ajuste o comando sql em src/models
-  function atualizarGrafico(idDataCenter, dados, myChart) {
+  function atualizarGrafico(idAmb, dados, myChart) {
 
 
 
-    fetch(`/medidas/tempo-real/${idDataCenter}`, { cache: 'no-store' }).then(function (response) {
+    fetch(`/medidas/tempo-real/${idAmb}`, { cache: 'no-store' }).then(function (response) {
       if (response.ok) {
         response.json().then(function (novoRegistro) {
 
-          obterdados(idDataCenter);
+          obterdados(idAmb);
           // alertar(novoRegistro, idAquario);
           console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
           console.log(`Dados atuais do gráfico:`);
           console.log(dados);
-
-          let avisoCaptura = document.getElementById(`avisoCaptura${idDataCenter}`)
+    
+          let avisoCaptura = document.getElementById(`avisoCaptura${idAmb}`)
           avisoCaptura.innerHTML = ""
 
 
@@ -1484,12 +1483,12 @@
           }
 
           // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-          proximaAtualizacao = setTimeout(() => atualizarGrafico(idDataCenter, dados, myChart), 2000);
+          proximaAtualizacao = setTimeout(() => atualizarGrafico(idAmb, dados, myChart), 2000);
         });
       } else {
         console.error('Nenhum dado encontrado ou erro na API');
         // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-        proximaAtualizacao = setTimeout(() => atualizarGrafico(idDataCenter, dados, myChart), 2000);
+        proximaAtualizacao = setTimeout(() => atualizarGrafico(idAmb, dados, myChart), 2000);
       }
     })
       .catch(function (error) {
@@ -1498,8 +1497,6 @@
 
   }
 
-  function redirecionarTuto(){
-    window.location.href = "Dashboard_tutorial/tutorial.html"
-  }
 
-</script> 
+
+</script>
