@@ -233,6 +233,29 @@ button span{
 
 }
 
+.menu_lateral2 {
+    background-color: #003366;
+    display: flex;
+    flex-direction: column;
+    width: 18.5%;
+    padding: 0 0.9%;
+
+}
+
+
+
+.menu_lateral2 .perfil_img img {
+    border: 2px solid #ffffff;
+    width: 60%;
+    border-radius: 30px;
+    padding: 2%;
+    margin-left: 15%;
+    margin-top: 12%;
+    background-color: white;
+
+}
+
+
 .menu_lateral .perfil_img img {
     border: 2px solid #ffffff;
     width: 60%;
@@ -246,7 +269,12 @@ button span{
 
 
 
+.menu_lateral2 .perfil_img .perfil_text {
+    font-size: 110%;
+    margin: 15% 0 15% 0;
+    color: #f2f2f2;
 
+}
 .menu_lateral .perfil_img .perfil_text {
     font-size: 110%;
     margin: 15% 0 15% 0;
@@ -254,6 +282,25 @@ button span{
 
 }
 
+
+.menu_lateral2 button {
+    background-color: black;
+    color: #ffffff;
+    border: none;
+    border-top: 1px #ffffff;
+    border-bottom: 1px #ffffff;
+    padding: 1rem;
+    font-size: 100%;
+    text-align: left;
+    margin: -1% -7% 0 -7%;
+    transition: 1s;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    border-radius: 20px;
+}
 .menu_lateral button {
     background-color: black;
     color: #ffffff;
@@ -314,6 +361,25 @@ button span{
 
 }
 
+
+.tela_dashboard .menu_lateral2 .config {
+    background-color: #003366;
+    color: #ffffff;
+    text-align: left;
+    font-size: 110%;
+    margin: 20vh 0 -10px 0;
+    border: none;
+    transition: 1s;
+    cursor: pointer;
+    position: relative;
+    padding-top: 2%;
+    border-radius: 15px;
+    display: flex;
+    text-align: center;
+}
+
+
+
 .tela_dashboard .menu_lateral .config {
     background-color: #003366;
     color: #ffffff;
@@ -328,7 +394,18 @@ button span{
     border-radius: 15px;
 }
 
+
+.tela_dashboard .menu_lateral2 .config:hover {
+    background-color: #ffffff;
+    color: #003366;
+}
 .tela_dashboard .menu_lateral .config:hover {
+    background-color: #ffffff;
+    color: #003366;
+}
+
+.menu_lateral2 button:hover {
+    border-radius: 15px;
     background-color: #ffffff;
     color: #003366;
 }

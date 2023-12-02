@@ -71,21 +71,6 @@ function validarCadastro() {
     return false;
 }
 
-
-function listar() {
-    fetch("/empresas/listar", {
-        method: "GET",
-    })
-        .then(function (resposta) {
-            resposta.json().then((empresas) => {
-                empresas.forEach((empresa) => {
-                    listaEmpresas.innerHTML += `<option value='${empresa.idEmpresa}'>${empresa.razaoSocial}</option>`;
-                });
-            });
-        })
-
-}
-
 function entrar() {
 
     var mensagemLogando = document.getElementById('mensagem_logando');
