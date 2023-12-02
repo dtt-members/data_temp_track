@@ -11,6 +11,7 @@ var app = express();
 var enderecoRouter = require("./src/routes/endereco");
 var empresaRouter = require("./src/routes/empresa");
 var usuarioRouter = require("./src/routes/usuario");
+var dataCenter = require("./src/routes/dataCenter");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -21,6 +22,7 @@ app.use(cors());
 app.use("/endereco", enderecoRouter);
 app.use("/empresa", empresaRouter);
 app.use("/usuario", usuarioRouter);
+app.use("/dataCenter", dataCenter);
 
 
 app.listen(PORTA, function () {

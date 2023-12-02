@@ -9,7 +9,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
-<body onload="buscar()">
+<body onload="buscarDC()">
   <!--Tela de perfil-->
   <div class="div_tela_perfil" id="div_tela_perfil">
 
@@ -355,7 +355,7 @@
               <div class="cima">
                 <img src="rack.png" class="imagem_corredor">
                 <div class="cima-direita">
-                  <img src="https://cdn-icons-png.flaticon.com/128/7  28/728093.png" class="imagem_gota">
+                  <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota">
                   <img src="temperatura.png" class="imagem_gota">
                 </div>
               </div>
@@ -705,6 +705,53 @@
       interrupe = 0;
     }
   }
+
+
+  
+/*Pegar os datas center da empresa pelo id do usuario*/
+
+function buscarDC(){
+  var fkEmpresaVar = sessionStorage.FK_EMPRESA;
+  fetch("/dataCenter/listarDC", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      idEmpresaServer: fkEmpresaVar,
+    })
+  }) 
+    .then(function (resposta) {
+      console.log("ESTOU NO THEN DO entrar()!")
+
+      if (resposta.ok) {
+        console.log(resposta);
+        resposta.json().then(json => {
+          console.log(json);
+          console.log(JSON.stringify(json));
+          sessionStorage.IDDATACENTER_UND = json.idDataCenter;
+                sessionStorage.FKEMP_UND = json.fkEmp;
+                sessionStorage.UNIDDATACENTER = json.unidDataCenter;
+        });
+      } else {
+        return false;
+      }
+
+    }).catch(
+      function (erro) {
+        res.status(500).json(erro.sqlMessage);
+
+      })
+
+    console.log(sessionStorage.IDDATACENTER_UND,  sessionStorage.FKEMP_UND, sessionStorage.UNIDDATACENTER)
+}
+
+
+
+
+
+
+
 
 
   /*Dashboard como um todo*/
@@ -1290,7 +1337,6 @@
     config5
   );
   const grafico_temperatura3 = new Chart(document.getElementById('id_grafico_temperatura3'), config6);
-  const grafico_temperatura7 = new Chart(document.getElementById('id_grafico_temperatura7'), config7);
 
 
 

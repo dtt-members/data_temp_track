@@ -213,6 +213,10 @@ button span{
     margin: 2% 0;
 }
 
+
+
+
+/*Tela Dashboard*/
 .tela_dashboard {
     display: flex;
     height: 100vh;
@@ -224,7 +228,7 @@ button span{
     display: flex;
     flex-direction: column;
     width: 18.5%;
-    height: mim-content;
+    height: min-content;
     padding: 0 0.9%;
 
 }

@@ -88,6 +88,8 @@ function listar() {
 
 function entrar() {
 
+    var mensagemLogando = document.getElementById('mensagem_logando');
+
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
 
@@ -122,18 +124,20 @@ function entrar() {
                 sessionStorage.ID_USUARIO = json.id;
                 sessionStorage.FK_EMPRESA = json.fkEmp;
 
-
-                // SETEI PARA O PATHING BASEADO AONDE DEIXE O ARQUIVO, SEM O "href" PORQUE NÃO SEI SE PRECISA DO MESMO
+                mensagemLogando.style.display = "flex";
+                mensagemLogando.innerHTML = `Você sera redirecionado para a Dashboard`
                 setTimeout(function () {
                     window.location = "../../Dashboard/Dashboard.html";
-                }, 1000); // apenas para exibir o loading
+                    console.log('PASSEI POR AQUI')
+                }, 3000); 
 
             });
 
         } else {
 
             console.log("Houve um erro ao tentar realizar o login!");
-
+            mensagemLogando.style.display = "flex";
+            mensagemLogando.innerHTML = "Senha ou email incorreto"
             resposta.text().then(texto => {
                 console.error(texto);
             });
@@ -141,8 +145,10 @@ function entrar() {
 
     }).catch(function (erro) {
         console.log(erro);
+
+        
     })
 
-    return false;
+    
 }
 

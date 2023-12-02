@@ -87,6 +87,20 @@ button:hover {
 }
 
 
+
+.mensagemLogando{
+    display: none;
+    width: 20%;
+    height:fit-content;
+    padding: 2%;
+    position: absolute;
+    background-color: white;
+    border: 2px solid black;
+    color: #000;
+    margin-bottom: 35%;
+    margin-left: 70%;
+}
+
 .container .a{
     color: #fff;
     width: 100%;

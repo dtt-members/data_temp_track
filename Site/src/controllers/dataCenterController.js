@@ -1,13 +1,14 @@
-var batalhaModel = require("../models/batalhaModel");
+var dataCenterModel = require("../models/dataCenterModel");
 
 
-function buscarBatalha(req, res) {
-    var pesquisaBatalha = req.body.pesquisaBatalhaServer;
+   
+   function listarDC(req, res) {
+    var idEmpresa = req.body.idEmpresaServer;
     if (ReadableStreamDefaultController == undefined) {
         res.status(400).send("Não tem batalhas está undefined!");
     }
 
-    batalhaModel.buscarBatalha(pesquisaBatalha).then(function(resposta){
+    dataCenterModel.listarDC(idEmpresa).then(function(resposta){
         res.status(200).send(resposta);
        
     }).catch(function(erro){
@@ -17,27 +18,6 @@ function buscarBatalha(req, res) {
    }
 
 
-
-   function listarB(req, res) {
-    batalhaModel.listarB().then(function (resultado2) {
-           if (resultado2.length > 0) {
-               res.status(200).json(resultado2);
-           } else {
-               res.status(204).send("Nenhum resultado encontrado!")
-           }
-       }).catch(function (erro) {
-           console.log(erro);
-           console.log("Houve um erro ao buscar os avisos: ", erro.sqlMessage);
-           res.status(500).json(erro.sqlMessage);
-       });
-   }
-
-
-
 module.exports = {
-    autenticarB,
-    cadastrarB,
-    buscarBatalha,
-    listarB,
-    buscarTodosBatalha
+    listarDC,
 }

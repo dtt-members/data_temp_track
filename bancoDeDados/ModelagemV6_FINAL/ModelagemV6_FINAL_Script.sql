@@ -44,8 +44,6 @@ create table unidadeDataCenter(
     constraint fkEmpUnidade foreign key (fkEmp) references empresa(idEmpresa)
 );
 
-insert into unidadeDataCenter values (1, 1000001, 'DataCenter2'), (2, 1000001, 'Datacenter 1');
-
 select * from unidadeDataCenter where fkEmp = '1000001';
 
 select * from empresa;
@@ -83,6 +81,7 @@ create table hist (
     dadoCap Decimal(14,2)
 );
 
+
 insert into hist(fkSensor, dadoCap) values (2, ?), (1, ?), (3, ?);
 
 insert into sensor values
@@ -94,6 +93,8 @@ insert into hist values
 (null, 1, null, 25),
 (null, 2, null, 50),
 (null, 3, null, 0);
+
+insert into unidadeDataCenter values (1, 1000001, 'DataCenter2'), (2, 1000001, 'Datacenter 1');
 
 select * from usuario join empresa
 	on fkEmp = idEmpresa;
@@ -120,3 +121,6 @@ select * from hist;
 
  INSERT INTO usuario (nome, sobrenome, emailInst, cpf, senha, fkEmp) VALUES
          ('arthur' , 'antonio' , 'arthur@gmail.com' , '57030727860' , '123456789', 1000001);
+         
+SELECT udc.* from  unidadeDataCenter  AS udc JOIN empresa AS e ON udc.fkEmp = e.idEmpresa JOIN 
+usuario AS s ON s.fkEmp = e.idEmpresa WHERE s.fkEmp = "1000001";

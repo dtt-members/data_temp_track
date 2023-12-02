@@ -1,8 +1,9 @@
 var database = require("../database/config");
 
-function buscarDataCenter(idEmpresa) {
+function listarDC(idEmpresa) {
 
-  instrucaoSql = `select * from unidadeDataCenter a where fkEmp = ${idEmpresa}`;
+  instrucaoSql = `SELECT udc.* from  unidadeDataCenter  AS udc JOIN empresa AS e ON udc.fkEmp = e.idEmpresa JOIN 
+  usuario AS s ON s.fkEmp = e.idEmpresa WHERE s.fkEmp = "${idEmpresa}";`;
 
   console.log("Executando a instrução SQL: \n" + instrucaoSql);
   return database.executar(instrucaoSql);
@@ -10,6 +11,6 @@ function buscarDataCenter(idEmpresa) {
 
 
 module.exports = {
-    buscarDataCenter
+    listarDC
   }
   
