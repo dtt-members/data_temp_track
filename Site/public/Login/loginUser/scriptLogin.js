@@ -109,7 +109,8 @@ function entrar() {
                 sessionStorage.ID_USUARIO = json.id;
                 sessionStorage.FK_EMPRESA = json.fkEmp;
 
-                alert("Logando na Dashboard de usuario")
+                mensagemLogando.style.display = "flex";
+                mensagemLogando.innerHTML = `Você sera redirecionado para a Dashboard`
                 setTimeout(function () {
                     window.location = "../../Dashboard/Dashboard.html";
                     console.log('PASSEI POR AQUI')
@@ -119,7 +120,9 @@ function entrar() {
 
         } else {
 
-           alert("Falha no login, email ou senha incorreto")
+            console.log("Houve um erro ao tentar realizar o login!");
+            mensagemLogando.style.display = "flex";
+            mensagemLogando.innerHTML = "Senha ou email incorreto"
             resposta.text().then(texto => {
                 console.error(texto);
             });
