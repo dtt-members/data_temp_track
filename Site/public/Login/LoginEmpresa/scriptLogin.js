@@ -57,7 +57,6 @@ function verificarE() {
 
             resposta.text().then(texto => {
                 console.error(texto);
-                finalizarAguardar(texto);    
             });
             return false;
         }

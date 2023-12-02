@@ -71,21 +71,6 @@ function validarCadastro() {
     return false;
 }
 
-
-function listar() {
-    fetch("/empresas/listar", {
-        method: "GET",
-    })
-        .then(function (resposta) {
-            resposta.json().then((empresas) => {
-                empresas.forEach((empresa) => {
-                    listaEmpresas.innerHTML += `<option value='${empresa.idEmpresa}'>${empresa.razaoSocial}</option>`;
-                });
-            });
-        })
-
-}
-
 function entrar() {
 
     var mensagemLogando = document.getElementById('mensagem_logando');
@@ -124,8 +109,7 @@ function entrar() {
                 sessionStorage.ID_USUARIO = json.id;
                 sessionStorage.FK_EMPRESA = json.fkEmp;
 
-                mensagemLogando.style.display = "flex";
-                mensagemLogando.innerHTML = `Você sera redirecionado para a Dashboard`
+                alert("Logando na Dashboard de usuario")
                 setTimeout(function () {
                     window.location = "../../Dashboard/Dashboard.html";
                     console.log('PASSEI POR AQUI')
@@ -135,9 +119,7 @@ function entrar() {
 
         } else {
 
-            console.log("Houve um erro ao tentar realizar o login!");
-            mensagemLogando.style.display = "flex";
-            mensagemLogando.innerHTML = "Senha ou email incorreto"
+           alert("Falha no login, email ou senha incorreto")
             resposta.text().then(texto => {
                 console.error(texto);
             });
