@@ -17,7 +17,15 @@ function autenticar(email, senha) {
     return database.executar(instrucao);
 }
 
+function excluir(cpf) {
+    var instrucao = `
+    delete from usuario where cpf = '${cpf}';`;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 module.exports = {
     cadastrar,
-    autenticar
+    autenticar,
+    excluir
 };

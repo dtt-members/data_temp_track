@@ -10,7 +10,8 @@ router.post("/autenticar", function (req, res) {
     usuarioController.autenticar(req, res);
 });
 
-
-
+router.delete("/excluir", function (req, res) {
+    usuarioController.excluir(req, res);
+});
 
 module.exports = router;

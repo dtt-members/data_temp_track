@@ -34,6 +34,8 @@ function cadastrarU() {
 
 
 
+
+    
     // Enviando o valor da nova input
     fetch("/usuario/cadastrar", {
       method: "POST",

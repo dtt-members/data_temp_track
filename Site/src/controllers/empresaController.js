@@ -17,7 +17,7 @@ function autenticar(req, res) {
         .then(
             function (resultadoAutenticar){
                 if (resultadoAutenticar.length ==1){
-                    dataCenterModel.buscarDataCenter(resultadoAutenticar[0].idEmpresa) 
+                    dataCenterModel.listarDC(resultadoAutenticar[0].idEmpresa) 
                     .then((resultadoDataCenter) => {
                         if(resultadoDataCenter.length > 0 ){
                         res.json({

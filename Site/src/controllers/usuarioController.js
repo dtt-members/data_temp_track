@@ -52,18 +52,33 @@ function autenticar(req, res) {
                     }
 
                 }).catch(
-                function (erro) {
-                    console.log(erro);
-                    console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
-                    res.status(500).json(erro.sqlMessage);
-                }
-            );
+                    function (erro) {
+                        console.log(erro);
+                        console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
+                        res.status(500).json(erro.sqlMessage);
+                    }
+                );
     }
 
+}
+
+function excluir(req, res) {
+    var cpf = req.body.cpfServer;
+
+    if (cpf == undefined) {
+        res.status(400).send("Seu CPF está undefined!");
+    }
+
+    usuarioModel.excluir(cpf).then(function (resposta) {
+        res.status(200).send("Usuario excluido com sucesso");
+    }).catch(function (erro) {
+        res.status(500).json(erro.sqlMessage);
+    })
 }
 
 
 module.exports = {
     cadastrar,
-    autenticar
+    autenticar,
+    excluir
 }
