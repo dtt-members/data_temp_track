@@ -1,10 +1,11 @@
-var dataCenterModel = require("../models/dataCenterModel");
+var ambienteModel = require("../models/ambienteModel");
 
 
    
-   function listarDC(req, res) {
+   function listarAmb(req, res) {
+    var nomeDC = req.body.nomeDCServer;
     var idEmpresa = req.body.idEmpresaServer;
-    dataCenterModel.listarDC(idEmpresa).then(function(resposta){
+    ambienteModel.listarAmb(idEmpresa, nomeDC).then(function(resposta){
         res.status(200).send(resposta);
         console.log(`vbananannananannanannanana`)
     }).catch(function(erro){
@@ -15,5 +16,5 @@ var dataCenterModel = require("../models/dataCenterModel");
 
 
 module.exports = {
-    listarDC,
+    listarAmb,
 }

@@ -94,7 +94,17 @@ insert into hist values
 (null, 2, null, 50),
 (null, 3, null, 0);
 
-insert into unidadeDataCenter values (1, 1000001, 'DataCenter2'), (2, 1000001, 'Datacenter 1');
+INSERT INTO empresa VALUES 
+(null, 'teste', null, null, null, 'teste@gmail.com', 'teste123', null);
+
+insert into unidadeDataCenter values (1, 1000001, 'DataCenter 1'), (2, 1000001, 'Datacenter 2');
+
+SELECT * FROM unidadeDataCenter;
+
+INSERT INTO ambiente VALUES 
+(null, 1, 1000001, 'Porta'),
+(null, 1, 1000001, 'Corredor 1'),
+(null, 1, 1000001, 'Corredor 2');
 
 select * from usuario join empresa
 	on fkEmp = idEmpresa;
@@ -105,6 +115,7 @@ select * from empresa;
 select * from empresa join endereco
 	on fkEndereco = idEndereco;
     
+
 SELECT * FROM usuario WHERE emailInst = 'arthur@gmail.com' AND senha = '123456789';
 
 describe hist;
@@ -123,4 +134,12 @@ select * from hist;
          ('arthur' , 'antonio' , 'arthur@gmail.com' , '57030727860' , '123456789', 1000001);
          
 SELECT udc.* from  unidadeDataCenter  AS udc JOIN empresa AS e ON udc.fkEmp = e.idEmpresa JOIN 
-usuario AS s ON s.fkEmp = e.idEmpresa WHERE s.fkEmp = "1000001";
+usuario AS s ON s.fkEmp = e.idEmpresa WHERE s.fkEmp = "1000001" ORDER BY udc.idDataCenter;
+
+SELECT * FROM ambiente AS a JOIN empresa AS e ON  a.fkEmp = e.idEmpresa 
+JOIN usuario AS u ON u.fkEmp = e.idEmpresa
+WHERE a.fkEmp = '1000001';
+
+SELECT * FROM ambiente AS a JOIN empresa AS e ON  a.fkEmp = e.idEmpresa 
+  JOIN usuario AS u ON u.fkEmp = e.idEmpresa JOIN unidadeDataCenter AS udc ON udc.fkEmp = e.idEmpresa
+  WHERE a.fkEmp = '1000001' AND udc.unidDataCenter = 'Datacenter 1';

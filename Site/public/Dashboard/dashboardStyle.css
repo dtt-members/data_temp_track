@@ -7,6 +7,23 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+
+::-webkit-scrollbar-thumb {
+    background-color: #f1f1f1;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #888; 
+}
+
+
+::-webkit-scrollbar {
+    height: 0;
+    width: 3px;
+    margin-right: 1px; 
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
 button span{
     font-family: sans-serif;
 }
@@ -241,23 +258,14 @@ iframe{
     display: flex;
     flex-direction: column;
     width: 18.5%;
-    padding: 0 0.9%;
-    
-
-}
-
-.menu_lateral2 {
-    background-color: #003366;
-    display: flex;
-    flex-direction: column;
-    width: 18.5%;
-    padding: 0 0.9%;
+    justify-content: center;
 
 }
 
 
 
-.menu_lateral2 .perfil_img img {
+
+.menu_lateral .perfil_img img {
     border: 2px solid #ffffff;
     width: 60%;
     border-radius: 30px;
@@ -282,7 +290,7 @@ iframe{
 
 
 
-.menu_lateral2 .perfil_img .perfil_text {
+.menu_lateral .perfil_img .perfil_text {
     font-size: 110%;
     margin: 15% 0 15% 0;
     color: #f2f2f2;
@@ -295,14 +303,18 @@ iframe{
 
 }
 
+.menu_lateral .menuDC{
+    width: 115%;
 
-.menu_lateral2 button {
+}
+
+.menu_lateral button {
     background-color: black;
     color: #ffffff;
     border: none;
     border-top: 1px #ffffff;
     border-bottom: 1px #ffffff;
-    padding: 1rem;
+    padding: 2rem 1rem; 
     font-size: 100%;
     text-align: left;
     margin: -1% -7% 0 -7%;
@@ -313,6 +325,8 @@ iframe{
     align-items: center;
     margin-top: 20px;
     border-radius: 20px;
+    width: 100%;
+    height: fit-content;
 }
 .menu_lateral button {
     background-color: black;
@@ -375,7 +389,7 @@ iframe{
 }
 
 
-.tela_dashboard .menu_lateral2 .config {
+.tela_dashboard .menu_lateral .config {
     background-color: #003366;
     color: #ffffff;
     text-align: left;
@@ -385,26 +399,33 @@ iframe{
     transition: 1s;
     cursor: pointer;
     position: relative;
-    padding-top: 2%;
     border-radius: 15px;
     display: flex;
     text-align: center;
+    margin: 0%;
 }
 
-
+.menuDC{
+    width:100%;
+    padding:0;
+    margin: 0;
+    text-align: center;
+    overflow: scroll;
+    height: 35%;
+    margin-bottom: 5%;
+}
 
 .tela_dashboard .menu_lateral .config {
     background-color: #003366;
     color: #ffffff;
     text-align: left;
     font-size: 110%;
-    margin: 12vh 0 -10px 0;
     border: none;
     transition: 1s;
     cursor: pointer;
     position: relative;
     border-radius: 15px;
-    margin-bottom: 10px;
+    height: 0;
 }
 
 .tela_dashboard .menu_lateral .config2 {
@@ -412,17 +433,16 @@ iframe{
     color: #ffffff;
     text-align: left;
     font-size: 110%;
-    margin: 1vh 0 -10px 0;
     border: none;
     transition: 1s;
     cursor: pointer;
     position: relative;
     border-radius: 15px;
-    padding-bottom: 10px;
+
 }
 
 
-.tela_dashboard .menu_lateral2 .config:hover {
+.tela_dashboard .menu_lateral .config:hover {
     background-color: #ffffff;
     color: #003366;
 }
@@ -436,7 +456,7 @@ iframe{
     color: #003366;
 }
 
-.menu_lateral2 button:hover {
+.menu_lateral button:hover {
     border-radius: 15px;
     background-color: #ffffff;
     color: #003366;
@@ -471,16 +491,17 @@ iframe{
 .lousa_invisivel .card_linha {
     margin: 1% 0;
     width: 100%;
-    height: 30%;
+    height: 50%;
     display: flex;
     justify-content: space-around;
+    word-wrap: break-word;
 }
 
 .lousa_invisivel .card_linha .card_grande {
     background-color: #f2f2f2;
     color: #ffffff;
     width: 80%;
-    height: 95%;
+    height: 50%;
     margin: 0.5%;
     border-radius: 15px;
     transition: 1s;
@@ -512,7 +533,7 @@ iframe{
 .lousa_invisivel .card_linha .card_unidade {
     background-color: #f2f2f2;
     width: 30%;
-    height: 95%;
+    height: 80%;
     margin: 0.5%;
     border-radius: 15px;
     /*border: 2px solid #999;*/
@@ -581,7 +602,7 @@ iframe{
 .lousa_invisivel1 .card_linha {
     margin: 1% 0;
     width: 100%;
-    height: 30%;
+    height: 50%;
     display: flex;
     justify-content: space-around;
 }
@@ -590,7 +611,7 @@ iframe{
     background-color: #f2f2f2;
     color: #ffffff;
     width: 80%;
-    height: 95%;
+    height: 50%;
     margin: 0.5%;
     border-radius: 15px;
     transition: 1s;
@@ -622,7 +643,7 @@ iframe{
 .lousa_invisivel1 .card_linha .card_unidade {
     background-color: #f2f2f2;
     width: 30%;
-    height: 95%;
+    height: 70%;
     margin: 0.5%;
     border-radius: 15px;
     /*border: 2px solid #999;*/
@@ -690,7 +711,7 @@ iframe{
 .lousa_invisivel2 .card_linha {
     margin: 1% 0;
     width: 100%;
-    height: 30%;
+    height: 50%;
     display: flex;
     justify-content: space-around;
 }
@@ -699,7 +720,7 @@ iframe{
     background-color: #f2f2f2;
     color: #ffffff;
     width: 80%;
-    height: 95%;
+    height: 50%;
     margin: 0.5%;
     border-radius: 15px;
     transition: 1s;
@@ -798,7 +819,7 @@ iframe{
 .lousa_invisivel2_2 .card_linha {
     margin: 1% 0;
     width: 100%;
-    height: 30%;
+    height: 50%;
     display: flex;
     justify-content: space-around;
 }
@@ -807,7 +828,7 @@ iframe{
     background-color: #f2f2f2;
     color: #ffffff;
     width: 80%;
-    height: 95%;
+    height: 50%;
     margin: 0.5%;
     border-radius: 15px;
     transition: 1s;
