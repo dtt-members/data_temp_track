@@ -3,7 +3,7 @@
 function verificarE() {
     var emailVar = input_email.value;
     var senhaVar = input_senha.value;
-    
+
     /*Div que possui a mensagem para entrar na Dashboard*/
     var mensagemDashboard = document.getElementById('mensagem_logando');
 
@@ -12,69 +12,60 @@ function verificarE() {
         return false;
     }
     else {
-        mensagem_erro.innerHTML = ""
-        mensagemDashboard.style.display = "block"
-    }
+        alert("Nao foi possível realizar")
 
-    console.log("FORM LOGIN: ", emailVar);
-    console.log("FORM SENHA: ", senhaVar);
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
 
-    fetch("/empresa/autenticar", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            emailServer: emailVar,
-            senhaServer: senhaVar
-        })
-    }).then(function (resposta) {
-        console.log("ESTOU NO THEN DO entrar()!")
+        fetch("/empresa/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
 
-        if (resposta.ok) {
-            console.log(resposta);
-            resposta.json().then(json => {
-                console.log(json);
-                console.log(JSON.stringify(json));
-                sessionStorage.EMAILINST_EMPRESA = json.emailInst;
-                sessionStorage.RAZAOSOCIAL_EMPRESA = json.razaoSocial;
-                sessionStorage.CNPJ_EMPRESA = json.cnpj;
-                sessionStorage.IDEMPRESA_EMPRESA = json.idEmpresa;
-                sessionStorage.FONECELL_EMPRESA = json.foneCell;
-                sessionStorage.FONEFIXO_EMPRESA = json.foneFixo;
-                sessionStorage.SENHA_EMPRESA = json.senha;
-                sessionStorage.DATACENTER = JSON.stringify(json.datacenter)
+            if (resposta.ok) {
+                console.log(resposta);
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAILINST_EMPRESA = json.emailInst;
+                    sessionStorage.RAZAOSOCIAL_EMPRESA = json.razaoSocial;
+                    sessionStorage.CNPJ_EMPRESA = json.cnpj;
+                    sessionStorage.IDEMPRESA_EMPRESA = json.idEmpresa;
+                    sessionStorage.FONECELL_EMPRESA = json.foneCell;
+                    sessionStorage.FONEFIXO_EMPRESA = json.foneFixo;
+                    sessionStorage.SENHA_EMPRESA = json.senha;
+                    sessionStorage.DATACENTER = JSON.stringify(json.datacenter)
 
+                });
                 setTimeout(function () {
                     window.location = "../../Dashboard/DashBoardEmpresa/DashboardEmpresa.html";
                     console.log('PASSEI POR AQUI')
-                }, 3000); 
-            });
+                }, 3000);
 
-        } else {
+            } else {
 
-            console.log("Houve um erro ao tentar realizar o login!");
+                alert("Houve um erro ao tentar realizar o login!");
 
-            resposta.text().then(texto => {
-                console.error(texto);
-            });
-            return false;
-        }
+                resposta.text().then(texto => {
+                    console.error(texto);
+                });
+                return false;
+            }
 
-    }).catch(
-        function (erro) {
-        res.status(500).json(erro.sqlMessage );
-    })
+        }).catch(
+            function (erro) {
+                res.status(500).json(erro.sqlMessage);
+            })
 
-
+    }
 }
-
-
-
-
-
-
-
 
 function validarCadastro() {
     var razaoSocialVar = input_razaoSocial.value;
@@ -109,9 +100,9 @@ function validarCadastro() {
     } else if (cepVar.length != 8) {
         messageErro.innerHTML = 'Digite um CEP válido';
         return false;
-    } else if(senhaVar.length <8 || confirmarVar.length >14){
+    } else if (senhaVar.length < 8 || confirmarVar.length > 14) {
         messageErro.innerHTML = 'A senha deve ter entre 8 e 14 caracteres'
-    } else if(senhaVar != confirmarVar){
+    } else if (senhaVar != confirmarVar) {
         messageErro.innerHTML = 'Senha diferentes'
     } else {
         messageErro.innerHTML = "Empresa cadastrada com sucesso";
@@ -144,7 +135,7 @@ function validarCadastro() {
             cnpjServer: cnpjVar,
             telefoneCelularServer: telefoneCelularVar,
             telefoneFixoServer: telefoneFixoVar,
-            emailCadastroServer: emailCadastroVar, 
+            emailCadastroServer: emailCadastroVar,
             senhaServer: senhaVar,
         })
     })
