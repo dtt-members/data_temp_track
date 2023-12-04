@@ -988,9 +988,7 @@ iframe{
     width: 95%;
     height: 50px;
     display: flex;
-    justify-content: space-between;
     margin: 0 40px;
-
     font-size: 120%;
     font-weight: 500;
 }
@@ -1003,9 +1001,9 @@ iframe{
 }
 
 .bottom_voltar {
-    margin-top: 15px;
+    margin-top: 30px;
     margin-left: 40px;
-    height: 55px;
+    height: 60px;
     cursor: pointer;
 }
 
@@ -1017,9 +1015,9 @@ iframe{
 }
 
 .texto_localizacao {
-    margin-left: 300px;
-    margin-top: 30px;
-    font-size: 40px;
+    margin-left: 530px;
+    margin-top: 60px;
+    font-size: 60px;
     color: white;
 }
 
@@ -1141,7 +1139,7 @@ canvas {
     display: flex;
     width: 100%;
     height: fit-content;
-    margin-top: 30px;
+    margin-top: 80px;
     justify-content: space-around;
     font-size: 22px;
     color: white;
@@ -1187,7 +1185,7 @@ canvas {
 }
 
 .dash {
-    margin-top: 70px;
+    margin-top: 150px;
     margin-left: 150px;
 }
 
