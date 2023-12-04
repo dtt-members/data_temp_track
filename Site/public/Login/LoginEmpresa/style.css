@@ -133,6 +133,7 @@ button:hover {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    margin-left: 30px;
 }
 
 .container2 .login-box2 .direita{
@@ -157,7 +158,7 @@ button:hover {
     border: none;
     padding: 10px;
     border-radius: 5px;
-    font-size: 18px;
+    font-size: 20px;
     cursor: pointer;
     justify-content: center;
     width: 20%;

@@ -305,15 +305,20 @@ iframe{
 
 
 .menu_lateral .perfil_img .perfil_text {
-    font-size: 110%;
+    font-size: 150%;
     margin: 15% 0 15% 0;
     color: #f2f2f2;
+    display: flex;
+    justify-content: center;
 
 }
 .menu_lateral2 .perfil_img2 .perfil_text2 {
-    font-size: 110%;
+    font-size: 140%;
     margin: 15% 0 15% 0;
     color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    margin-right: 10px;
 
 }
 
@@ -418,15 +423,32 @@ iframe{
     color: #ffffff;
     text-align: left;
     font-size: 110%;
-    margin: 20vh 0 -10px 0;
     border: none;
     transition: 1s;
     cursor: pointer;
     position: relative;
-    border-radius: 15px;
+    border-radius: 20px;
     display: flex;
     text-align: center;
     margin: 0%;
+    
+}
+
+.tela_dashboard .menu_lateral .config3 {
+    background-color: #003366;
+    color: #ffffff;
+    text-align: left;
+    font-size: 110%;
+    border: none;
+    transition: 1s;
+    cursor: pointer;
+    position: relative;
+    border-radius: 20px;
+    display: flex;
+    text-align: center;
+    margin: 0%;
+    margin-top: 20px;
+    
 }
 
 .tela_dashboard2 .menu_lateral2 .config2 {
@@ -465,7 +487,7 @@ iframe{
     color: #003366;
 }
 
-.tela_dashboard .menu_lateral .config2:hover {
+.tela_dashboard .menu_lateral .config3:hover {
     background-color: #ffffff;
     color: #003366;
 }

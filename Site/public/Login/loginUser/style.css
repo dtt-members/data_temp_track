@@ -168,12 +168,12 @@ button:hover {
     cursor: pointer;
     justify-content: center;
     width: 20%;
-    margin-bottom: 2%;
     justify-content: center;
+    margin-top: 60px;
 
 }
 
-button:hover {
+.button:hover {
     background-color: #5f5959;
 }
 
