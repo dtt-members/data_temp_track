@@ -1284,7 +1284,7 @@ function listarAmb(){
     const grafico_umidade3 = new Chart(document.getElementById('id_grafico_umidade3'), config3);
 
 
-    setTimeout(() => atualizarGrafico(idDataCenter, dados, myChart), 2000);
+    setTimeout(() => atualizarGrafico(idAmb, dados, myChart), 2000);
   }
 
 
@@ -1295,21 +1295,21 @@ function listarAmb(){
 
   //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
   //     Para ajustar o "select", ajuste o comando sql em src/models
-  function atualizarGrafico(idDataCenter, dados, myChart) {
+  function atualizarGrafico(idAmb, dados, myChart) {
 
 
 
-    fetch(`/medidas/tempo-real/${idDataCenter}`, { cache: 'no-store' }).then(function (response) {
+    fetch(`/medidas/tempo-real/${idAmb}`, { cache: 'no-store' }).then(function (response) {
       if (response.ok) {
         response.json().then(function (novoRegistro) {
 
-          obterdados(idDataCenter);
+          obterdados(idAmb);
           // alertar(novoRegistro, idAquario);
           console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
           console.log(`Dados atuais do gráfico:`);
           console.log(dados);
 
-          let avisoCaptura = document.getElementById(`avisoCaptura${idDataCenter}`)
+          let avisoCaptura = document.getElementById(`avisoCaptura${idAmb}`)
           avisoCaptura.innerHTML = ""
 
 
@@ -1337,12 +1337,12 @@ function listarAmb(){
           }
 
           // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-          proximaAtualizacao = setTimeout(() => atualizarGrafico(idDataCenter, dados, myChart), 2000);
+          proximaAtualizacao = setTimeout(() => atualizarGrafico(idAmb, dados, myChart), 2000);
         });
       } else {
         console.error('Nenhum dado encontrado ou erro na API');
         // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-        proximaAtualizacao = setTimeout(() => atualizarGrafico(idDataCenter, dados, myChart), 2000);
+        proximaAtualizacao = setTimeout(() => atualizarGrafico(idAmb, dados, myChart), 2000);
       }
     })
       .catch(function (error) {
