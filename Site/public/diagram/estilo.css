@@ -11,8 +11,9 @@
 
 }
 .titulo-diagrama{
-color: white;
-margin-bottom: 50px;
+    color: white;
+    margin-bottom: 50px;
+    font-size: 40px;
 }
 .cartas-1 {
     display: flex;
@@ -41,20 +42,7 @@ margin-bottom: 50px;
 
 /*Primeiro bloco*/
 
-.cartas-1 .cardpri {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: #f2f2f2;
-    width: 29%;
-    min-height: 1px;
-    height: 150px;
-    border-radius: 5px;
-    border: solid 5px black;
-    box-shadow: black 2px 0 2px 0;
-    transition: 1s;
-}
+
 
 sec :hover{
     width: 100%;
@@ -75,6 +63,10 @@ sec :hover{
     transition: 1s;
 }
 
+.cartas-1 .cardpri:hover{
+    transform: scale(1.1);
+}
+
 .cartas-1 .cardtwo {
     display: flex;
     flex-direction: column;
@@ -91,6 +83,11 @@ sec :hover{
     
 }
 
+.cartas-1 .cardtwo:hover{
+    transform: scale(1.1);
+}
+
+
 .cartas-1 .cardthere {
     display: flex;
     flex-direction: column;
@@ -105,6 +102,10 @@ sec :hover{
     box-shadow: black 2px 0 2px 0;
     transition: 1s;
     
+}
+
+.cartas-1 .cardthere:hover{
+    transform: scale(1.1);
 }
 
 /*Segundo bloco*/
@@ -124,6 +125,10 @@ sec :hover{
     transition: 1s;
 }
 
+.cartas-2 .carddois:hover{
+    transform: scale(1.1);
+}
+
 .cartas-2 .cardtres {
     display: flex;
     flex-direction: column;
@@ -138,6 +143,10 @@ sec :hover{
     box-shadow: black 2px 0 2px 0;
     transition: 1s;
     
+}
+
+.cartas-2 .cardtres:hover{
+    transform: scale(1.1);
 }
 
 .cartas-2 .cardquatro {
@@ -155,6 +164,10 @@ sec :hover{
     transition: 1s;
     
 
+}
+
+.cartas-2 .cardquatro:hover{
+    transform: scale(1.1);
 }
 
 /*Terceiro bloco*/
@@ -175,6 +188,10 @@ sec :hover{
     
 }
 
+.cartas-3 .cardfist:hover{
+    transform: scale(1.1);
+}
+
 .cartas-3 .cardsecond {
     display: flex;
     flex-direction: column;
@@ -191,6 +208,10 @@ sec :hover{
     
 }
 
+.cartas-3 .cardsecond:hover{
+    transform: scale(1.1);
+}
+
 .cartas-3 .cardterceiro {
     display: flex;
     flex-direction: column;
@@ -205,6 +226,10 @@ sec :hover{
     box-shadow: black 2px 0 2px 0;
     transition: 1s;
     
+}
+
+.cartas-3 .cardterceiro:hover{
+    transform: scale(1.1);
 }
 
 section img {
