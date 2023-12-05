@@ -91,17 +91,16 @@
     </div>
     <div class="div-form">
       <!--<form--->
-      <div><h1>Contate - Nos
-      </h1></div>
+      <div>
+        <h1>Contate - Nos
+        </h1>
+      </div>
 
       <div class="help_desk">
-    
-  
-        <iframe
-          src='https://app.pipefy.com/public/form/YcYXyBxJ?embedded=true'
-          frameborder='0'
-        ></iframe>
-      </div>  
+
+
+        <iframe src='https://app.pipefy.com/public/form/YcYXyBxJ?embedded=true' frameborder='0'></iframe>
+      </div>
       <!--<div class="pedaco-formulario">
           <input type="text" id="nome" name="Nome" placeholder="Digite aqui seu nome">
         </div>
@@ -121,275 +120,276 @@
   </div>
 
 
-    <!--Tela inicial -->
-    <div class="tela_dashboard" id="div_tela_dashboard">
-      <div class="menu_lateral" id="divMenu_lateral">
-        <div class="perfil_img">
-          <img src="https://cdn-icons-png.flaticon.com/512/4211/4211178.png" onclick="chamarPerfil()">
-          <div class="perfil_text">
-           <b> Usuário: <span id="nomeUsuario"></span><br></b>
+  <!--Tela inicial -->
+  <div class="tela_dashboard" id="div_tela_dashboard">
+    <div class="menu_lateral" id="divMenu_lateral">
+      <div class="perfil_img">
+        <img src="https://cdn-icons-png.flaticon.com/512/4211/4211178.png" onclick="chamarPerfil()">
+        <div class="perfil_text">
+          <b> Usuário: <span id="nomeUsuario"></span><br></b>
 
-          </div>
         </div>
-        <div class="menuDC" id="div_menuDC">
-        
-         <!-- <div class="piscar-vermelho-dc">
+      </div>
+      <div class="menuDC" id="div_menuDC">
+
+        <!-- <div class="piscar-vermelho-dc">
             <p>ALERTA</p>
           </div>-->
       </div>
-        <button class="config" onclick="Ajuda()">Ajuda</button>
+      <button class="config" onclick="Ajuda()">Ajuda</button>
 
-        <button onclick="redirecionarTuto()" class="config3">Entenda o site</button>
+      <button onclick="redirecionarTuto()" class="config3">Entenda o site</button>
+    </div>
+    <div class="lousa">
+      <div id="div_text_inicial" class="text_inicial">
+        <div class="messageErro" id="messageErro"></div>
+        Escolha um Data Center
       </div>
-      <div class="lousa">
-        <div id="div_text_inicial" class="text_inicial">
-          Escolha um Data Center
-        </div>
-        <div id="div_lousa_invisivel" class="lousa_invisivel">
-          <div id="div_card_linha" class="card_linha">
-            <div id="div_card_grande_dc" class="card_grande" onclick="TemUmiDataCenter()">
-              <div class="baixo">
-                Data Center
-              </div>
-            </div>
-          </div>
-          <div id="div_card_linha2" class="card_linha">
-      
-            
-          </div>
-        </div>
-
-        <!-- FIM DATA CENTER 1 -->
-
-
-        <div id="div_lousa_invisivel1" class="lousa_invisivel1">
-          <div id="div_card_linha" class="card_linha">
-            <div id="div_card_grande_dc" class="card_grande" onclick="TemUmiDataCenter()">
-              <div class="baixo">
-                Data Center
-              </div>
-            </div>
-          </div>
-          <div id="div_card_linha2" class="card_linha">
-   
-          </div>
-        </div>
-
-
-
-        <!--Tela dos Corredores -->
-        <div id="div_lousa_invisivel2" class="lousa_invisivel2">
-          <div id="div_card_linha" class="card_linha">
-            <div id="div_card_grande_corredor" class="card_grande" onclick="TemUmiDataCenter()">
-              <div class="baixo">
-                Corredor 01
-              </div>
-            </div>
-          </div>
-          <div id="div_card_linha" class="card_linha">
-            <div id="div_card_unidade" value="rack01" class="card_unidade" onclick="TemUmiDataCenter('Rack 01')">
-              <div class="cima">
-                <img src="rack.png" class="imagem_corredor">
-                <div class="cima-direita">
-                  <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota">
-                  <img src="temperatura.png" class="imagem_gota">
-                </div>
-              </div>
-              <div id="textoRackNome" class="baixo">
-                Rack 01
-              </div>
-            </div>
-            <div id="div_card_unidade" value="rack02" class="card_unidade" onclick="TemUmiDataCenter('Rack 02')">
-              <div class="cima">
-                <img src="rack.png" class="imagem_corredor">
-                <div class="cima-direita">
-                  <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota">
-                  <img src="temperatura.png" class="imagem_gota">
-                </div>
-              </div>
-              <div id="textoRackNome" class="baixo">
-                Rack 02
-              </div>
-            </div>
-            <div id="div_card_unidade" value="rack03" class="card_unidade" onclick="TemUmiDataCenter('Rack 03')">
-              <div class="cima">
-                <img src="rack.png" class="imagem_corredor">
-                <div class="cima-direita">
-                  <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota">
-                  <img src="temperatura.png" class="imagem_gota">
-                </div>
-              </div>
-              <div id="textoRackNome" class="baixo">
-                Rack 03
-              </div>
+      <div id="div_lousa_invisivel" class="lousa_invisivel">
+        <div id="div_card_linha" class="card_linha">
+          <div id="div_card_grande_dc" class="card_grande" onclick="TemUmiDataCenter()">
+            <div class="baixo">
+              Data Center
             </div>
           </div>
         </div>
+        <div id="div_card_linha2" class="card_linha">
 
 
+        </div>
+      </div>
+
+      <!-- FIM DATA CENTER 1 -->
 
 
-
-    
-
-        <!--Tela Dos Graficos do Data Center -->
-        <div id="div_lousa_invisivel3" class="lousa_invisivel3">
-          <div class="alinhar_lousa3">
-
-            <div class="menu">
-
-              <div class="tamanho">
-                <img src="undo.png" onclick="dataCenter1()" class="bottom_voltar">
-              </div>
-
-              <div class="localizacao">
-                <div  id="div_texto_localizacao" class="texto_localizacao">
-                  
-                </div>
-              </div>
-
+      <div id="div_lousa_invisivel1" class="lousa_invisivel1">
+        <div id="div_card_linha" class="card_linha">
+          <div id="div_card_grande_dc" class="card_grande" onclick="TemUmiDataCenter()">
+            <div class="baixo">
+              Data Center
             </div>
-
-
-            <div class="dash">
-
-              <div class="regua">
-                <div class="item-regua ideal">
-                  <h4>Ideal</h4>
-                  <h2>16°C <br>a <br> 24°C</h2>
-                </div>
-                <div class="item-regua alerta">
-                  <h4>Alerta</h4>
-                  <h2>12°C a 15°C <br>e<br /> 25°C a 28°C </h2>
-                </div>
-                <div class="item-regua danger">
-                  <h4>Perigo</h4>
-                  <h2>
-                    &lt;= 10°C <br>e <br> >= 30°C
-                  </h2>
-                </div>
-
-                <div class="item-regua espaco">
-                  
-                </div>
-
-                <div class="item-regua ideal">
-                  <h4>Ideal</h4>
-                  <h2> 42,5% <br>a <br> 47,5%
-                  </h2>
-                </div>
-                <div class="item-regua alerta">
-                  <h4>Alerta</h4>
-                  <h2>35% a 42% <br>e<br /> 48% a 65% </h2>
-                </div>
-                <div class="item-regua danger">
-                  <h4>Perigo</h4>
-                  <h2>&lt;= 35% <br>e <br> >= 65%</h2>
-                </div>
-              </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="medicao_atual" id="div_medicao_atual">
-              <div class="medicaoAlert" id="medicaoAlertU"></div>
-              <div class="medicaoAlerta" id="medicaoAlertT"></div>
-            </div>
-            <div class="container-canvas_01" id="id_container_canvas_01">
-              <canvas id="id_grafico_temperatura"></canvas>
-              <canvas id="id_grafico_umidade"></canvas>
-            </div>
-            <div class="tabela_bloqueio" id="div_tabela_bloqueio">
-              <div class="linha_bloqueio">
-                <div>Porta</div>
-                <div>Data</div>
-                <div>Hora</div>
-                <div>Situação</div>
-              </div>
-
-              <div class="linha_bloqueio_dados">
-                <div>01</div>
-                <div>24/10/2023</div>
-                <div>16:20:27</div>
-                <div>Aberta</div>
-              </div>
-              <div class="linha_bloqueio_dados">
-                <div>02</div>
-                <div>24/10/2023</div>
-                <div>13:00:23</div>
-                <div>Aberta</div>
-              </div>
-            </div>
-
-
           </div>
         </div>
+        <div id="div_card_linha2" class="card_linha">
+
+        </div>
+      </div>
+
+
+
+      <!--Tela dos Corredores -->
+      <div id="div_lousa_invisivel2" class="lousa_invisivel2">
+        <div id="div_card_linha" class="card_linha">
+          <div id="div_card_grande_corredor" class="card_grande" onclick="TemUmiDataCenter()">
+            <div class="baixo">
+              Corredor 01
+            </div>
+          </div>
+        </div>
+        <div id="div_card_linha" class="card_linha">
+          <div id="div_card_unidade" value="rack01" class="card_unidade" onclick="TemUmiDataCenter('Rack 01')">
+            <div class="cima">
+              <img src="rack.png" class="imagem_corredor">
+              <div class="cima-direita">
+                <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota">
+                <img src="temperatura.png" class="imagem_gota">
+              </div>
+            </div>
+            <div id="textoRackNome" class="baixo">
+              Rack 01
+            </div>
+          </div>
+          <div id="div_card_unidade" value="rack02" class="card_unidade" onclick="TemUmiDataCenter('Rack 02')">
+            <div class="cima">
+              <img src="rack.png" class="imagem_corredor">
+              <div class="cima-direita">
+                <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota">
+                <img src="temperatura.png" class="imagem_gota">
+              </div>
+            </div>
+            <div id="textoRackNome" class="baixo">
+              Rack 02
+            </div>
+          </div>
+          <div id="div_card_unidade" value="rack03" class="card_unidade" onclick="TemUmiDataCenter('Rack 03')">
+            <div class="cima">
+              <img src="rack.png" class="imagem_corredor">
+              <div class="cima-direita">
+                <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota">
+                <img src="temperatura.png" class="imagem_gota">
+              </div>
+            </div>
+            <div id="textoRackNome" class="baixo">
+              Rack 03
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+      <!--Tela Dos Graficos do Data Center -->
+      <div id="div_lousa_invisivel3" class="lousa_invisivel3">
+        <div class="alinhar_lousa3">
+
+          <div class="menu">
+
+            <div class="tamanho">
+              <img src="undo.png" onclick="dataCenter1()" class="bottom_voltar">
+            </div>
+
+            <div class="localizacao">
+              <div id="div_texto_localizacao" class="texto_localizacao">
+
+              </div>
+            </div>
+
+          </div>
+
+
+          <div class="dash">
+
+            <div class="regua">
+              <div class="item-regua ideal">
+                <h4>Ideal</h4>
+                <h2>16°C <br>a <br> 24°C</h2>
+              </div>
+              <div class="item-regua alerta">
+                <h4>Alerta</h4>
+                <h2>12°C a 15°C <br>e<br /> 25°C a 28°C </h2>
+              </div>
+              <div class="item-regua danger">
+                <h4>Perigo</h4>
+                <h2>
+                  &lt;= 10°C <br>e <br> >= 30°C
+                </h2>
+              </div>
+
+              <div class="item-regua espaco">
+
+              </div>
+
+              <div class="item-regua ideal">
+                <h4>Ideal</h4>
+                <h2> 42,5% <br>a <br> 47,5%
+                </h2>
+              </div>
+              <div class="item-regua alerta">
+                <h4>Alerta</h4>
+                <h2>35% a 42% <br>e<br /> 48% a 65% </h2>
+              </div>
+              <div class="item-regua danger">
+                <h4>Perigo</h4>
+                <h2>&lt;= 35% <br>e <br> >= 65%</h2>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+          <div class="medicao_atual" id="div_medicao_atual">
+            <div class="medicaoAlert" id="medicaoAlertU"></div>
+            <div class="medicaoAlerta" id="medicaoAlertT"></div>
+          </div>
+          <div class="container-canvas_01" id="id_container_canvas_01">
+            <canvas id="id_grafico_temperatura"></canvas>
+            <canvas id="id_grafico_umidade"></canvas>
+          </div>
+          <div class="tabela_bloqueio" id="div_tabela_bloqueio">
+            <div class="linha_bloqueio">
+              <div>Porta</div>
+              <div>Data</div>
+              <div>Hora</div>
+              <div>Situação</div>
+            </div>
+
+            <div class="linha_bloqueio_dados">
+              <div>01</div>
+              <div>24/10/2023</div>
+              <div>16:20:27</div>
+              <div>Aberta</div>
+            </div>
+            <div class="linha_bloqueio_dados">
+              <div>02</div>
+              <div>24/10/2023</div>
+              <div>13:00:23</div>
+              <div>Aberta</div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
 </body>
 
 </html>
 <script>
- 
-/*Pegar os datas center da empresa pelo id do usuario*/
-var menu = document.getElementById('div_menuDC');
-setTimeout(buscarDC, 10)
 
-function buscarDC(){
-  var fkEmpresaVar = sessionStorage.FK_EMPRESA;
-  fetch("/dataCenter/listarDC", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      idEmpresaServer: fkEmpresaVar,
-    })
-  }).then(function (resposta) {
+  /*Pegar os datas center da empresa pelo id do usuario*/
+  var menu = document.getElementById('div_menuDC');
+  setTimeout(buscarDC, 10)
+
+  function buscarDC() {
+    var fkEmpresaVar = sessionStorage.FK_EMPRESA;
+    fetch("/dataCenter/listarDC", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        idEmpresaServer: fkEmpresaVar,
+      })
+    }).then(function (resposta) {
       if (resposta.ok) {
         resposta.json().then(function (resposta) {
           for (contador = 0; contador < resposta.length; contador++) {
             var dc = resposta[contador];
-              menu.innerHTML += `
+            menu.innerHTML += `
               <button onclick="dataCenter${dc.idDataCenter}()"><span><b id="div_nomeDC">${dc.unidDataCenter}</b></span></button>
                   `;
           }
         })
       }
-    }) 
-    .catch(
-      function (erro) {
-        res.status(500).json(erro.sqlMessage);
+    })
+      .catch(
+        function (erro) {
+          res.status(500).json(erro.sqlMessage);
 
-      })   
-}
+        })
+  }
 
 /*Pegar os ambientes*/Ajuda
-var cardLinha = document.getElementById('div_card_linha2');
+  var cardLinha = document.getElementById('div_card_linha2');
 
-function listarAmb(){
-  cardLinha.innerHTML = '';
-  var fkEmpresaVar = sessionStorage.FK_EMPRESA;
-  var nomeDCVar = document.getElementById('div_nomeDC').innerText;
+  function listarAmb() {
+    cardLinha.innerHTML = '';
+    var fkEmpresaVar = sessionStorage.FK_EMPRESA;
+    var nomeDCVar = document.getElementById('div_nomeDC').innerText;
 
-  fetch("/ambiente/listarAmb", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      idEmpresaServer: fkEmpresaVar,
-      nomeDCServer: nomeDCVar,
-    })
-  }).then(function (resposta) {
+    fetch("/ambiente/listarAmb", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        idEmpresaServer: fkEmpresaVar,
+        nomeDCServer: nomeDCVar,
+      })
+    }).then(function (resposta) {
       if (resposta.ok) {
         resposta.json().then(function (resposta) {
           for (contador = 0; contador < resposta.length; contador++) {
             var rack = resposta[contador];
-            
-            if(rack.nomeAmbiente == 'Porta'){
+
+            if (rack.nomeAmbiente == 'Porta') {
               cardLinha.innerHTML += `
             <div id="div_card_unidade" class="card_unidade" onclick="TemUmiDataCenter1()">
               <div class="cima">
@@ -400,15 +400,12 @@ function listarAmb(){
                 </div>
               </div>
               <div class="baixo">
-                <div class="piscar-vermelho-dc">
-                  <p>ALERTA</p>
-                </div>
               ${rack.nomeAmbiente}
               </div>
             </div>
                   `;
-            }else {
-            cardLinha.innerHTML += `
+            } else {
+              cardLinha.innerHTML += `
             <div id="div_card_unidade" class="card_unidade" onclick="chamarRack()">
               <div class="cima">
                 <img src="rack.png" class="imagem_corredor">
@@ -418,9 +415,6 @@ function listarAmb(){
                 </div>
               </div>
               <div class="baixo">
-                <div class="piscar-vermelho-dc">
-                  <p>ALERTA</p>
-                </div>
               ${rack.nomeAmbiente}
               </div>
             </div>
@@ -429,13 +423,13 @@ function listarAmb(){
           }
         })
       }
-    }) 
-    .catch(
-      function (erro) {
-        res.status(500).json(erro.sqlMessage);
+    })
+      .catch(
+        function (erro) {
+          res.status(500).json(erro.sqlMessage);
 
-      })   
-}
+        })
+  }
 
 
 
@@ -467,8 +461,7 @@ function listarAmb(){
   var botao_lousa3_01 = document.getElementById('div_botao_lousa3_01');
   var botao_lousa3_02 = document.getElementById('div_botao_lousa3_02');
   var botao_lousa3_03 = document.getElementById('div_botao_lousa3_03');
-  var medicaoAlertT = document.getElementById('medicaoAlertT');
-  var medicaoAlertU = document.getElementById('medicaoAlertU');
+
 
   var tabela_bloqueio = document.getElementById('div_tabela_bloqueio');
 
@@ -548,29 +541,6 @@ function listarAmb(){
 
     obterDadosGrafico(fkEmpresa)
 
-    if (temperaturaAtual1 >= 19 && temperaturaAtual1 <= 21) {
-      medicaoAlertT.style.backgroundColor = "green";
-      medicaoAlertT.style.color = "white";
-    } else if (temperaturaAtual1 >= 10 && temperaturaAtual1 <= 30) {
-      medicaoAlertT.style.backgroundColor = "yellow";
-    } else {
-      medicaoAlertT.style.backgroundColor = "red";
-    }
-
-    if (umidadeAtual1 >= 42 && umidadeAtual1 <= 58) {
-      medicaoAlertU.style.backgroundColor = "green";
-      medicaoAlertU.style.color = "white";
-    } else if (umidadeAtual1 >= 35 && umidadeAtual1 <= 64) {
-      medicaoAlertU.style.backgroundColor = "yellow";
-    } else {
-      medicaoAlertU.style.backgroundColor = "red";
-    }
-
-    div_medicao_atual.innerHTML = `<div class="medicaoAlert" id="medicaoAlertT">Temperatura: ${temperaturaAtual1}°C</div>
-    <div class="medicaoAlert" id="medicaoAlertU" > Umidade:${umidadeAtual1}%</div>`
-
-
-
   }
 
   function TemUmiDataCenter1() {
@@ -582,27 +552,8 @@ function listarAmb(){
     lousa_invisivel1.style.display = "none"
     lousa_invisivel2.style.display = "none";
     lousa_invisivel3.style.display = "flex";
-       tabela_bloqueio.style.display = "flex";
+    tabela_bloqueio.style.display = "flex";
 
-    if (temperaturaAtual1 >= 19 && temperaturaAtual1 <= 21) {
-      medicaoAlertT.style.backgroundColor = "green";
-      medicaoAlertT.style.color = "white";
-    } else if (temperaturaAtual1 >= 10 && temperaturaAtual1 <= 30) {
-      medicaoAlertT.style.backgroundColor = "yellow";
-    } else {
-      medicaoAlertT.style.backgroundColor = "red";
-    }
-
-    if (umidadeAtual1 >= 42 && umidadeAtual1 <= 58) {
-      medicaoAlertU.style.backgroundColor = "green";
-      medicaoAlertU.style.color = "white";
-    } else if (umidadeAtual1 >= 35 && umidadeAtual1 <= 64) {
-      medicaoAlertU.style.backgroundColor = "yellow";
-    } else {
-      medicaoAlertU.style.backgroundColor = "red";
-    }
-
-    div_medicao_atual.innerHTML = `<div class="medicaoAlert" id="medicaoAlertT">Temperatura: ${temperaturaAtual1}°C</div><div class="medicaoAlert" id="medicaoAlertU" > Umidade:${umidadeAtual1}%</div>`
 
 
   }
@@ -618,100 +569,21 @@ function listarAmb(){
 
   }
 
- 
 
 
-  function cincoMinutos() {
-    container_canvas1.style.display = "flex";
-    container_canvas2.style.display = "none";
-    container_canvas3.style.display = "none";
-
-    if (temperaturaAtual1 >= 19 && temperaturaAtual1 <= 21) {
-      medicaoAlertT.style.backgroundColor = "green";
-      medicaoAlertT.style.color = "white";
-    } else if (temperaturaAtual1 >= 10 && temperaturaAtual1 <= 30) {
-      medicaoAlertT.style.backgroundColor = "yellow";
-    } else {
-      medicaoAlertT.style.backgroundColor = "red";
-
-    }
-
-    if (umidadeAtual1 >= 42 && umidadeAtual1 <= 58) {
-      medicaoAlertU.style.backgroundColor = "green";
-      medicaoAlertU.style.color = "white";
-    } else if (umidadeAtual1 >= 35 && umidadeAtual1 <= 64) {
-      medicaoAlertU.style.backgroundColor = "yellow";
-    } else {
-      medicaoAlertU.style.backgroundColor = "red";
-    }
-
-    div_medicao_atual.innerHTML = `<div class="medicaoAlert" id="medicaoAlertT">Temperatura: ${temperaturaAtual1}°C</div><div class="medicaoAlert" id="medicaoAlertU" > Umidade:${umidadeAtual1}%</div>`
-
-  }
-
-  function umaHora() {
-    container_canvas1.style.display = "none";
-    container_canvas2.style.display = "flex";
-    container_canvas3.style.display = "none";
 
 
-    div_medicao_atual.innerHTML = `<div class="medicaoAlert" id="medicaoAlertT">Temperatura: ${temperaturaAtual2}°C</div><div class="medicaoAlert" id="medicaoAlertU" > Umidade:${umidadeAtual2}%</div>`
 
-    if (temperaturaAtual2 >= 19 && temperaturaAtual2 <= 21) {
-      medicaoAlertT.style.backgroundColor = "green";
-      medicaoAlertT.style.color = "white";
-    } else if (temperaturaAtual2 >= 10 && temperaturaAtual2 <= 30) {
-      medicaoAlertT.style.backgroundColor = "yellow";
-    } else {
-      medicaoAlertT.style.backgroundColor = "red";
-    }
-
-    if (umidadeAtual2 >= 42 && umidadeAtual2 <= 58) {
-      medicaoAlertU.style.backgroundColor = "green";
-      medicaoAlertU.style.color = "white";
-    } else if (umidadeAtual2 >= 35 && umidadeAtual2 <= 64) {
-      medicaoAlertU.style.backgroundColor = "yellow";
-    } else {
-      medicaoAlertU.style.backgroundColor = "red";
-    }
-  }
-
-  function umDia() {
-    container_canvas1.style.display = "none";
-    container_canvas2.style.display = "none";
-    container_canvas3.style.display = "flex";
-
-
-    div_medicao_atual.innerHTML = `<div class="medicaoAlert" id="medicaoAlertT">Temperatura: ${temperaturaAtual3}°C</div><div class="medicaoAlert" id="medicaoAlertU" > Umidade:${umidadeAtual3}%</div>`
-
-    if (temperaturaAtual3 >= 19 && temperaturaAtual3 <= 21) {
-      medicaoAlertT.style.backgroundColor = "green";
-      medicaoAlertT.style.color = "white";
-    } else if (temperaturaAtual3 >= 10 && temperaturaAtual3 <= 30) {
-      medicaoAlertT.style.backgroundColor = "yellow";
-    } else {
-      medicaoAlertT.style.backgroundColor = "red";
-    }
-
-    if (umidadeAtual3 >= 42 && umidadeAtual3 <= 58) {
-      medicaoAlertU.style.backgroundColor = "green";
-      medicaoAlertU.style.color = "white";
-    } else if (umidadeAtual3 >= 35 && umidadeAtual3 <= 64) {
-      medicaoAlertU.style.backgroundColor = "yellow";
-    } else {
-      medicaoAlertU.style.backgroundColor = "red";
-    }
-  }
 
 
   /*Graficos Umidade*/
   const label = [
-    '5min',
+  '5min',
     '4min',
     '3min',
     '2min',
     '1min',
-    'Minuto atual',
+    'Min atual',
   ];
 
 
@@ -735,7 +607,7 @@ function listarAmb(){
         51],
     }]
   };
- 
+
 
   const config = {
     type: 'line',
@@ -775,7 +647,7 @@ function listarAmb(){
         20.54],
     }]
   };
- 
+
 
   const config4 = {
     type: 'line',
@@ -803,7 +675,7 @@ function listarAmb(){
 
     fetch(`/medida/ultimas/${idAmb}`, { cache: 'no-store' }).then(function (response) {
       if (response.ok) {
-        console.log("resposta",response)
+        console.log("resposta", response)
         response.json().then(function (resposta) {
           console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
           resposta.reverse();
@@ -833,11 +705,11 @@ function listarAmb(){
     console.log(resposta)
 
     // Inserindo valores recebidos em estrutura para plotar o gráfico
-    for (i = 0; i < resposta.length; i++) {
+    for (i = 0; i < resposta[4]; i++) {
       var registro = resposta[i];
-      if(registro.unidMedida == "ºC"){
+      if (registro.unidMedida == "ºC") {
         var temperatura = registro.dadoCap
-      }else if(registro.unidMedida == "%"){
+      } else if (registro.unidMedida == "%") {
         var umidade = registro.dadoCap
       }
       label4.push(registro.dataHist);
@@ -848,7 +720,7 @@ function listarAmb(){
 
 
     // Criando estrutura para plotar gráfico - config
- 
+
 
     // Adicionando gráfico criado em div na tela
 
@@ -865,19 +737,11 @@ function listarAmb(){
 
   //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
   //     Para ajustar o "select", ajuste o comando sql em src/models
-  function atualizarGrafico(idAmb, data4, data, grafico_temperatura, grafico_umidade){
-
-
+  function atualizarGrafico(idAmb, data4, data, grafico_temperatura, grafico_umidade) {
 
     fetch(`/medida/tempo-real/${idAmb}`, { cache: 'no-store' }).then(function (response) {
       if (response.ok) {
         response.json().then(function (novoRegistro) {
-
-
-
-
-
-
           if (novoRegistro[0].dadoCap == data.labels[data.labels.length - 1]) {
             console.log("---------------------------------------------------------------")
             console.log("Como não há dados novos para captura, o gráfico não atualizará.")
@@ -887,13 +751,8 @@ function listarAmb(){
             console.log("---------------------------------------------------------------")
           } else {
 
-            label.shift();
-            label.push(novoRegistro[0].dataHist)
-            // tirando e colocando valores no gráfico
-            data4.labels.shift(); // apagar o primeiro
-            data4.labels.push(novoRegistro[0].dataHist); // incluir um novo momento
-            data.labels.shift(); // apagar o primeiro
-            data.labels.push(novoRegistro[0].dataHist); // incluir um novo momento
+        
+
 
             data4.datasets[0].data.shift();  // apagar o primeiro de umidade
             data4.datasets[0].data.push(novoRegistro[0].umidade); // incluir uma nova medida de umidade
@@ -917,6 +776,34 @@ function listarAmb(){
       .catch(function (error) {
         console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
       });
+
+    var medicaoAlertT = document.getElementById('medicaoAlertT');
+    var medicaoAlertU = document.getElementById('medicaoAlertU');
+
+    temperaturaAtual1 = data4.datasets[0].data[5];
+
+    umidadeAtual1 = data.datasets[0].data[5];
+
+    if (temperaturaAtual1 >= 19 && temperaturaAtual1 <= 21) {
+      medicaoAlertT.style.color = "#005500";
+
+    } else if (temperaturaAtual1 >= 10 && temperaturaAtual1 <= 30) {
+      medicaoAlertT.style.color = "yellow";
+    } else {
+      medicaoAlertT.style.color = "red";
+    }
+
+    if (umidadeAtual1 >= 42 && umidadeAtual1 <= 58) {
+      medicaoAlertU.style.color = "green";
+
+    } else if (umidadeAtual1 >= 35 && umidadeAtual1 <= 64) {
+      medicaoAlertU.style.color = "yellow";
+    } else {
+      medicaoAlertU.style.color = "red";
+    }
+
+    div_medicao_atual.innerHTML = `<div class="medicaoAlert" id="medicaoAlertT">Temperatura: ${temperaturaAtual1}°C</div>
+    <div class="medicaoAlert" id="medicaoAlertU"> Umidade:${umidadeAtual1}%</div>`
 
   }
 
