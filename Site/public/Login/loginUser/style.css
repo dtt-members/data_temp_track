@@ -67,9 +67,9 @@ button {
     font-size: 18px;
     cursor: pointer;
     justify-content: center;
-    width: 80%;
+    width: 100%;
     margin-top: 5%;
-    margin-left: 40px;
+   
 }
 .button {
     justify-content: center;
@@ -107,6 +107,8 @@ button:hover {
     width: 100%;
     display: flex;
     justify-content: flex-start;
+    margin-top: 30px;
+    text-decoration: none;
 }
 
 
@@ -129,11 +131,12 @@ button:hover {
 
 .login-box2 {
     margin: 0 auto;
-    margin-bottom: 2%;
     display: flex;
     width: 100%;
     justify-content: center;
-    margin-top: 60px;
+    margin-left: 15px;
+    margin-top: 20px;
+    
 }
 
 .container2 .login-box2 .esquerda{
@@ -173,7 +176,7 @@ button:hover {
     width: 20%;
     justify-content: center;
     margin-top: 60px;
-
+    margin-right: 50px;
 }
 
 .button:hover {

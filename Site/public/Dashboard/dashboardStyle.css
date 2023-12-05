@@ -110,7 +110,7 @@ button span{
 }
 
 
-/*Tela de perfil*/
+/*Tela de ajuda*/
 
 .tela-form-ajuda {
     width: 100vw;
@@ -297,7 +297,7 @@ iframe{
     border-radius: 30px;
     padding: 2%;
     margin-left: 15%;
-    margin-top: 12%;
+    margin-top: -150px;
     background-color: white;
 
 }
@@ -362,7 +362,7 @@ iframe{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 70px;
     border-radius: 20px;
     width: 100%;
     height: fit-content;
@@ -619,11 +619,12 @@ iframe{
 }
 
 .lousa_invisivel .card_linha .card_unidade .cima {
-    height: 50%;
+    height: 40%;
     flex-direction: row;
     border-radius: 15px 15px 0 0;
     display: flex;
-    justify-content: center
+    justify-content: center;
+    margin-top: 40px;
 }
 
 .lousa_invisivel .card_linha .card_unidade .baixo {

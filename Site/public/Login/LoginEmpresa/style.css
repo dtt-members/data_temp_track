@@ -65,9 +65,7 @@ button {
     width: 100%;
     margin-bottom: 2%;
 }
-.button {
-    justify-content: center;
-}
+
 
 button:hover {
     background-color: #5f5959;
@@ -87,6 +85,7 @@ button:hover {
     width: 100%;
     display: flex;
     justify-content: flex-start;
+    text-decoration: none;
 }
 
 .mensagemLogando{
@@ -124,6 +123,7 @@ button:hover {
     margin-bottom: 2%;
     display: flex;
     width: 100%;
+    margin-top: 5px;
 }
 
 .container2 .login-box2 .esquerda{
