@@ -391,7 +391,7 @@
 
             if (rack.nomeAmbiente == 'Porta') {
               cardLinha.innerHTML += `
-            <div id="div_card_unidade" class="card_unidade" onclick="TemUmiDataCenter1()">
+            <div id="div_card_unidade" class="card_unidade">
               <div class="cima">
                 <img src="https://cdn-icons-png.flaticon.com/128/566/566489.png" class="imagem_corredor">
                 <div class="cima-direita">
@@ -755,10 +755,10 @@
 
 
             data4.datasets[0].data.shift();  // apagar o primeiro de umidade
-            data4.datasets[0].data.push(novoRegistro[0].umidade); // incluir uma nova medida de umidade
+            data4.datasets[0].data.push(novoRegistro[0].dadoCap); // incluir uma nova medida de umidade
 
             data.datasets[0].data.shift();  // apagar o primeiro de temperatura
-            data.datasets[0].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
+            data.datasets[0].data.push(novoRegistro[0].umidade); // incluir uma nova medida de temperatura
 
             grafico_temperatura.update();
             grafico_umidade.update();

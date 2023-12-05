@@ -2,7 +2,7 @@
 #define dht_type DHT11 
  int dht_pin = A2;
 DHT dht_1 = DHT(dht_pin, dht_type);
-int pinoSensor = 7;
+int pinoSensor = 7; 
 
 const int LM35 = A0;
 float temperatura2;
