@@ -15,27 +15,21 @@ function cadastrarU() {
     senhaVar == "" ||
     confirmarSenhaVar == "") {
 
-    alert(`Prencha todos os campos`);
+    Swal.fire("Preencha todos os campos");
   }
   else if (emailVar.indexOf('@') < 0 || emailVar.indexOf('.') < 0) {
-    alert(`Prencha com um email valido`);
+    Swal.fire("Preencha um email valido");
   }
   else if (cpfVar.length != 11) {
-    alert(`Prencha com um CPF válido`);
+    Swal.fire("Entre com um CPF válido");
   }
   else if (senhaVar.length < 8 || senhaVar.length > 14) {
-    alert(`A senha deve ter entre 8 e 14 caracteres`);
+    Swal.fire("Sua senha deve ter pelo menos 8 e no maximo 14 caracteres");
   }
   else if (senhaVar != confirmarSenhaVar) {
-    alert(`Senha diferentes`);
+    Swal.fire("Senhas diferentes");
   }
   else {
-
-
-
-
-
-    
     // Enviando o valor da nova input
     fetch("/usuario/cadastrar", {
       method: "POST",
@@ -56,7 +50,13 @@ function cadastrarU() {
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
-          alert("funcionario cadastrado com sucesso na aplicação")
+          Swal.fire({
+            position: "top-end",
+            icon: "Success",
+            title: "Usuario cadastrado com sucesso",
+            showConfirmButton: false,
+            timer: 1500
+          });
 
           setTimeout(() => {
             window.location.href = "";
@@ -64,7 +64,7 @@ function cadastrarU() {
 
           limparFormulario();
         } else {
-          throw "Houve um erro ao tentar realizar o cadastro!";
+          Swal.fire("Erro ao criar o perfil");
         }
       })
       .catch(function (resposta) {

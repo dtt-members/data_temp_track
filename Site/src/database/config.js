@@ -4,10 +4,10 @@ var mysql = require("mysql2");
 
 // CONEXÃO DO MYSQL WORKBENCH
 var mySqlConfig = {
-    host: "localhost",
+    host: "10.18.36.45",
     database: "DataBaseTrack",
-    user: "aluno",
-    password: "sptech",
+    user: "WLan",
+    password: "UserLan#2023",
 };
 
 function executar(instrucao) {
@@ -27,6 +27,7 @@ function executar(instrucao) {
                 return ("ERRO NO SQL SERVER (Azure): ", erro);
             });
         });
+
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
         return new Promise(function (resolve, reject) {
             var conexao = mysql.createConnection(mySqlConfig);

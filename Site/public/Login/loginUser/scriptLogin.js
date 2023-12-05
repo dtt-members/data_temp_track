@@ -11,28 +11,26 @@ function validarCadastro() {
 
     //validações das input 
     if (razaoSocialVar == "" || cnpjVar == "" || emailCadastroVar == "" || telefoneCelularVar == "" || telefoneFixoVar == "" || cepVar == "" || numeroEndVar == "") {
-        messageErro.innerHTML = 'Preencha todos os campos'
+        Swal.fire("Preencha todos os campos");
         //Os return servem com uma break, elas impedem da  função continuar
         return false;
     } else if (cnpjVar.length != 14) {
-        messageErro.innerHTML = `Preencha com um cnpj válido`;
+        Swal.fire("Entre com uma CNPJ válido");
         return false;
     } else if (emailCadastroVar.indexOf('@') < 0 || emailCadastroVar.indexOf('.') < 0) {
-        messageErro.innerHTML = `Preencha com email válido que contenha '@' e '.com'`;
+        Swal.fire("Seu email deve conter ao menos um @ e um .");
         return false;
     } else if (telefoneCelularVar.length != 11) {
-        messageErro.innerHTML = 'Preencha com telefone celular válido';
+        Swal.fire("Entre com um numero de celular válido de pelo menos 11 digitos");
         return false;
     } else if (telefoneFixoVar.length != 10) {
-        messageErro.innerHTML = 'Preencha com telefone fixo válido';
+        Swal.fire("Entre com um Telefone fixo com pelo menos 10 digitos");
         return false;
     } else if (cepVar.length != 8) {
-        messageErro.innerHTML = 'Digite um CEP válido';
+        Swal.fire("Entre com um CEP válido");
         return false;
     } else {
-        messageErro.innerHTML = "";
-        // usar esse ultimo else para mostrar a mensagem de cadastro realizado
-        // Cadastro endereco 
+        Swal.fire("Cadastro realizado"); 
     }
 
     //Aqui eu pego as variaveis do cadastro, troco o nome da variavel e envio para a o arquivo endereco na pasta ROUTES
