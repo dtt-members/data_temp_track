@@ -4,10 +4,10 @@ var mysql = require("mysql2");
 
 // CONEXÃO DO MYSQL WORKBENCH
 var mySqlConfig = {
-    host: "localhost",
+    host: "10.18.36.45",
     database: "DataBaseTrack",
-    user: "aluno",
-    password: "sptech",
+    user: "root",
+    password: "Gui@684875",
 };
 
 function executar(instrucao) {
