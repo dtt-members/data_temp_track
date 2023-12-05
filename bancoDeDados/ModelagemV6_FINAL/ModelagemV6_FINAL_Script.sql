@@ -85,19 +85,19 @@ create table hist (
 insert into hist(fkSensor, dadoCap) values (2, ?), (1, ?), (3, ?);
 
 insert into sensor values
-(null, 'lm35', null, 'ºC'),
-(null, 'dht11', null, '%'),
-(null, 'trtc5000', null, 'bool');
+(null, 'lm35', 1, 'ºC'),
+(null, 'dht11', 2, '%'),
+(null, 'trtc5000', 1, 'bool');
 
-insert into hist values
-(null, 1, null, 25),
-(null, 2, null, 50),
-(null, 3, null, 0);
+insert into hist(fkSensor, dadoCap) values
+( 1, 25),
+( 2, 50),
+( 3, 0);
 
 INSERT INTO empresa VALUES 
 (null, 'teste', null, null, null, 'teste@gmail.com', 'teste123', null);
 
-insert into unidadeDataCenter values (1, 1000001, 'DataCenter 1'), (2, 1000001, 'Datacenter 2');
+insert into unidadeDataCenter values (1, 1000001, 'DataCenter 1');
 
 SELECT * FROM unidadeDataCenter;
 
@@ -105,6 +105,9 @@ INSERT INTO ambiente VALUES
 (null, 1, 1000001, 'Porta'),
 (null, 1, 1000001, 'Corredor 1'),
 (null, 1, 1000001, 'Corredor 2');
+
+SELECT h.dataHist, h.dadoCap, s.tipoSensor, s.unidMedida FROM unidadedatacenter as dt JOIN ambiente as a ON a.fkDC = dt.idDataCenter JOIN sensor as s  ON s.fkAmb = a.idAmb LEFT JOIN hist as h ON h.fkSensor = s.idSensor
+WHERE dt.fkEmp = 1000001;
 
 select * from usuario join empresa
 	on fkEmp = idEmpresa;
@@ -143,3 +146,5 @@ WHERE a.fkEmp = '1000001';
 SELECT * FROM ambiente AS a JOIN empresa AS e ON  a.fkEmp = e.idEmpresa 
   JOIN usuario AS u ON u.fkEmp = e.idEmpresa JOIN unidadeDataCenter AS udc ON udc.fkEmp = e.idEmpresa
   WHERE a.fkEmp = '1000001' AND udc.unidDataCenter = 'Datacenter 1';
+  
+  SELECT * FROM ambiente WHERE nomeAmbiente = 'Porta';

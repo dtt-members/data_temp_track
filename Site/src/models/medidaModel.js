@@ -1,14 +1,8 @@
 var database = require("../database/config");
 
-function buscarUltimasMedidas(idAmb, limite_linhas) {
-        var instrucaoSql = `select 
-        dht11_temperatura as temperatura, 
-        dht11_umidade as umidade,
-                        momento,
-                        DATE_FORMAT(momento,'%H:%i:%s') as momento_grafico
-                    from medida
-                    where fk_aquario = ${idAmb}
-                    order by id desc limit ${limite_linhas};`
+function buscarUltimasMedidas(idAmb) {
+        var instrucaoSql = `SELECT h.dataHist, h.dadoCap, s.tipoSensor, s.unidMedida FROM unidadedatacenter as dt JOIN ambiente as a ON a.fkDC = dt.idDataCenter JOIN sensor as s  ON s.fkAmb = a.idAmb LEFT JOIN hist as h ON h.fkSensor = s.idSensor
+        WHERE dt.fkEmp = ${idAmb} limit 5;`
 
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         
@@ -18,13 +12,8 @@ function buscarUltimasMedidas(idAmb, limite_linhas) {
 }
 function buscarMedidasEmTempoReal(idAmb) {
 
-       var instrucaoSql = `select 
-        dht11_temperatura as temperatura, 
-        dht11_umidade as umidade,
-                        DATE_FORMAT(momento,'%H:%i:%s') as momento_grafico, 
-                        fk_aquario 
-                        from medida where fk_aquario = ${idAmb} 
-                    order by id desc limit 1;`
+       var instrucaoSql = `SELECT h.dataHist, h.dadoCap, s.tipoSensor, s.unidMedida FROM unidadedatacenter as dt JOIN ambiente as a ON a.fkDC = dt.idDataCenter JOIN sensor as s  ON s.fkAmb = a.idAmb LEFT JOIN hist as h ON h.fkSensor = s.idSensor
+       WHERE dt.fkEmp = ${idAmb} limit 1;`
 
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
 

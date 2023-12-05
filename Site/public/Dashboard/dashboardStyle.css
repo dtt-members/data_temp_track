@@ -1113,18 +1113,6 @@ iframe{
     justify-content: center;
 }
 
-.lousa_invisivel3 .alinhar_lousa3 .container-canvas_02 {
-    width: 100%;
-    display: none;
-    justify-content: center;
-}
-
-.lousa_invisivel3 .alinhar_lousa3 .container-canvas_03 {
-    width: 100%;
-    display: none;
-    justify-content: center;
-}
-
 canvas {
     max-width: 40%;
     max-height: 200px;

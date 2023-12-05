@@ -187,7 +187,7 @@
             </div>
           </div>
           <div id="div_card_linha" class="card_linha">
-            <div id="div_card_unidade" class="card_unidade" onclick="TemUmiDataCenter()">
+            <div id="div_card_unidade" value="rack01" class="card_unidade" onclick="TemUmiDataCenter('Rack 01')">
               <div class="cima">
                 <img src="rack.png" class="imagem_corredor">
                 <div class="cima-direita">
@@ -195,11 +195,11 @@
                   <img src="temperatura.png" class="imagem_gota">
                 </div>
               </div>
-              <div class="baixo">
-                Rack 0001
+              <div id="textoRackNome" class="baixo">
+                Rack 01
               </div>
             </div>
-            <div id="div_card_unidade" class="card_unidade" onclick="TemUmiDataCenter()">
+            <div id="div_card_unidade" value="rack02" class="card_unidade" onclick="TemUmiDataCenter('Rack 02')">
               <div class="cima">
                 <img src="rack.png" class="imagem_corredor">
                 <div class="cima-direita">
@@ -207,11 +207,11 @@
                   <img src="temperatura.png" class="imagem_gota">
                 </div>
               </div>
-              <div class="baixo">
-                Rack 0002
+              <div id="textoRackNome" class="baixo">
+                Rack 02
               </div>
             </div>
-            <div id="div_card_unidade" class="card_unidade" onclick="TemUmiDataCenter()">
+            <div id="div_card_unidade" value="rack03" class="card_unidade" onclick="TemUmiDataCenter('Rack 03')">
               <div class="cima">
                 <img src="rack.png" class="imagem_corredor">
                 <div class="cima-direita">
@@ -219,8 +219,8 @@
                   <img src="temperatura.png" class="imagem_gota">
                 </div>
               </div>
-              <div class="baixo">
-                Rack 0003
+              <div id="textoRackNome" class="baixo">
+                Rack 03
               </div>
             </div>
           </div>
@@ -230,62 +230,7 @@
 
 
 
-        <div id="div_lousa_invisivel2_2" class="lousa_invisivel2_2">
-          <div id="div_card_linha" class="card_linha">
-            <div id="div_card_grande_corredor" class="card_grande" onclick="TemUmiDataCenter()">
-              <div class="baixo">
-                Corredor 01
-              </div>
-            </div>
-          </div>
-          <div id="div_card_linha" class="card_linha">
-            <div id="div_card_unidade" class="card_unidade" onclick="TemUmiDataCenter()">
-              <div class="cima">
-                <img src="rack.png" class="imagem_corredor">
-                <div class="cima-direita">
-                  <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota">
-                  <img src="temperatura.png" class="imagem_gota">
-                </div>
-              </div>
-              <div class="baixo">
-                <div class="piscar-vermelho-dc">
-                  <p>ALERTA</p>
-                </div>
-                Rack 0001
-              </div>
-            </div>
-            <div id="div_card_unidade" class="card_unidade" onclick="TemUmiDataCenter()">
-              <div class="cima">
-                <img src="rack.png" class="imagem_corredor">
-                <div class="cima-direita">
-                  <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota">
-                  <img src="temperatura.png" class="imagem_gota">
-                </div>
-              </div>
-              <div class="baixo">
-                <div class="piscar-vermelho-dc">
-                  <p>ALERTA</p>
-                </div>
-                Rack 0002
-              </div>
-            </div>
-            <div id="div_card_unidade" class="card_unidade" onclick="TemUmiDataCenter()">
-              <div class="cima">
-                <img src="rack.png" class="imagem_corredor">
-                <div class="cima-direita">
-                  <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota">
-                  <img src="temperatura.png" class="imagem_gota">
-                </div>
-              </div>
-              <div class="baixo">
-                <div class="piscar-vermelho-dc">
-                  <p>ALERTA</p>
-                </div>
-                Rack 0003
-              </div>
-            </div>
-          </div>
-        </div>
+    
 
         <!--Tela Dos Graficos do Data Center -->
         <div id="div_lousa_invisivel3" class="lousa_invisivel3">
@@ -298,16 +243,11 @@
               </div>
 
               <div class="localizacao">
-                <div class="texto_localizacao">
-                  PORTA 1
+                <div  id="div_texto_localizacao" class="texto_localizacao">
+                  
                 </div>
               </div>
 
-              <!--<div class="div_botao_lousa3">
-                <div id="div_botao_lousa3_01" onclick="cincoMinutos()" class="texto_botao_lousa">5 Minutos</div>
-                <div id="div_botao_lousa3_02" onclick="umaHora()" class="texto_botao_lousa">1 hora</div>
-                <div id="div_botao_lousa3_03" onclick="umDia()" class="texto_botao_lousa">24 horas</div>
-              </div>-->
             </div>
 
 
@@ -361,14 +301,6 @@
               <canvas id="id_grafico_temperatura"></canvas>
               <canvas id="id_grafico_umidade"></canvas>
             </div>
-            <div class="container-canvas_02" id="id_container_canvas_02">
-              <canvas id="id_grafico_temperatura2"></canvas>
-              <canvas id="id_grafico_umidade2"></canvas>
-            </div>
-            <div class="container-canvas_03" id="id_container_canvas_03">
-              <canvas id="id_grafico_temperatura3"></canvas>
-              <canvas id="id_grafico_umidade3"></canvas>
-            </div>
             <div class="tabela_bloqueio" id="div_tabela_bloqueio">
               <div class="linha_bloqueio">
                 <div>Porta</div>
@@ -398,57 +330,7 @@
 
 </html>
 <script>
-  /* Tela de perfil*/
-  var interrupe = 0;
-  function editarnome() {
-    if (interrupe == 0) {
-      div_nome_perfil.style.display = "block";
-      interrupe = 1;
-    } else if (interrupe == 1) {
-      var pegardados = div_nome_perfil.value;
-      div_nome_perfil.style.display = "none";
-      receptor.innerHTML = `${pegardados}`;
-      interrupe = 0;
-    }
-  }
-  function editaremail() {
-    if (interrupe == 0) {
-      div_email_perfil.style.display = "block";
-      interrupe = 1;
-    } else if (interrupe == 1) {
-      var pegardados = div_email_perfil.value;
-      div_email_perfil.style.display = "none";
-      receptor2.innerHTML = `${pegardados}`
-      interrupe = 0;
-    }
-  }
-  function editarcell() {
-    celular.style.display = "block"
-    if (interrupe == 0) {
-      celular.style.display = "block";
-      interrupe = 1;
-    } else if (interrupe == 1) {
-      var pegardados = celular.value;
-      celular.style.display = "none";
-      receptor3.innerHTML = `${pegardados}`;
-      interrupe = 0;
-    }
-  }
-  function editarsenha() {
-    senha.style.display = "block"
-    if (interrupe == 0) {
-      senha.style.display = "block";
-      interrupe = 1;
-    } else if (interrupe == 1) {
-      var pegardados = senha.value;
-      senha.style.display = "none";
-      receptor4.innerHTML = `${pegardados}`;
-      interrupe = 0;
-    }
-  }
-
-
-  
+ 
 /*Pegar os datas center da empresa pelo id do usuario*/
 var menu = document.getElementById('div_menuDC');
 setTimeout(buscarDC, 10)
@@ -503,7 +385,6 @@ function listarAmb(){
       if (resposta.ok) {
         resposta.json().then(function (resposta) {
           for (contador = 0; contador < resposta.length; contador++) {
-            console.log(`ddddddddddddddddddddddddddd`)   
             var rack = resposta[contador];
             
             if(rack.nomeAmbiente == 'Porta'){
@@ -526,7 +407,7 @@ function listarAmb(){
                   `;
             }else {
             cardLinha.innerHTML += `
-            <div id="div_card_unidade" class="card_unidade" onclick="chamarRackAlert()">
+            <div id="div_card_unidade" class="card_unidade" onclick="chamarRack()">
               <div class="cima">
                 <img src="rack.png" class="imagem_corredor">
                 <div class="cima-direita">
@@ -577,7 +458,6 @@ function listarAmb(){
   var lousa_invisivel = document.getElementById('div_lousa_invisivel');
   var lousa_invisivel1 = document.getElementById('div_lousa_invisivel1');
   var lousa_invisivel2 = document.getElementById('div_lousa_invisivel2');
-  var lousa_invisivel2_2 = document.getElementById('div_lousa_invisivel2_2');
   var lousa_invisivel3 = document.getElementById('div_lousa_invisivel3');
   var container_canvas1 = document.getElementById('id_container_canvas_01');
   var container_canvas2 = document.getElementById('id_container_canvas_02');
@@ -597,7 +477,6 @@ function listarAmb(){
     lousa_invisivel.style.display = "none";
     lousa_invisivel1.style.display = "none"
     lousa_invisivel2.style.display = "none";
-    lousa_invisivel2_2.style.display = "none";
     lousa_invisivel3.style.display = "none";
     tela_dashboard.style.display = "none";
     tabela_bloqueio.style.display = "none";
@@ -610,7 +489,6 @@ function listarAmb(){
     lousa_invisivel.style.display = "flex";
     lousa_invisivel1.style.display = "none"
     lousa_invisivel2.style.display = "none";
-    lousa_invisivel2_2.style.display = "none"
     lousa_invisivel3.style.display = "none";
     tabela_bloqueio.style.display = "none";
 
@@ -623,7 +501,6 @@ function listarAmb(){
     lousa_invisivel.style.display = "none";
     lousa_invisivel1.style.display = "flex"
     lousa_invisivel2.style.display = "none";
-    lousa_invisivel2_2.style.display = "none";
     lousa_invisivel3.style.display = "none";
     tabela_bloqueio.style.display = "none";
     listarAmb()
@@ -635,7 +512,6 @@ function listarAmb(){
     lousa_invisivel.style.display = "none";
     lousa_invisivel1.style.display = "none"
     lousa_invisivel2.style.display = "none";
-    lousa_invisivel2_2.style.display = "none";
     lousa_invisivel3.style.display = "none";
     tela_dashboard.style.display = "none";
     tabela_bloqueio.style.display = "none";
@@ -648,12 +524,13 @@ function listarAmb(){
     lousa_invisivel.style.display = "none";
     lousa_invisivel1.style.display = "none"
     lousa_invisivel2.style.display = "none";
-    lousa_invisivel2_2.style.display = "none";
     lousa_invisivel3.style.display = "none";
     tabela_bloqueio.style.display = "none";
 
   }
-  function TemUmiDataCenter() {
+  function TemUmiDataCenter(nomeLocalizacao) {
+
+    var fkEmpresa = sessionStorage.FK_EMPRESA
 
     text_inicial.style.display = "none";
     tela_form_ajuda.style.display = "none";
@@ -661,9 +538,13 @@ function listarAmb(){
     lousa_invisivel.style.display = "none";
     lousa_invisivel1.style.display = "none"
     lousa_invisivel2.style.display = "none";
-    lousa_invisivel2_2.style.display = "none";
     lousa_invisivel3.style.display = "flex";
     tabela_bloqueio.style.display = "none";
+
+    var textoLocalizacaoDiv = document.getElementById('div_texto_localizacao');
+    textoLocalizacaoDiv.innerHTML = nomeLocalizacao;
+
+    obterDadosGrafico(fkEmpresa)
 
     if (temperaturaAtual1 >= 19 && temperaturaAtual1 <= 21) {
       medicaoAlertT.style.backgroundColor = "green";
@@ -698,7 +579,6 @@ function listarAmb(){
     lousa_invisivel.style.display = "none";
     lousa_invisivel1.style.display = "none"
     lousa_invisivel2.style.display = "none";
-    lousa_invisivel2_2.style.display = "none";
     lousa_invisivel3.style.display = "flex";
        tabela_bloqueio.style.display = "flex";
 
@@ -731,24 +611,12 @@ function listarAmb(){
     lousa_invisivel.style.display = "none";
     lousa_invisivel1.style.display = "none"
     lousa_invisivel2.style.display = "flex";
-    lousa_invisivel2_2.style.display = "none";
     lousa_invisivel3.style.display = "none";
     tabela_bloqueio.style.display = "none";
 
   }
 
-  function chamarRackAlert() {
-    text_inicial.style.display = "none";
-    tela_form_ajuda.style.display = "none";
-    text_inicial.style.display = "none";
-    lousa_invisivel.style.display = "none";
-    lousa_invisivel1.style.display = "none"
-    lousa_invisivel2.style.display = "none";
-    lousa_invisivel2_2.style.display = "flex";
-    lousa_invisivel3.style.display = "none";
-   tabela_bloqueio.style.display = "none";
-
-  }
+ 
 
 
   function cincoMinutos() {
@@ -844,41 +712,6 @@ function listarAmb(){
     'Minuto atual',
   ];
 
-  const label2 = [
-    '10min atuais',
-    '20min',
-    '30min',
-    '40min',
-    '50min',
-    '60min',
-  ];
-
-  const label3 = [
-    '00:00',
-    '01:00',
-    '02:00',
-    '03:00',
-    '04:00',
-    '05:00',
-    '06:00',
-    '07:00',
-    '08:00',
-    '09:00',
-    '10:00',
-    '11:00',
-    '12:00',
-    '13:00',
-    '14:00',
-    '15:00',
-    '16:00',
-    '17:00',
-    '18:00',
-    '19:00',
-    '20:00',
-    '21:00',
-    '22:00',
-    '23:00',
-  ];
 
 
   Chart.defaults.borderColor = '#f2f2f2';
@@ -900,80 +733,19 @@ function listarAmb(){
         51],
     }]
   };
-  const data2 = {
-    labels: label2,
-    datasets: [{
-      label: 'Umidade (%)',
-      backgroundColor: 'blue',
-      borderColor: 'blue',
-      color: 'white',
-      data: [51,
-        50,
-        50,
-        51,
-        50,
-        409,
-        50],
-    }]
-  };
-  const data3 = {
-    labels: label3,
-    datasets: [{
-      label: 'Umidade (%)',
-      backgroundColor: 'blue',
-      borderColor: 'blue',
-      data: [56,
-        56,
-        56,
-        56,
-        55,
-        54,
-        53,
-        53,
-        52,
-        52,
-        51,
-        50,
-        49,
-        48,
-        49,
-        50,
-        50,
-        51,
-        51,
-        51,
-        52,
-        53,
-        54,
-        55],
-    }]
-  };
+ 
 
   const config = {
     type: 'line',
     data: data,
     options: {}
   };
-  const config2 = {
-    type: 'line',
-    data: data2,
-    options: {}
-  };
-  const config3 = {
-    type: 'line',
-    data: data3,
-    options: {}
-  }
+
 
   const grafico_umidade = new Chart(
     document.getElementById('id_grafico_umidade'),
     config
   );
-  const grafico_umidade2 = new Chart(
-    document.getElementById('id_grafico_umidade2'),
-    config2
-  );
-  const grafico_umidade3 = new Chart(document.getElementById('id_grafico_umidade3'), config3);
 
   /*Graficos Temperatura*/
   const label4 = [
@@ -985,49 +757,6 @@ function listarAmb(){
     'Min atual',
   ];
 
-  const label5 = [
-    '10min atuais',
-    '20min',
-    '30min',
-    '40min',
-    '50min',
-    '60min',
-  ];
-
-  const label6 = [
-    '00:00',
-    '01:00',
-    '02:00',
-    '03:00',
-    '04:00',
-    '05:00',
-    '06:00',
-    '07:00',
-    '08:00',
-    '09:00',
-    '10:00',
-    '11:00',
-    '12:00',
-    '13:00',
-    '14:00',
-    '15:00',
-    '16:00',
-    '17:00',
-    '18:00',
-    '19:00',
-    '20:00',
-    '21:00',
-    '22:00',
-    '23:00',
-  ];
-  const label7 = [
-    '5min',
-    '4min',
-    '3min',
-    '2min',
-    '1min',
-    'Min atual',
-  ];
 
   const data4 = {
     labels: label4,
@@ -1044,120 +773,38 @@ function listarAmb(){
         20.54],
     }]
   };
-  const data5 = {
-    labels: label5,
-    datasets: [{
-      label: 'Temperatura (°C)',
-      backgroundColor: 'green',
-      borderColor: 'green',
-      data: [21.26,
-        20.79,
-        20.43,
-        19.82,
-        20.00,
-        20.30,
-        20.15],
-    }]
-  };
-  const data6 = {
-    labels: label6,
-    datasets: [{
-      label: 'Temperatura (°C)',
-      backgroundColor: 'green',
-      borderColor: 'green',
-
-      data: [19.03,
-        19.12,
-        19.27,
-        19.36,
-        19.48,
-        19.89,
-        20.22,
-        20.34,
-        20.55,
-        20.76,
-        20.81,
-        20.90,
-        21.00,
-        21.00,
-        21.00,
-        20.87,
-        20.76,
-        20.53,
-        20.41,
-        20.20,
-        20.03,
-        19.76,
-        19.53,
-        19.30],
-    }]
-  };
-  const data7 = {
-    labels: label7,
-    datasets: [{
-      label: 'Temperatura (°C)',
-      backgroundColor: 'green',
-      borderColor: 'green',
-      data: [19.78,
-        20.04,
-        20.88,
-        21.10,
-        20.97,
-        20.62,
-        99.01],
-    }]
-  };
+ 
 
   const config4 = {
     type: 'line',
     data: data4,
     options: {}
   };
-  const config5 = {
-    type: 'line',
-    data: data5,
-    options: {}
-  };
-  const config6 = {
-    type: 'line',
-    data: data6,
-    options: {}
-  }
-  const config7 = {
-    type: 'line',
-    data: data7,
-    options: {}
-  }
+
 
   const grafico_temperatura = new Chart(
     document.getElementById('id_grafico_temperatura'),
     config4
   );
-  const grafico_temperatura2 = new Chart(
-    document.getElementById('id_grafico_temperatura2'),
-    config5
-  );
-  const grafico_temperatura3 = new Chart(document.getElementById('id_grafico_temperatura3'), config6);
 
 
 
 
+  var proximaAtualizacao;
 
 
   function obterDadosGrafico(idAmb) {
-
-    alterarTitulo(idAmb)
 
     if (proximaAtualizacao != undefined) {
       clearTimeout(proximaAtualizacao);
     }
 
-    fetch(`/medidas/ultimas/${idAmb}`, { cache: 'no-store' }).then(function (response) {
+    fetch(`/medida/ultimas/${idAmb}`, { cache: 'no-store' }).then(function (response) {
       if (response.ok) {
+        console.log("resposta",response)
         response.json().then(function (resposta) {
           console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
           resposta.reverse();
-
           plotarGrafico(resposta, idAmb);
 
         });
@@ -1177,69 +824,8 @@ function listarAmb(){
 
     console.log('iniciando plotagem do gráfico...');
 
-    // Criando estrutura para plotar gráfico - labels
-    const label3 = [
-      '00:00',
-      '01:00',
-      '02:00',
-      '03:00',
-      '04:00',
-      '05:00',
-      '06:00',
-      '07:00',
-      '08:00',
-      '09:00',
-      '10:00',
-      '11:00',
-      '12:00',
-      '13:00',
-      '14:00',
-      '15:00',
-      '16:00',
-      '17:00',
-      '18:00',
-      '19:00',
-      '20:00',
-      '21:00',
-      '22:00',
-      '23:00',
-    ];
 
-    Chart.defaults.borderColor = '#f2f2f2';
-    Chart.defaults.color = '#fff';
     // Criando estrutura para plotar gráfico - dados
-    const data3 = {
-      labels: label3,
-      datasets: [{
-        label: 'Umidade (%)',
-        backgroundColor: 'blue',
-        borderColor: 'blue',
-        data: [56,
-          56,
-          56,
-          56,
-          55,
-          54,
-          53,
-          53,
-          52,
-          52,
-          51,
-          50,
-          49,
-          48,
-          49,
-          50,
-          50,
-          51,
-          51,
-          51,
-          52,
-          53,
-          54,
-          55],
-      }]
-    };
     console.log('----------------------------------------------')
     console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
     console.log(resposta)
@@ -1247,36 +833,26 @@ function listarAmb(){
     // Inserindo valores recebidos em estrutura para plotar o gráfico
     for (i = 0; i < resposta.length; i++) {
       var registro = resposta[i];
-      labels.push(registro.momento_grafico);
-      dados.datasets[0].data.push(registro.umidade);
-      dados.datasets[1].data.push(registro.temperatura);
+      if(registro.unidMedida == "ºC"){
+        var temperatura = registro.dadoCap
+      }else if(registro.unidMedida == "%"){
+        var umidade = registro.dadoCap
+      }
+      label4.push(registro.dataHist);
+      label.push(registro.dataHist);
+      data.datasets[0].data.push(umidade);
+      data4.datasets[0].data.push(temperatura);
     }
 
-    console.log('----------------------------------------------')
-    console.log('O gráfico será plotado com os respectivos valores:')
-    console.log('Labels:')
-    console.log(labels)
-    console.log('Dados:')
-    console.log(dados.datasets)
-    console.log('----------------------------------------------')
 
     // Criando estrutura para plotar gráfico - config
-    const config3 = {
-      type: 'line',
-      data: data3,
-      options: {}
-    }
+ 
 
     // Adicionando gráfico criado em div na tela
-    let myChart = new Chart(
-      document.getElementById(`myChartCanvas${idAmb}`),
-      config
-    );
-    /*nosso new chart*/
-    const grafico_umidade3 = new Chart(document.getElementById('id_grafico_umidade3'), config3);
 
 
-    setTimeout(() => atualizarGrafico(idAmb, dados, myChart), 2000);
+
+    setTimeout(() => atualizarGrafico(idAmb, data4, data, grafico_temperatura, grafico_umidade), 2000);
   }
 
 
@@ -1287,54 +863,53 @@ function listarAmb(){
 
   //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
   //     Para ajustar o "select", ajuste o comando sql em src/models
-  function atualizarGrafico(idAmb, dados, myChart) {
+  function atualizarGrafico(idAmb, data4, data, grafico_temperatura, grafico_umidade){
 
 
 
-    fetch(`/medidas/tempo-real/${idAmb}`, { cache: 'no-store' }).then(function (response) {
+    fetch(`/medida/tempo-real/${idAmb}`, { cache: 'no-store' }).then(function (response) {
       if (response.ok) {
         response.json().then(function (novoRegistro) {
 
-          obterdados(idAmb);
-          // alertar(novoRegistro, idAquario);
-          console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
-          console.log(`Dados atuais do gráfico:`);
-          console.log(dados);
-
-          let avisoCaptura = document.getElementById(`avisoCaptura${idAmb}`)
-          avisoCaptura.innerHTML = ""
 
 
-          if (novoRegistro[0].momento_grafico == dados.labels[dados.labels.length - 1]) {
+
+
+
+          if (novoRegistro[0].dadoCap == data.labels[data.labels.length - 1]) {
             console.log("---------------------------------------------------------------")
             console.log("Como não há dados novos para captura, o gráfico não atualizará.")
-            avisoCaptura.innerHTML = "<i class='fa-solid fa-triangle-exclamation'></i> Foi trazido o dado mais atual capturado pelo sensor. <br> Como não há dados novos a exibir, o gráfico não atualizará."
             console.log("Horário do novo dado capturado:")
-            console.log(novoRegistro[0].momento_grafico)
             console.log("Horário do último dado capturado:")
-            console.log(dados.labels[dados.labels.length - 1])
+            console.log(data.labels[data.labels.length - 1])
             console.log("---------------------------------------------------------------")
           } else {
+
+            label.shift();
+            label.push(novoRegistro[0].dataHist)
             // tirando e colocando valores no gráfico
-            dados.labels.shift(); // apagar o primeiro
-            dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
+            data4.labels.shift(); // apagar o primeiro
+            data4.labels.push(novoRegistro[0].dataHist); // incluir um novo momento
+            data.labels.shift(); // apagar o primeiro
+            data.labels.push(novoRegistro[0].dataHist); // incluir um novo momento
 
-            dados.datasets[0].data.shift();  // apagar o primeiro de umidade
-            dados.datasets[0].data.push(novoRegistro[0].umidade); // incluir uma nova medida de umidade
+            data4.datasets[0].data.shift();  // apagar o primeiro de umidade
+            data4.datasets[0].data.push(novoRegistro[0].umidade); // incluir uma nova medida de umidade
 
-            dados.datasets[1].data.shift();  // apagar o primeiro de temperatura
-            dados.datasets[1].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
+            data.datasets[0].data.shift();  // apagar o primeiro de temperatura
+            data.datasets[0].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
 
-            myChart.update();
+            grafico_temperatura.update();
+            grafico_umidade.update();
           }
 
           // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-          proximaAtualizacao = setTimeout(() => atualizarGrafico(idAmb, dados, myChart), 2000);
+          proximaAtualizacao = setTimeout(() => atualizarGrafico(idAmb, data4, data, grafico_temperatura, grafico_umidade), 2000);
         });
       } else {
         console.error('Nenhum dado encontrado ou erro na API');
         // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-        proximaAtualizacao = setTimeout(() => atualizarGrafico(idAmb, dados, myChart), 2000);
+        proximaAtualizacao = setTimeout(() => atualizarGrafico(idAmb, data4, data, grafico_temperatura, grafico_umidade), 2000);
       }
     })
       .catch(function (error) {
