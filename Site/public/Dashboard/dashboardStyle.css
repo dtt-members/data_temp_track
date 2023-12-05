@@ -319,6 +319,7 @@ iframe{
     display: flex;
     justify-content: center;
     margin-right: 10px;
+    margin-top: 100px;
 
 }
 
@@ -333,7 +334,7 @@ iframe{
     border: none;
     border-top: 1px #ffffff;
     border-bottom: 1px #ffffff;
-    padding: 2rem 1rem; 
+    padding: 1rem;
     font-size: 100%;
     text-align: left;
     margin: -1% -7% 0 -7%;
@@ -343,7 +344,7 @@ iframe{
     justify-content: space-around;
     align-items: center;
     margin-top: 20px;
-    border-radius: 20px;
+    border-radius: 40px;
     width: 100%;
     height: fit-content;
 }
@@ -361,7 +362,7 @@ iframe{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 40px;
     border-radius: 20px;
     width: 100%;
     height: fit-content;
@@ -555,6 +556,7 @@ iframe{
     transition: 1.5s;
     cursor: pointer;
     background-position: center;
+    margin-top: 100px;
 }
 
 .lousa_invisivel .card_linha .card_grande:hover {
@@ -577,7 +579,7 @@ iframe{
 
 .lousa_invisivel .card_linha .card_unidade {
     background-color: #f2f2f2;
-    width: 30%;
+    width: 20%;
     height: 80%;
     margin: 0.5%;
     border-radius: 15px;
@@ -774,6 +776,7 @@ iframe{
     transition: 1.5s;
     cursor: pointer;
     background-position: center;
+    margin-top: 100px;
 }
 
 .lousa_invisivel2 .card_linha .card_grande:hover {
@@ -795,7 +798,7 @@ iframe{
 
 .lousa_invisivel2 .card_linha .card_unidade {
     background-color: #f2f2f2;
-    width: 30%;
+    width: 20%;
     height: 95%;
     margin: 0.5%;
     border-radius: 15px;
@@ -835,11 +838,12 @@ iframe{
 }
 
 .lousa_invisivel2 .card_linha .card_unidade .cima {
-    height: 50%;
+    height: 40%;
     flex-direction: row;
     border-radius: 15px 15px 0 0;
     display: flex;
-    justify-content: center
+    justify-content: center;
+    margin-top: 60px;
 }
 
 .lousa_invisivel2 .card_linha .card_unidade .baixo {
