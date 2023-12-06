@@ -1,14 +1,11 @@
 var medidaModel = require("../models/medidaModel");
 
 function buscarUltimasMedidas(req, res) {
+    var fkSensorGrafico = req.params.fkSensorGrafico;
 
-    const limite_linhas = 7;
+    console.log(`Recuperando as ultimas medidas`);
 
-    var idAmb = req.params.idAmb;
-
-    console.log(`Recuperando as ultimas ${limite_linhas} medidas`);
-
-    medidaModel.buscarUltimasMedidas(idAmb, limite_linhas).then(function (resultado) {
+    medidaModel.buscarUltimasMedidas(fkSensorGrafico).then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {

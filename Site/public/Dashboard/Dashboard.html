@@ -668,12 +668,37 @@
 
 
   function obterDadosGrafico(idAmb) {
-
+  var fkSensorGrafico = 1;
     if (proximaAtualizacao != undefined) {
       clearTimeout(proximaAtualizacao);
     }
 
-    fetch(`/medida/ultimas/${idAmb}`, { cache: 'no-store' }).then(function (response) {
+    fetch(`/medida/ultimas/${fkSensorGrafico}`, { cache: 'no-store' }).then(function (response) {
+      if (response.ok) {
+        console.log("resposta", response)
+        response.json().then(function (resposta) {
+          console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+          resposta.reverse();
+          plotarGrafico(resposta, idAmb);
+
+        });
+      } else {
+        console.error('Nenhum dado encontrado ou erro na API');
+      }
+    })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+      });
+      obterDadosGrafico2()
+  }
+
+  function obterDadosGrafico(idAmb) {
+  var fkSensorGrafico = 2;
+    if (proximaAtualizacao != undefined) {
+      clearTimeout(proximaAtualizacao);
+    }
+
+    fetch(`/medida/ultimas/${idAmb}, ${fkSensorGrafico}`, { cache: 'no-store' }).then(function (response) {
       if (response.ok) {
         console.log("resposta", response)
         response.json().then(function (resposta) {
