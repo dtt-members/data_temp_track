@@ -256,7 +256,7 @@
             <div class="regua">
               <div class="item-regua ideal">
                 <h4>Ideal</h4>
-                <h2>16°C <br>a <br> 24°C</h2>
+                <h2>19°C <br>a <br> 24°C</h2>
               </div>
               <div class="item-regua alerta">
                 <h4>Alerta</h4>
@@ -275,12 +275,12 @@
 
               <div class="item-regua ideal">
                 <h4>Ideal</h4>
-                <h2> 42,5% <br>a <br> 47,5%
+                <h2> 42% <br>a <br> 58%
                 </h2>
               </div>
               <div class="item-regua alerta">
                 <h4>Alerta</h4>
-                <h2>35% a 42% <br>e<br /> 48% a 65% </h2>
+                <h2>35% a 42% <br>e<br /> 48% a 64% </h2>
               </div>
               <div class="item-regua danger">
                 <h4>Perigo</h4>
@@ -296,7 +296,8 @@
 
 
           <div class="medicao_atual" id="div_medicao_atual">
-     
+            <div class="medicaoAlert" id="medicaoAlertT">Temperatura:°C</div>
+            <div class="medicaoAlert" id="medicaoAlertU"> Umidade: %</div>
           </div>
           <div class="container-canvas_01" id="id_container_canvas_01">
             <canvas id="id_grafico_temperatura"></canvas>
@@ -703,29 +704,7 @@
     console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
     console.log(resposta)
 
-    // Inserindo valores recebidos em estrutura para plotar o gráfico
-    for (i = 0; i < resposta[4]; i++) {
-      var registro = resposta[i];
-      if (registro.unidMedida == "ºC") {
-        var temperatura = registro.dadoCap
-      } else if (registro.unidMedida == "%") {
-        var umidade = registro.dadoCap
-      }
-      label4.push(registro.dataHist);
-      label.push(registro.dataHist);
-      data.datasets[0].data.push(umidade);
-      data4.datasets[0].data.push(temperatura);
-    }
-
-
-    // Criando estrutura para plotar gráfico - config
-
-
-    // Adicionando gráfico criado em div na tela
-
-
-
-    setTimeout(() => atualizarGrafico(idAmb, data4, data, grafico_temperatura, grafico_umidade), 2000);
+  setTimeout(() => atualizarGrafico(idAmb, data4, data, grafico_temperatura, grafico_umidade), 1500);
   }
 
 
@@ -757,13 +736,27 @@
                 div_card_porta.style = "background-color: #f2f2f2"
               }, 1000)
             }
-
+   // Inserindo valores recebidos em estrutura para plotar o gráfico
+   for (i = 0; i < response[4]; i++) {
+      var registro = response[i];
+      if (registro.unidMedida == "ºC") {
+        var temperatura = registro.dadoCap
+      } else if (registro.unidMedida == "%") {
+        var umidade = registro.dadoCap
+      }else {
+        var proximidade = registro.dadoCap
+      }
+      label4.push(registro.dataHist);
+      label.push(registro.dataHist);
+      data.datasets[0].data.push(umidade);
+      data4.datasets[0].data.push(temperatura);
+    }
 
             data4.datasets[0].data.shift();  // apagar o primeiro de umidade
-            data4.datasets[0].data.push(novoRegistro[0].dadoCap); // incluir uma nova medida de umidade
+            data4.datasets[0].data.push(novoRegistro[1].dadoCap); // incluir uma nova medida de umidade
 
             data.datasets[0].data.shift();  // apagar o primeiro de temperatura
-            data.datasets[0].data.push(novoRegistro[1].dadoCap); // incluir uma nova medida de temperatura
+            data.datasets[0].data.push(novoRegistro[0].dadoCap); // incluir uma nova medida de temperatura
             console.log(div_lousa_invisivel3.style.display);
             if (div_lousa_invisivel3.style.display = 'flex') {
               grafico_temperatura.update();
@@ -772,12 +765,12 @@
           }
 
           // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-          proximaAtualizacao = setTimeout(() => atualizarGrafico(idAmb, data4, data, grafico_temperatura, grafico_umidade), 2000);
+          proximaAtualizacao = setTimeout(() => atualizarGrafico(idAmb, data4, data, grafico_temperatura, grafico_umidade), 1500);
         });
       } else {
         console.error('Nenhum dado encontrado ou erro na API');
         // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-        proximaAtualizacao = setTimeout(() => atualizarGrafico(idAmb, data4, data, grafico_temperatura, grafico_umidade), 2000);
+        proximaAtualizacao = setTimeout(() => atualizarGrafico(idAmb, data4, data, grafico_temperatura, grafico_umidade), 1500);
       }
     })
       .catch(function (error) {
@@ -788,27 +781,28 @@
     temperaturaAtual1 = data4.datasets[0].data[5];
 
     umidadeAtual1 = data.datasets[0].data[5];
+    div_medicao_atual.innerHTML = `<div class="medicaoAlert" id="medicaoAlertT">Temperatura: ${temperaturaAtual1}°C</div>
+    <div class="medicaoAlert" id="medicaoAlertU"> Umidade:${umidadeAtual1}%</div>`
+
 
     if (temperaturaAtual1 >= 19 && temperaturaAtual1 <= 21) {
-      medicaoAlertT.style = "color: #005500;";
+      medicaoAlertT.style.backgroundColor = "green";
 
     } else if (temperaturaAtual1 >= 10 && temperaturaAtual1 <= 30) {
-      medicaoAlertT.style.color = "yellow";
+      medicaoAlertT.style.backgroundColor = "yellow";
     } else {
-      medicaoAlertT.style.color = "red";
+      medicaoAlertT.style.backgroundColor = "red";
     }
 
     if (umidadeAtual1 >= 42 && umidadeAtual1 <= 58) {
-      medicaoAlertU.style.color = "green";
+      medicaoAlertU.style.backgroundColor = "green";
 
     } else if (umidadeAtual1 >= 35 && umidadeAtual1 <= 64) {
-      medicaoAlertU.style.color = "yellow";
+      medicaoAlertU.style.backgroundColor = "yellow";
     } else {
-      medicaoAlertU.style.color = "red";
+      medicaoAlertU.style.backgroundColor = "red";
     }
-
-    div_medicao_atual.innerHTML = `<div class="medicaoAlert" id="medicaoAlertT">Temperatura: ${temperaturaAtual1}°C</div>
-    <div class="medicaoAlert" id="medicaoAlertU"> Umidade:${umidadeAtual1}%</div>`
+    
 
   }
 
