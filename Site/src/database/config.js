@@ -6,8 +6,8 @@ var mysql = require("mysql2");
 var mySqlConfig = {
     host: "localhost",
     database: "DataBaseTrack",
-    user: "aluno",
-    password: "sptech",
+    user: "root",
+    password: "Gui@684875",
 };
 
 function executar(instrucao) {
@@ -27,7 +27,6 @@ function executar(instrucao) {
                 return ("ERRO NO SQL SERVER (Azure): ", erro);
             });
         });
-
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
         return new Promise(function (resolve, reject) {
             var conexao = mysql.createConnection(mySqlConfig);

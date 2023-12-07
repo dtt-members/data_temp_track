@@ -119,9 +119,8 @@ select idUsuario, nome, emailInst, fkEmp from usuario where emailInst = 'arthur@
 
 drop view login;
 
-select * from login;
-
 select * from hist;
+select * from sensor;
 
 select * from sensor;
 
@@ -130,17 +129,17 @@ select * from sensor;
          
          
          
-select * from ambiente;
-INSERT INTO ambiente (fkDC,fkEmp, nomeAmbiente) VALUES 
-(1, 1000001, 'Porta'),
-(1, 1000001, 'Corredor 1');
+         select * from ambiente;
+         INSERT INTO ambiente (fkDC,fkEmp, nomeAmbiente) VALUES 
+         (1, 1000001, 'Porta'),
+         (1, 1000001, 'Corredor 1');
          
-Insert into empresa VALUES
-(null, 'Data Temp Track', 12345678901234, 12345678901, 1234567890, 'datatemptrack@gmail.com', 'dbt123', null);
+         Insert into empresa VALUES
+         (null, 'Data Temp Track', 12345678901234, 12345678901, 1234567890, 'datatemptrack@gmail.com', 'dbt123', null);
          
-SELECT * FROM unidadeDataCenter;
-select * from empresa;
-select * from ambiente;
-
-SELECT dadoCap, unidMedida FROM sensor JOIN hist ON idSensor = fkSensor
-WHERE fkSensor= 1 ORDER BY dataHist limit 5;
+         SELECT * FROM unidadeDataCenter;
+         select * from empresa;
+         select * from ambiente;
+         select * from usuario;
+         
+         

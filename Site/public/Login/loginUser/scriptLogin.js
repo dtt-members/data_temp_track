@@ -11,26 +11,28 @@ function validarCadastro() {
 
     //validações das input 
     if (razaoSocialVar == "" || cnpjVar == "" || emailCadastroVar == "" || telefoneCelularVar == "" || telefoneFixoVar == "" || cepVar == "" || numeroEndVar == "") {
-        Swal.fire("Preencha todos os campos");
+        messageErro.innerHTML = 'Preencha todos os campos'
         //Os return servem com uma break, elas impedem da  função continuar
         return false;
     } else if (cnpjVar.length != 14) {
-        Swal.fire("Entre com uma CNPJ válido");
+        messageErro.innerHTML = `Preencha com um cnpj válido`;
         return false;
     } else if (emailCadastroVar.indexOf('@') < 0 || emailCadastroVar.indexOf('.') < 0) {
-        Swal.fire("Seu email deve conter ao menos um @ e um .");
+        messageErro.innerHTML = `Preencha com email válido que contenha '@' e '.com'`;
         return false;
     } else if (telefoneCelularVar.length != 11) {
-        Swal.fire("Entre com um numero de celular válido de pelo menos 11 digitos");
+        messageErro.innerHTML = 'Preencha com telefone celular válido';
         return false;
     } else if (telefoneFixoVar.length != 10) {
-        Swal.fire("Entre com um Telefone fixo com pelo menos 10 digitos");
+        messageErro.innerHTML = 'Preencha com telefone fixo válido';
         return false;
     } else if (cepVar.length != 8) {
-        Swal.fire("Entre com um CEP válido");
+        messageErro.innerHTML = 'Digite um CEP válido';
         return false;
     } else {
-        Swal.fire("Cadastro realizado"); 
+        messageErro.innerHTML = "";
+        // usar esse ultimo else para mostrar a mensagem de cadastro realizado
+        // Cadastro endereco 
     }
 
     //Aqui eu pego as variaveis do cadastro, troco o nome da variavel e envio para a o arquivo endereco na pasta ROUTES
@@ -107,8 +109,8 @@ function entrar() {
                 sessionStorage.ID_USUARIO = json.id;
                 sessionStorage.FK_EMPRESA = json.fkEmp;
 
-                mensagemLogando.style.display = "flex";
-                mensagemLogando.innerHTML = `Você sera redirecionado para a Dashboard`
+                alert("Redirecionando para a Dashboard");
+
                 setTimeout(function () {
                     window.location = "../../Dashboard/Dashboard.html";
                     console.log('PASSEI POR AQUI')
@@ -119,8 +121,7 @@ function entrar() {
         } else {
 
             console.log("Houve um erro ao tentar realizar o login!");
-            mensagemLogando.style.display = "flex";
-            mensagemLogando.innerHTML = "Senha ou email incorreto"
+            alert("Erro! email ou senha incorretos")
             resposta.text().then(texto => {
                 console.error(texto);
             });

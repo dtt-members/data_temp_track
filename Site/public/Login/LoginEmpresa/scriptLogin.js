@@ -8,13 +8,14 @@ function verificarE() {
     var mensagemDashboard = document.getElementById('mensagem_logando');
 
     if (emailVar == "" || senhaVar == "") {
-        Swal.fire("Preencha todos os campos");
+        alert("Preencha todos os campos");
         return false;
     }
     else {
+
         console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
-        
+
         fetch("/empresa/autenticar", {
             method: "POST",
             headers: {
@@ -25,11 +26,9 @@ function verificarE() {
                 senhaServer: senhaVar
             })
         }).then(function (resposta) {
-
             console.log("ESTOU NO THEN DO entrar()!")
-            
+
             if (resposta.ok) {
-                Swal.fire("redirecionando para a Dashboard");
                 console.log(resposta);
                 resposta.json().then(json => {
                     console.log(json);
@@ -42,15 +41,16 @@ function verificarE() {
                     sessionStorage.FONEFIXO_EMPRESA = json.foneFixo;
                     sessionStorage.SENHA_EMPRESA = json.senha;
                     sessionStorage.DATACENTER = JSON.stringify(json.datacenter)
-
                 });
+                alert("Usuario verificado com sucesso, redirecionando para a tela de login");
                 setTimeout(function () {
                     window.location = "../../Dashboard/DashBoardEmpresa/DashboardEmpresa.html";
+                    console.log('PASSEI POR AQUI')
                 }, 3000);
 
             } else {
 
-                wal.fire("Houve um erro ao tentar entrar");
+                alert("Houve um erro ao tentar realizar o login!");
 
                 resposta.text().then(texto => {
                     console.error(texto);
@@ -81,74 +81,67 @@ function validarCadastro() {
 
     //validações das input 
     if (razaoSocialVar == "" || cnpjVar == "" || emailCadastroVar == "" || telefoneCelularVar == "" || telefoneFixoVar == "" || cepVar == "" || numeroEndVar == "" || senhaVar == "" || confirmarVar == "") {
-        Swal.fire("Preencha todos os campos");
+        messageErro.innerHTML = 'Preencha todos os campos'
         //Os return servem com uma break, elas impedem da  função continuar
         return false;
     } else if (cnpjVar.length != 14) {
-        Swal.fire("Entre com pelo menos 14 digitos de CNPJ");
+        messageErro.innerHTML = `Preencha com um cnpj válido`;
         return false;
     } else if (emailCadastroVar.indexOf('@') < 0 || emailCadastroVar.indexOf('.') < 0) {
-        Swal.fire("Seu email deve conter pelo menos um @ e um .");
+        messageErro.innerHTML = `Preencha com email válido que contenha '@' e '.com'`;
         return false;
     } else if (telefoneCelularVar.length != 11) {
-        Swal.fire("Entre com 11 digitos de celular");
+        messageErro.innerHTML = 'Preencha com telefone celular válido';
         return false;
     } else if (telefoneFixoVar.length != 10) {
-        Swal.fire("entre com 10 digitos de telefone");
+        messageErro.innerHTML = 'Preencha com telefone fixo válido';
         return false;
     } else if (cepVar.length != 8) {
-        Swal.fire("Digite um CEP válido");
+        messageErro.innerHTML = 'Digite um CEP válido';
         return false;
     } else if (senhaVar.length < 8 || confirmarVar.length > 14) {
-        Swal.fire("A senha deve conter entre 8 e 14 caracteres");
-        return false;
+        messageErro.innerHTML = 'A senha deve ter entre 8 e 14 caracteres'
     } else if (senhaVar != confirmarVar) {
-        Swal.fire("Senhas não conferem");
-        return false;
+        messageErro.innerHTML = 'Senha diferentes'
     } else {
-        Swal.fire({
-            position: "top-end",
-            icon: "Cadastrado",
-            title: "Sua empresa foi cadastrada com sucesso!",
-            showConfirmButton: false,
-            timer: 1500
-          });
-
-        //Aqui eu pego as variaveis do cadastro, troco o nome da variavel e envio para a o arquivo endereco na pasta ROUTES
-        // o cadastrarEnd é uma function no arquivo endereco 
-        fetch("/endereco/cadastrarEnd", {
-            method: "POST",
-            headers: {
-                "Content-Type": 'application/json',
-            },
-            body: JSON.stringify({
-                cepServer: cepVar,
-                numeroEndServer: numeroEndVar,
-                complementoServer: complementoVar,
-            })
-        })
-
-
-        // Aqui faço a mesma coisa só que enviando para o arquivo empresa
-        fetch("/empresa/cadastrarEmp", {
-            method: "POST",
-            headers: {
-                "Content-Type": 'application/json',
-            },
-            body: JSON.stringify({
-                razaoSocialServer: razaoSocialVar,
-                cnpjServer: cnpjVar,
-                telefoneCelularServer: telefoneCelularVar,
-                telefoneFixoServer: telefoneFixoVar,
-                emailCadastroServer: emailCadastroVar,
-                senhaServer: senhaVar,
-            })
-        })
-            .then(function (resposta) {
-                console.log("resposta: ", resposta)
-            });
-
+        messageErro.innerHTML = "Empresa cadastrada com sucesso";
+        // usar esse ultimo else para mostrar a mensagem de cadastro realizado
+        // Cadastro endereco 
     }
+
+    //Aqui eu pego as variaveis do cadastro, troco o nome da variavel e envio para a o arquivo endereco na pasta ROUTES
+    // o cadastrarEnd é uma function no arquivo endereco 
+    fetch("/endereco/cadastrarEnd", {
+        method: "POST",
+        headers: {
+            "Content-Type": 'application/json',
+        },
+        body: JSON.stringify({
+            cepServer: cepVar,
+            numeroEndServer: numeroEndVar,
+            complementoServer: complementoVar,
+        })
+    })
+
+    // Aqui faço a mesma coisa só que enviando para o arquivo empresa
+    fetch("/empresa/cadastrarEmp", {
+        method: "POST",
+        headers: {
+            "Content-Type": 'application/json',
+        },
+        body: JSON.stringify({
+            razaoSocialServer: razaoSocialVar,
+            cnpjServer: cnpjVar,
+            telefoneCelularServer: telefoneCelularVar,
+            telefoneFixoServer: telefoneFixoVar,
+            emailCadastroServer: emailCadastroVar,
+            senhaServer: senhaVar,
+        })
+    })
+        .then(function (resposta) {
+            console.log("resposta: ", resposta)
+        });
+
+
     return false;
 }
-

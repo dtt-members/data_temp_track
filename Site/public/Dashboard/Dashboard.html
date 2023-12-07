@@ -265,7 +265,7 @@
               <div class="item-regua danger">
                 <h4>Perigo</h4>
                 <h2>
-                  &lt;= 10°C <br>e <br> >= 30°C
+                  Menor que 10°C <br>e <br> Maior que 30°C
                 </h2>
               </div>
 
@@ -284,7 +284,7 @@
               </div>
               <div class="item-regua danger">
                 <h4>Perigo</h4>
-                <h2>&lt;= 35% <br>e <br> >= 65%</h2>
+                <h2>Menor que 35% <br>e <br> Maior 65%</h2>
               </div>
             </div>
           </div>
@@ -296,8 +296,7 @@
 
 
           <div class="medicao_atual" id="div_medicao_atual">
-            <div class="medicaoAlert" id="medicaoAlertU"></div>
-            <div class="medicaoAlerta" id="medicaoAlertT"></div>
+     
           </div>
           <div class="container-canvas_01" id="id_container_canvas_01">
             <canvas id="id_grafico_temperatura"></canvas>
@@ -391,7 +390,7 @@
 
             if (rack.nomeAmbiente == 'Porta') {
               cardLinha.innerHTML += `
-            <div id="div_card_unidade" class="card_unidade">
+            <div id="div_card_porta" class="card_unidade">
               <div class="cima">
                 <img src="https://cdn-icons-png.flaticon.com/128/566/566489.png" class="imagem_corredor">
                 <div class="cima-direita">
@@ -578,7 +577,7 @@
 
   /*Graficos Umidade*/
   const label = [
-  '5min',
+    '5min',
     '4min',
     '3min',
     '2min',
@@ -667,46 +666,19 @@
   var proximaAtualizacao;
 
 
-  function obterDadosGrafico(fkSensorGrafico) {
-  var fkSensorGrafico = 1;
+  function obterDadosGrafico(idAmb) {
+
     if (proximaAtualizacao != undefined) {
       clearTimeout(proximaAtualizacao);
     }
 
-    fetch(`/medida/ultimas/${fkSensorGrafico}`, { cache: 'no-store' }).then(function (response) {
+    fetch(`/medida/ultimas/${idAmb}`, { cache: 'no-store' }).then(function (response) {
       if (response.ok) {
         console.log("resposta", response)
         response.json().then(function (resposta) {
           console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
           resposta.reverse();
-          plotarGrafico(resposta);
-
-        });
-      } else {
-        console.error('Nenhum dado encontrado ou erro na API');
-      }
-    })
-      .catch(function (error) {
-        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-      });
-      obterDadosGrafico2()
-      plotarGrafico2()
-
-  }
-
-  function obterDadosGrafico2(fkSensorGrafico) {
-  var fkSensorGrafico = 2;
-    if (proximaAtualizacao != undefined) {
-      clearTimeout(proximaAtualizacao);
-    }
-
-    fetch(`/medida/ultimas/ ${fkSensorGrafico}`, { cache: 'no-store' }).then(function (response) {
-      if (response.ok) {
-        console.log("resposta", response)
-        response.json().then(function (resposta) {
-          console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-          resposta.reverse();
-          plotarGrafico(resposta);
+          plotarGrafico(resposta, idAmb);
 
         });
       } else {
@@ -718,51 +690,55 @@
       });
   }
 
-  
-  function plotarGrafico(resposta, fkSensorGrafico) {
+  // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
+  // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
+  // A função *plotarGrafico* também invoca a função *atualizarGrafico*
+  function plotarGrafico(resposta, idAmb) {
 
     console.log('iniciando plotagem do gráfico...');
 
 
+    // Criando estrutura para plotar gráfico - dados
     console.log('----------------------------------------------')
     console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
     console.log(resposta)
 
-    for (i = 0; i < resposta.length; i++) {
+    // Inserindo valores recebidos em estrutura para plotar o gráfico
+    for (i = 0; i < resposta[4]; i++) {
       var registro = resposta[i];
-      var temperatura = registro.dadoCap
+      if (registro.unidMedida == "ºC") {
+        var temperatura = registro.dadoCap
+      } else if (registro.unidMedida == "%") {
+        var umidade = registro.dadoCap
+      }
+      label4.push(registro.dataHist);
+      label.push(registro.dataHist);
+      data.datasets[0].data.push(umidade);
       data4.datasets[0].data.push(temperatura);
+    }
 
-    setTimeout(() => atualizarGrafico(data4, grafico_temperatura, 'temperaturaLocal'), 2000);
+
+    // Criando estrutura para plotar gráfico - config
+
+
+    // Adicionando gráfico criado em div na tela
+
+
+
+    setTimeout(() => atualizarGrafico(idAmb, data4, data, grafico_temperatura, grafico_umidade), 2000);
   }
-  }
 
 
-  function plotarGrafico2(resposta, fkSensorGrafico) {
-console.log('iniciando plotagem do gráfico...');
+  /*Alterar depois para atualizar gráficos*/
 
+  // Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
+  // buscando a última medida inserida em tabela contendo as capturas, 
 
-console.log('----------------------------------------------')
-console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
-console.log(resposta)
+  //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
+  //     Para ajustar o "select", ajuste o comando sql em src/models
+  function atualizarGrafico(idAmb, data4, data, grafico_temperatura, grafico_umidade) {
 
-for (i = 0; i < resposta.length; i++) {
-  var registro = resposta[i];
-  var umidade = registro.dadoCap  
-  data.datasets[0].data.push(umidade);
-
-}
-
-setTimeout(() => atualizarGrafico( data, grafico_umidade, `umidadeLocal`), 2000);
-}
-
-
-function atualizarGrafico(data4, data, grafico_temperatura, grafico_umidade, local) {
-var fkSensorGrafico = 1
-  if(local == 'umidadeLocal'){
-    fkSensorGrafico= 2
-  }
-  fetch(`/medida/tempo-real/ ${fkSensorGrafico}`, { cache: 'no-store' }).then(function (response) {
+    fetch(`/medida/tempo-real/${idAmb}`, { cache: 'no-store' }).then(function (response) {
       if (response.ok) {
         response.json().then(function (novoRegistro) {
           if (novoRegistro[0].dadoCap == data.labels[data.labels.length - 1]) {
@@ -774,39 +750,47 @@ var fkSensorGrafico = 1
             console.log("---------------------------------------------------------------")
           } else {
 
-        
+
+            if (novoRegistro[2].dadoCap == 1) {
+              div_card_porta.style = "background-color: red"
+              setTimeout(() => {
+                div_card_porta.style = "background-color: #f2f2f2"
+              }, 1000)
+            }
 
 
-            data4.datasets[0].data.shift();  
-            data4.datasets[0].data.push(novoRegistro[0].dadoCap); 
+            data4.datasets[0].data.shift();  // apagar o primeiro de umidade
+            data4.datasets[0].data.push(novoRegistro[0].dadoCap); // incluir uma nova medida de umidade
 
-            data.datasets[0].data.shift(); 
-            data.datasets[0].data.push(novoRegistro[0].umidade); 
-
-            grafico_temperatura.update();
-            grafico_umidade.update();
+            data.datasets[0].data.shift();  // apagar o primeiro de temperatura
+            data.datasets[0].data.push(novoRegistro[1].dadoCap); // incluir uma nova medida de temperatura
+            console.log(div_lousa_invisivel3.style.display);
+            if (div_lousa_invisivel3.style.display = 'flex') {
+              grafico_temperatura.update();
+              grafico_umidade.update();
+            }
           }
 
-        proximaAtualizacao = setTimeout(() => atualizarGrafico(data4, data, grafico_temperatura, grafico_umidade), 2000);
+          // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+          proximaAtualizacao = setTimeout(() => atualizarGrafico(idAmb, data4, data, grafico_temperatura, grafico_umidade), 2000);
         });
       } else {
         console.error('Nenhum dado encontrado ou erro na API');
-        proximaAtualizacao = setTimeout(() => atualizarGrafico(data4, data, grafico_temperatura, grafico_umidade), 2000);
+        // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+        proximaAtualizacao = setTimeout(() => atualizarGrafico(idAmb, data4, data, grafico_temperatura, grafico_umidade), 2000);
       }
     })
       .catch(function (error) {
         console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
       });
 
-    var medicaoAlertT = document.getElementById('medicaoAlertT');
-    var medicaoAlertU = document.getElementById('medicaoAlertU');
 
     temperaturaAtual1 = data4.datasets[0].data[5];
 
     umidadeAtual1 = data.datasets[0].data[5];
 
     if (temperaturaAtual1 >= 19 && temperaturaAtual1 <= 21) {
-      medicaoAlertT.style.color = "#005500";
+      medicaoAlertT.style = "color: #005500;";
 
     } else if (temperaturaAtual1 >= 10 && temperaturaAtual1 <= 30) {
       medicaoAlertT.style.color = "yellow";

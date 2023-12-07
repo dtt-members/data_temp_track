@@ -5,11 +5,10 @@ function excluirUser() {
   if (
     cpfVar == ""
   ) {
-    Swal.fire("Preencha todos os campos");
+    alert(`Prencha todos os campos`);
   }
   else if (cpfVar.length != 11) {
-    Swal.fire("Preencha um CPF válido");
-
+    alert(`Prencha com um CPF válido`);
   }
   else {
 
@@ -27,29 +26,16 @@ function excluirUser() {
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
-          Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "Usuario excluido com sucesso",
-            showConfirmButton: false,
-            timer: 1500
-          });
+          alert("funcionario excluido da aplicação com sucesso!")
 
         } else {
-          Swal.fire({
-            position: "top-end",
-            icon: "error",
-            title: "Não foi possível excluir o funcionário",
-            showConfirmButton: false,
-            timer: 1500
-          });
+        alert("Houve um erro ao excluir funcionario, tenha certeza que os campos são correspondentes");
         }
         
       })
       .catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
       });
-
     return false;
   }
 }
