@@ -260,12 +260,12 @@
               </div>
               <div class="item-regua alerta">
                 <h4>Alerta</h4>
-                <h2>12°C a 15°C <br>e<br /> 25°C a 28°C </h2>
+                <h2>12°C a 18°C <br>e<br /> 25°C a 28°C </h2>
               </div>
               <div class="item-regua danger">
                 <h4>Perigo</h4>
                 <h2>
-                  Menor que 10°C <br>e <br> Maior que 30°C
+                  Menor que 12°C <br>e <br> Maior que 28°C
                 </h2>
               </div>
 
@@ -280,11 +280,11 @@
               </div>
               <div class="item-regua alerta">
                 <h4>Alerta</h4>
-                <h2>35% a 42% <br>e<br /> 48% a 64% </h2>
+                <h2>35% a 41% <br>e<br /> 59% a 64% </h2>
               </div>
               <div class="item-regua danger">
                 <h4>Perigo</h4>
-                <h2>Menor que 35% <br>e <br> Maior 65%</h2>
+                <h2>Menor que 35% <br>e <br> Maior 64%</h2>
               </div>
             </div>
           </div>
@@ -304,25 +304,6 @@
             <canvas id="id_grafico_umidade"></canvas>
           </div>
           <div class="tabela_bloqueio" id="div_tabela_bloqueio">
-            <div class="linha_bloqueio">
-              <div>Porta</div>
-              <div>Data</div>
-              <div>Hora</div>
-              <div>Situação</div>
-            </div>
-
-            <div class="linha_bloqueio_dados">
-              <div>01</div>
-              <div>24/10/2023</div>
-              <div>16:20:27</div>
-              <div>Aberta</div>
-            </div>
-            <div class="linha_bloqueio_dados">
-              <div>02</div>
-              <div>24/10/2023</div>
-              <div>13:00:23</div>
-              <div>Aberta</div>
-            </div>
           </div>
 
 
@@ -721,7 +702,7 @@
           } else {
 
 
-            if (novoRegistro[2].dadoCap == 1) {
+            if (novoRegistro[1].dadoCap == 1) {
               abertoFechado.innerHTML = "Aberto"
               abertoFechado.style.backgroundColor = "red"
             } else {
@@ -749,7 +730,7 @@
             data4.datasets[0].data.push(novoRegistro[0].dadoCap); // incluir uma nova medida de umidade
 
             data.datasets[0].data.shift();  // apagar o primeiro de temperatura
-            data.datasets[0].data.push(novoRegistro[1].dadoCap); // incluir uma nova medida de temperatura
+            data.datasets[0].data.push(novoRegistro[2].dadoCap); // incluir uma nova medida de temperatura
             console.log(div_lousa_invisivel3.style.display);
             if (div_lousa_invisivel3.style.display = 'flex') {
               grafico_temperatura.update();
@@ -780,55 +761,37 @@
 
     if (temperaturaAtual1 >= 19 && temperaturaAtual1 <= 24) {
       medicaoAlertT.style.backgroundColor = "green";
+      medicaoAlertT.style.color ="black";
     }
     else if (temperaturaAtual1 >= 12 && temperaturaAtual1 <= 28) {
       medicaoAlertT.style.backgroundColor = "yellow";
-      Swal.fire({
-        icon: "warning",
-        title: "IRREGULARIDADE NA TEMPERATURA REGISTRADA ",
-        text: "sua TEMPERATURA está MAIOR que 12 graus e menor de 28",
-        footer: '<a href="#">Why do I have this issue?</a>'
-      });
+      medicaoAlertT.style.color ="black";
     }
     else {
       medicaoAlertT.style.backgroundColor = "red";
-      Swal.fire({
-        icon: "warning",
-        title: "TEMPERATURA EM NIVEIS PREOCUPANTES",
-        text: "TEMPERATURA FORA DA MARGEM, recomendado ação IMEDIATA",
-        footer: '<a href="#">Why do I have this issue?</a>'
-      });
-    }
+      medicaoAlertT.style.color ="black";
+     }
 
     if (umidadeAtual1 >= 42 && umidadeAtual1 <= 58) {
       medicaoAlertU.style.backgroundColor = "green";
-
+      medicaoAlertU.style.color = "black"
     } else if (umidadeAtual1 >= 35 && umidadeAtual1 <= 64) {
       medicaoAlertU.style.backgroundColor = "yellow";
-      Swal.fire({
-        icon: "warning",
-        title: "IRREGULARIDADE REGISTRADA NA UMIDADE",
-        text: "Sua UMIDADE está maior que 34% e abaixo dos 65%",
-        footer: '<a href="#">Why do I have this issue?</a>'
-      });
+      medicaoAlertU.style.color = "black"
     } else {
       medicaoAlertU.style.backgroundColor = "red";
-      Swal.fire({
-        icon: "warning",
-        title: "UMIDADE EM NIVEIS PREOCOUPANTES ",
-        text: "UMIDADE ACIMA DO NORMAL,recomendado tomada de ação imediata",
-        footer: '<a href="#">Why do I have this issue?</a>'
-      });
+      medicaoAlertU.style.color = "black"
     }
-    if (temperaturaAtual1 >= 10 && temperaturaAtual1 <= 30) {
-      div_card_unidade.style.backgroundColor = "red"
-      Swal.fire({
-        icon: "warning",
-        title: "TEMPERATURA EM NIVEIS PREOCUPANTES",
-        text: "sua temperatura está maior que 10 graus e menor que 30 graus",
-        footer: '<a href="#">Why do I have this issue?</a>'
-      });
-    }
+
+    
+
+    if (novoRegistro[1].dadoCap == 1) {
+              abertoFechado.innerHTML = "Aberto"
+              abertoFechado.style.backgroundColor = "red"
+            } else {
+              abertoFechado.innerHTML = "Fechado"
+              abertoFechado.style.backgroundColor = "green"
+            }
 
   }
 

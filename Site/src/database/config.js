@@ -7,7 +7,7 @@ var mySqlConfig = {
     host: "localhost",
     database: "DataBaseTrack",
     user: "root",
-    password: "Root#23#Sp",
+    password: "Gui@684875",
 };
 
 function executar(instrucao) {
