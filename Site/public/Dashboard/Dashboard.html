@@ -185,7 +185,7 @@
               Corredor 01
             </div>
           </div>
-        </div>  
+        </div>
         <div id="div_card_linha" class="card_linha">
           <div id="div_card_unidade" value="rack01" class="card_unidade" onclick="TemUmiDataCenter('Rack 01')">
             <div class="cima">
@@ -329,6 +329,8 @@
         </div>
       </div>
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </html>
 <script>
@@ -693,7 +695,7 @@
     console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
     console.log(resposta)
 
-  setTimeout(() => atualizarGrafico(idAmb, data4, data, grafico_temperatura, grafico_umidade), 1500);
+    setTimeout(() => atualizarGrafico(idAmb, data4, data, grafico_temperatura, grafico_umidade), 1500);
   }
 
 
@@ -722,26 +724,26 @@
             if (novoRegistro[2].dadoCap == 1) {
               abertoFechado.innerHTML = "Aberto"
               abertoFechado.style.backgroundColor = "red"
-            }else{
+            } else {
               abertoFechado.innerHTML = "Fechado"
               abertoFechado.style.backgroundColor = "green"
             }
 
-   // Inserindo valores recebidos em estrutura para plotar o gráfico
-   for (i = 0; i < response[4]; i++) {
-      var registro = response[i];
-      if (registro.unidMedida == "ºC") {
-        var temperatura = registro.dadoCap
-      } else if (registro.unidMedida == "%") {
-        var umidade = registro.dadoCap
-      }else {
-        var proximidade = registro.dadoCap
-      }
-      label4.push(registro.dataHist);
-      label.push(registro.dataHist);
-      data.datasets[0].data.push(umidade);
-      data4.datasets[0].data.push(temperatura);
-    }
+            // Inserindo valores recebidos em estrutura para plotar o gráfico
+            for (i = 0; i < response[4]; i++) {
+              var registro = response[i];
+              if (registro.unidMedida == "ºC") {
+                var temperatura = registro.dadoCap
+              } else if (registro.unidMedida == "%") {
+                var umidade = registro.dadoCap
+              } else {
+                var proximidade = registro.dadoCap
+              }
+              label4.push(registro.dataHist);
+              label.push(registro.dataHist);
+              data.datasets[0].data.push(umidade);
+              data4.datasets[0].data.push(temperatura);
+            }
 
             data4.datasets[0].data.shift();  // apagar o primeiro de umidade
             data4.datasets[0].data.push(novoRegistro[0].dadoCap); // incluir uma nova medida de umidade
@@ -778,11 +780,24 @@
 
     if (temperaturaAtual1 >= 19 && temperaturaAtual1 <= 24) {
       medicaoAlertT.style.backgroundColor = "green";
-
-    } else if (temperaturaAtual1 >= 12 && temperaturaAtual1 <= 28) {
+    }
+    else if (temperaturaAtual1 >= 12 && temperaturaAtual1 <= 28) {
       medicaoAlertT.style.backgroundColor = "yellow";
-    } else {
+      Swal.fire({
+        icon: "warning",
+        title: "IRREGULARIDADE NA TEMPERATURA REGISTRADA ",
+        text: "sua TEMPERATURA está MAIOR que 12 graus e menor de 28",
+        footer: '<a href="#">Why do I have this issue?</a>'
+      });
+    }
+    else {
       medicaoAlertT.style.backgroundColor = "red";
+      Swal.fire({
+        icon: "warning",
+        title: "TEMPERATURA EM NIVEIS PREOCUPANTES",
+        text: "TEMPERATURA FORA DA MARGEM, recomendado ação IMEDIATA",
+        footer: '<a href="#">Why do I have this issue?</a>'
+      });
     }
 
     if (umidadeAtual1 >= 42 && umidadeAtual1 <= 58) {
@@ -790,13 +805,30 @@
 
     } else if (umidadeAtual1 >= 35 && umidadeAtual1 <= 64) {
       medicaoAlertU.style.backgroundColor = "yellow";
+      Swal.fire({
+        icon: "warning",
+        title: "IRREGULARIDADE REGISTRADA NA UMIDADE",
+        text: "Sua UMIDADE está maior que 34% e abaixo dos 65%",
+        footer: '<a href="#">Why do I have this issue?</a>'
+      });
     } else {
       medicaoAlertU.style.backgroundColor = "red";
+      Swal.fire({
+        icon: "warning",
+        title: "UMIDADE EM NIVEIS PREOCOUPANTES ",
+        text: "UMIDADE ACIMA DO NORMAL,recomendado tomada de ação imediata",
+        footer: '<a href="#">Why do I have this issue?</a>'
+      });
     }
-    if(temperaturaAtual1 >=10 && temperaturaAtual1 <=30){
+    if (temperaturaAtual1 >= 10 && temperaturaAtual1 <= 30) {
       div_card_unidade.style.backgroundColor = "red"
+      Swal.fire({
+        icon: "warning",
+        title: "TEMPERATURA EM NIVEIS PREOCUPANTES",
+        text: "sua temperatura está maior que 10 graus e menor que 30 graus",
+        footer: '<a href="#">Why do I have this issue?</a>'
+      });
     }
-    
 
   }
 

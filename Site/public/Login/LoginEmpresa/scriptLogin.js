@@ -8,7 +8,11 @@ function verificarE() {
     var mensagemDashboard = document.getElementById('mensagem_logando');
 
     if (emailVar == "" || senhaVar == "") {
-        alert("Preencha todos os campos");
+        Swal.fire({
+            icon: "error",
+            title: "Não foi possível realizar seu login",
+            text: "Preencha todos os campos",
+        });
         return false;
     }
     else {
@@ -42,7 +46,13 @@ function verificarE() {
                     sessionStorage.SENHA_EMPRESA = json.senha;
                     sessionStorage.DATACENTER = JSON.stringify(json.datacenter)
                 });
-                alert("Usuario verificado com sucesso, redirecionando para a tela de login");
+                Swal.fire({
+                    position: "top-end",
+                    icon: "Empresa autenticada com sucesso",
+                    title: "Redirecionando para sua tela",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
                 setTimeout(function () {
                     window.location = "../../Dashboard/DashBoardEmpresa/DashboardEmpresa.html";
                     console.log('PASSEI POR AQUI')
@@ -50,7 +60,12 @@ function verificarE() {
 
             } else {
 
-                alert("Houve um erro ao tentar realizar o login!");
+                Swal.fire({
+                    icon: "error",
+                    title: "Não foi possível realizar seu login",
+                    text: "Confira se email ou senha conferem",
+                    footer: '<a href="#">Why do I have this issue?</a>'
+                });
 
                 resposta.text().then(texto => {
                     console.error(texto);
@@ -81,36 +96,67 @@ function validarCadastro() {
 
     //validações das input 
     if (razaoSocialVar == "" || cnpjVar == "" || emailCadastroVar == "" || telefoneCelularVar == "" || telefoneFixoVar == "" || cepVar == "" || numeroEndVar == "" || senhaVar == "" || confirmarVar == "") {
-        messageErro.innerHTML = 'Preencha todos os campos'
+        Swal.fire({
+            icon: "error",
+            title: "Não foi possível realizar seu login",
+            text: "Preencha todos os campos",
+        });
         //Os return servem com uma break, elas impedem da  função continuar
         return false;
     } else if (cnpjVar.length != 14) {
-        messageErro.innerHTML = `Preencha com um cnpj válido`;
+        Swal.fire({
+            icon: "error",
+            title: "Não foi possível realizar seu login",
+            text: "CNPJ necessita 14 digitos",
+        });
         return false;
     } else if (emailCadastroVar.indexOf('@') < 0 || emailCadastroVar.indexOf('.') < 0) {
-        messageErro.innerHTML = `Preencha com email válido que contenha '@' e '.com'`;
+        Swal.fire({
+            icon: "error",
+            title: "Não foi possível realizar seu login",
+            text: `O email necessita ter "@" e um "." `,
+        });
         return false;
     } else if (telefoneCelularVar.length != 11) {
-        messageErro.innerHTML = 'Preencha com telefone celular válido';
+        Swal.fire({
+            icon: "error",
+            title: "Não foi possível realizar seu login",
+            text: "Celular necessita 11 digitos",
+        });
         return false;
     } else if (telefoneFixoVar.length != 10) {
-        messageErro.innerHTML = 'Preencha com telefone fixo válido';
+        Swal.fire({
+            icon: "error",
+            title: "Não foi possível realizar seu login",
+            text: "Telefone necessita 10 digitos",
+        });
         return false;
     } else if (cepVar.length != 8) {
-        messageErro.innerHTML = 'Digite um CEP válido';
+        Swal.fire({
+            icon: "error",
+            title: "Não foi possível realizar seu login",
+            text: "CEP necessita 8 digitos",
+        });
         return false;
     } else if (senhaVar.length < 8 || confirmarVar.length > 14) {
-        messageErro.innerHTML = 'A senha deve ter entre 8 e 14 caracteres'
+        Swal.fire({
+            icon: "error",
+            title: "Não foi possível realizar seu login",
+            text: "Sua senha deve conter entre 8 e 14 digitos",
+        });
+        return false;
     } else if (senhaVar != confirmarVar) {
-        messageErro.innerHTML = 'Senha diferentes'
+        Swal.fire({
+            icon: "error",
+            title: "Não foi possível realizar seu login",
+            text: "Senhas não coerentes",
+        });
+        return false;
     } else {
-        messageErro.innerHTML = "Empresa cadastrada com sucesso";
+        return false;
         // usar esse ultimo else para mostrar a mensagem de cadastro realizado
         // Cadastro endereco 
     }
-
-    //Aqui eu pego as variaveis do cadastro, troco o nome da variavel e envio para a o arquivo endereco na pasta ROUTES
-    // o cadastrarEnd é uma function no arquivo endereco 
     fetch("/endereco/cadastrarEnd", {
         method: "POST",
         headers: {
@@ -139,6 +185,14 @@ function validarCadastro() {
         })
     })
         .then(function (resposta) {
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Cadastrado com sucesso!",
+                showConfirmButton: false,
+                timer: 1500
+            });
+
             console.log("resposta: ", resposta)
         });
 

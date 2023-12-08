@@ -15,19 +15,40 @@ function cadastrarU() {
     senhaVar == "" ||
     confirmarSenhaVar == "") {
 
-    alert(`Prencha todos os campos`);
+
+    Swal.fire({
+      icon: "error",
+      title: "Não foi possível cadastrar o Usuario",
+      text: "Preencha todos os campos",
+    });
   }
   else if (emailVar.indexOf('@') < 0 || emailVar.indexOf('.') < 0) {
-    alert(`Prencha com um email valido`);
+    Swal.fire({
+      icon: "error",
+      title: "Não foi possível cadastrar o Usuario",
+      text: "Email necessita ter @ e .",
+    });
   }
   else if (cpfVar.length != 11) {
-    alert(`Prencha com um CPF válido`);
+    Swal.fire({
+      icon: "error",
+      title: "Não foi possível cadastrar o Usuario",
+      text: "CPF inválido",
+    });
   }
   else if (senhaVar.length < 8 || senhaVar.length > 14) {
-    alert(`A senha deve ter entre 8 e 14 caracteres`);
+    Swal.fire({
+      icon: "error",
+      title: "Não foi possível cadastrar o Usuario",
+      text: "Senha necessita ter entre 8 e 14 caracteres",
+    });
   }
   else if (senhaVar != confirmarSenhaVar) {
-    alert(`Senha diferentes`);
+    Swal.fire({
+      icon: "error",
+      title: "Não foi possível cadastrar o Usuario",
+      text: "Senhas não coincidem",
+    });
   }
   else {
 
@@ -35,7 +56,7 @@ function cadastrarU() {
 
 
 
-    
+
     // Enviando o valor da nova input
     fetch("/usuario/cadastrar", {
       method: "POST",
@@ -56,15 +77,25 @@ function cadastrarU() {
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
-          alert("funcionario cadastrado com sucesso na aplicação")
+          Swal.fire({
+            position: "top-end",
+            icon: "sucesso",
+            title: "Usuario Cadastrado com sucesso",
+            showConfirmButton: false,
+            timer: 1500
+          });
 
           setTimeout(() => {
             window.location.href = "";
           }, "2000");
-
-          limparFormulario();
-        } else {
-          throw "Houve um erro ao tentar realizar o cadastro!";
+          
+        }
+        else {
+          Swal.fire({
+            icon: "error",
+            title: "Não foi possível cadastrar o Usuario",
+            text: "Algo errado",
+          });
         }
       })
       .catch(function (resposta) {

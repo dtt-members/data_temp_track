@@ -5,10 +5,18 @@ function excluirUser() {
   if (
     cpfVar == ""
   ) {
-    alert(`Prencha todos os campos`);
+    Swal.fire({
+      icon: "error",
+      title: "Algo deu errado",
+      text: "Preencha todos os campos",
+    });
   }
   else if (cpfVar.length != 11) {
-    alert(`Prencha com um CPF válido`);
+    Swal.fire({
+      icon: "error",
+      title: "Algo deu errado",
+      text: "CPF inserido incorretamente",
+    });
   }
   else {
 
@@ -26,12 +34,21 @@ function excluirUser() {
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
-          alert("funcionario excluido da aplicação com sucesso!")
-
+          Swal.fire({
+            position: "top-end",
+            icon: "sucesso",
+            title: "Funcionário excluido da aplicação com sucesso",
+            showConfirmButton: false,
+            timer: 1500
+          });
         } else {
-        alert("Houve um erro ao excluir funcionario, tenha certeza que os campos são correspondentes");
+          Swal.fire({
+            icon: "error",
+            title: "Algo deu errado",
+            text: "CPF não encontrado",
+          });
         }
-        
+
       })
       .catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);

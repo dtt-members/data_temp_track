@@ -11,28 +11,56 @@ function validarCadastro() {
 
     //validações das input 
     if (razaoSocialVar == "" || cnpjVar == "" || emailCadastroVar == "" || telefoneCelularVar == "" || telefoneFixoVar == "" || cepVar == "" || numeroEndVar == "") {
-        messageErro.innerHTML = 'Preencha todos os campos'
+        Swal.fire({
+            icon: "error",
+            title: "Algo deu errado",
+            text: "Preencha todos os campos",
+        });
         //Os return servem com uma break, elas impedem da  função continuar
         return false;
     } else if (cnpjVar.length != 14) {
-        messageErro.innerHTML = `Preencha com um cnpj válido`;
+        Swal.fire({
+            icon: "error",
+            title: "Algo deu errado",
+            text: "Entre com 14 digitos de CNPJ",
+        });
         return false;
     } else if (emailCadastroVar.indexOf('@') < 0 || emailCadastroVar.indexOf('.') < 0) {
-        messageErro.innerHTML = `Preencha com email válido que contenha '@' e '.com'`;
+        Swal.fire({
+            icon: "error",
+            title: "Algo deu errado",
+            text: `O email deve conter pelo menos um "@" e um "."`,
+        });
         return false;
     } else if (telefoneCelularVar.length != 11) {
-        messageErro.innerHTML = 'Preencha com telefone celular válido';
+        Swal.fire({
+            icon: "error",
+            title: "Algo deu errado",
+            text: "celular deve conter pelo menos 11 digitos",
+        });
         return false;
     } else if (telefoneFixoVar.length != 10) {
-        messageErro.innerHTML = 'Preencha com telefone fixo válido';
+        Swal.fire({
+            icon: "error",
+            title: "Algo deu errado",
+            text: "O telefone deve conter 10 digitos",
+        });
         return false;
     } else if (cepVar.length != 8) {
-        messageErro.innerHTML = 'Digite um CEP válido';
+        Swal.fire({
+            icon: "error",
+            title: "Algo deu errado",
+            text: "o CEP deve ter 8 digitos",
+        });
         return false;
     } else {
-        messageErro.innerHTML = "";
-        // usar esse ultimo else para mostrar a mensagem de cadastro realizado
-        // Cadastro endereco 
+        Swal.fire({
+            position: "top-end",
+            icon: "Sucesso!",
+            title: "Empresa cadastrado com sucesso",
+            showConfirmButton: false,
+            timer: 1500
+          });
     }
 
     //Aqui eu pego as variaveis do cadastro, troco o nome da variavel e envio para a o arquivo endereco na pasta ROUTES
@@ -109,19 +137,28 @@ function entrar() {
                 sessionStorage.ID_USUARIO = json.id;
                 sessionStorage.FK_EMPRESA = json.fkEmp;
 
-                alert("Redirecionando para a Dashboard");
+                Swal.fire({
+                    position: "top-end",
+                    icon: "sucesso",
+                    title: "Redirecionando para a tela de login",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
 
                 setTimeout(function () {
                     window.location = "../../Dashboard/Dashboard.html";
                     console.log('PASSEI POR AQUI')
-                }, 3000); 
+                }, 3000);
 
             });
 
         } else {
 
-            console.log("Houve um erro ao tentar realizar o login!");
-            alert("Erro! email ou senha incorretos")
+            Swal.fire({
+                icon: "error",
+                title: "Não foi pissível realizar o Login",
+                text: "Email e senha não coincidem",
+              });
             resposta.text().then(texto => {
                 console.error(texto);
             });
@@ -130,9 +167,9 @@ function entrar() {
     }).catch(function (erro) {
         console.log(erro);
 
-        
+
     })
 
-    
+
 }
 

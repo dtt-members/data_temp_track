@@ -13,11 +13,11 @@ create table endereco (
 
 create table empresa (
 	idEmpresa int primary key auto_increment,
-    razaoSocial varchar(70),
-    cnpj char(14),
+    razaoSocial varchar(70) unique,
+    cnpj char(14) unique,
     foneCell char(11),
     foneFixo char(10),
-    emailInst varchar(45),
+    emailInst varchar(45) unique,
     senha varchar(14),
     fkEndereco int,
     constraint fkEndereco foreign key (fkEndereco) references endereco(idEndereco)
@@ -164,12 +164,6 @@ select idUsuario, nome, emailInst, fkEmp from usuario where emailInst = 'arthur@
 
 drop view login;
 
-select * from hist;
-select * from sensor;
-
-select * from sensor;
-select * from usuario;
-select * from empresa;	
 select * from  hist order by idhist DESC;
 
 SELECT DISTINCT s.unidMedida, h.dataHist, h.dadoCap, s.tipoSensor
