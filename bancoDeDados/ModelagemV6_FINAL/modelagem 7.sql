@@ -84,6 +84,12 @@ create table hist (
     dadoCap Decimal(14,2)
 );
 
+SELECT dt.fkEmp, h.dataHist, h.dadoCap, s.tipoSensor, s.unidMedida FROM unidadedatacenter as dt 
+JOIN ambiente as a ON a.fkDC = dt.idDataCenter 
+JOIN sensor as s  ON s.fkAmb = a.idAmb 
+JOIN hist as h ON h.fkSensor = s.idSensor
+       WHERE dt.fkEmp = 1000001;
+--	1000001	2023-12-05 16:46:07	25.42	lm35	ºC
 insert into hist(fkSensor, dadoCap) values (2, ?), (1, ?), (3, ?);
 
 insert into sensor values
@@ -92,10 +98,50 @@ insert into sensor values
 (null, 'trtc5000', 1, 'bool');
 
 select * from hist;
-insert into hist values
-(null, 1, null, 32),
-(null, 2, null, 41),
-(null, 3, null, 0);
+INSERT INTO hist (fkSensor, dataHist, dadoCap) VALUES
+(1, null, 25.50),
+(2, null, 75),
+(3, null , 1),
+(1, null , 30.25),
+(2, null, 80),
+(3, null, 1),
+(1, null, 27.90),
+(2, null, 76),
+(3, null, 0),
+(1, null, 32.10),
+(2, null, 30),
+(3, null, 0),
+(1, null, 28.45),
+(2, null, 69),
+(3, null, 0),
+(1, null, 35.75),
+(2, null, 20),
+(3, null, 0),
+(1, null, 30.00),
+(2, null,55),
+(3, null, 0),
+(1, null, 34.20),
+(2, null, 60),
+(3, null, 1),
+(1, null, 29.80),
+(2, null, 75),
+(3, null, 1),
+(1, null, 33.40),
+(2, null, 23),
+(3, null, 0),
+(1, null, 31.00),
+(2, null, 65),
+(3, null, 1),
+(1, null, 28.70),
+(2, null, 78),
+(3, null, 0),
+(1, null, 29.50),
+(2, null, 40),
+(3, null, 1),
+(1, null, 32.90),
+(2, null, 21),
+(3, null, 0);
+truncate table hist;
 
 select * from usuario join empresa
 	on fkEmp = idEmpresa;
@@ -103,7 +149,6 @@ select * from usuario join empresa
 select * from usuario;
 
 select * from empresa;
-
 select * from ambiente;
 
 select * from empresa join endereco
@@ -123,7 +168,29 @@ select * from hist;
 select * from sensor;
 
 select * from sensor;
+select * from usuario;
+select * from empresa;	
+select * from  hist order by idhist DESC;
 
+SELECT DISTINCT s.unidMedida, h.dataHist, h.dadoCap, s.tipoSensor
+FROM unidadedatacenter AS dt
+JOIN ambiente AS a ON a.fkDC = dt.idDataCenter
+JOIN sensor AS s ON s.fkAmb = a.idAmb
+JOIN hist AS h ON h.fkSensor = s.idSensor
+WHERE dt.fkEmp = 1000001
+ORDER BY h.dataHist, s.tipoSensor DESC
+LIMIT 3;
+
+
+SELECT h.dataHist, h.dadoCap, s.tipoSensor, s.unidMedida FROM unidadedatacenter as dt JOIN ambiente as a ON a.fkDC = dt.idDataCenter JOIN sensor as s  ON s.fkAmb = a.idAmb JOIN hist as h ON h.fkSensor = s.idSensor
+       WHERE dt.fkEmp = 1000001 ORDER by dataHist DESC limit 3;
+       
+	
+SELECT h.dataHist, h.dadoCap, s.tipoSensor, s.unidMedida FROM
+unidadedatacenter as dt JOIN ambiente as a ON a.fkDC = dt.idDataCenter 
+JOIN sensor as s  ON s.fkAmb = a.idAmb JOIN hist as h ON h.fkSensor = s.idSensor
+WHERE dt.fkEmp = 1000001 limit 6;
+       
  INSERT INTO usuario (nome, sobrenome, emailInst, cpf, senha, fkEmp) VALUES
          ('arthur' , 'antonio' , 'arthur@gmail.com' , '57032727860' , '123456789', 1000001);
          
@@ -135,11 +202,17 @@ select * from sensor;
          (1, 1000001, 'Corredor 1');
          
          Insert into empresa VALUES
-         (null, 'Data Temp Track', 12345678901234, 12345678901, 1234567890, 'datatemptrack@gmail.com', 'dbt123', null);
+         (null, 'Data Temp Track', 12345678901234, 12345678901, 1234567890, 'datatemptrack@gmail.com', 'dbt123', null),
+         (null, 'Sptech', '1234567894321', '12345678901', '1234567890', 'sptech@gmail.com', 'sptech123', null);
          
          SELECT * FROM unidadeDataCenter;
          select * from empresa;
          select * from ambiente;
          select * from usuario;
          
+         truncate table hist;
          
+         delete from empresa where idEmpresa = 1000002;
+         
+         SELECT h.dataHist, h.dadoCap, s.tipoSensor, s.unidMedida FROM unidadedatacenter as dt JOIN ambiente as a ON a.fkDC = dt.idDataCenter JOIN sensor as s  ON s.fkAmb = a.idAmb LEFT JOIN hist as h ON h.fkSensor = s.idSensor
+        WHERE dt.fkEmp = 1000001 ORDER by dataHist DESC limit 5 ;

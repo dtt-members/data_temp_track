@@ -1223,3 +1223,10 @@ canvas {
 }
 
 
+#abertoFechado{
+    width: fit-content;
+    padding: 1%;
+    border-radius: 15px;
+    margin-left: 30%;
+    color: #fff;
+}

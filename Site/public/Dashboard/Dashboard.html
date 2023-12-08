@@ -239,7 +239,7 @@
           <div class="menu">
 
             <div class="tamanho">
-              <img src="undo.png" onclick="dataCenter1()" class="bottom_voltar">
+              <img src="undo.png" onclick="dataCenter()" class="bottom_voltar">
             </div>
 
             <div class="localizacao">
@@ -353,7 +353,7 @@
           for (contador = 0; contador < resposta.length; contador++) {
             var dc = resposta[contador];
             menu.innerHTML += `
-              <button onclick="dataCenter${dc.idDataCenter}()"><span><b id="div_nomeDC">${dc.unidDataCenter}</b></span></button>
+              <button onclick="dataCenter(${dc.idDataCenter})"><span><b id="div_nomeDC">${dc.unidDataCenter}</b></span></button>
                   `;
           }
         })
@@ -394,13 +394,12 @@
             <div id="div_card_porta" class="card_unidade">
               <div class="cima">
                 <img src="https://cdn-icons-png.flaticon.com/128/566/566489.png" class="imagem_corredor">
-                <div class="cima-direita">
-                  <img src="https://cdn-icons-png.flaticon.com/128/728/728093.png" class="imagem_gota">
-                  <img src="temperatura.png" class="imagem_gota">
-                </div>
               </div>
               <div class="baixo">
               ${rack.nomeAmbiente}
+              <div id="abertoFechado">
+                
+                </div>
               </div>
             </div>
                   `;
@@ -477,7 +476,8 @@
     tabela_bloqueio.style.display = "none";
   }
 
-  function dataCenter1() {
+  function dataCenter(idDataCenter) {
+    var fkEmpresa = sessionStorage.FK_EMPRESA
     text_inicial.style.display = "none";
     tela_form_ajuda.style.display = "none";
     text_inicial.style.display = "none";
@@ -486,20 +486,10 @@
     lousa_invisivel2.style.display = "none";
     lousa_invisivel3.style.display = "none";
     tabela_bloqueio.style.display = "none";
+    listarAmb()
+    obterDadosGrafico(fkEmpresa)
+  }
 
-    listarAmb()
-  }
-  function dataCenter2() {
-    text_inicial.style.display = "none";
-    tela_form_ajuda.style.display = "none";
-    text_inicial.style.display = "none";
-    lousa_invisivel.style.display = "none";
-    lousa_invisivel1.style.display = "flex"
-    lousa_invisivel2.style.display = "none";
-    lousa_invisivel3.style.display = "none";
-    tabela_bloqueio.style.display = "none";
-    listarAmb()
-  }
   function Ajuda() {
     text_inicial.style.display = "none";
     tela_form_ajuda.style.display = "flex";
@@ -543,7 +533,7 @@
 
   }
 
-  function TemUmiDataCenter1() {
+  function TemUmiDataCenter() {
 
     text_inicial.style.display = "none";
     tela_form_ajuda.style.display = "none";
@@ -675,7 +665,6 @@
 
     fetch(`/medida/ultimas/${idAmb}`, { cache: 'no-store' }).then(function (response) {
       if (response.ok) {
-        console.log("resposta", response)
         response.json().then(function (resposta) {
           console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
           resposta.reverse();
@@ -731,11 +720,13 @@
 
 
             if (novoRegistro[2].dadoCap == 1) {
-              div_card_porta.style = "background-color: red"
-              setTimeout(() => {
-                div_card_porta.style = "background-color: #f2f2f2"
-              }, 1000)
+              abertoFechado.innerHTML = "Aberto"
+              abertoFechado.style.backgroundColor = "red"
+            }else{
+              abertoFechado.innerHTML = "Fechado"
+              abertoFechado.style.backgroundColor = "green"
             }
+
    // Inserindo valores recebidos em estrutura para plotar o gráfico
    for (i = 0; i < response[4]; i++) {
       var registro = response[i];
@@ -753,10 +744,10 @@
     }
 
             data4.datasets[0].data.shift();  // apagar o primeiro de umidade
-            data4.datasets[0].data.push(novoRegistro[1].dadoCap); // incluir uma nova medida de umidade
+            data4.datasets[0].data.push(novoRegistro[0].dadoCap); // incluir uma nova medida de umidade
 
             data.datasets[0].data.shift();  // apagar o primeiro de temperatura
-            data.datasets[0].data.push(novoRegistro[0].dadoCap); // incluir uma nova medida de temperatura
+            data.datasets[0].data.push(novoRegistro[1].dadoCap); // incluir uma nova medida de temperatura
             console.log(div_lousa_invisivel3.style.display);
             if (div_lousa_invisivel3.style.display = 'flex') {
               grafico_temperatura.update();
@@ -785,10 +776,10 @@
     <div class="medicaoAlert" id="medicaoAlertU"> Umidade:${umidadeAtual1}%</div>`
 
 
-    if (temperaturaAtual1 >= 19 && temperaturaAtual1 <= 21) {
+    if (temperaturaAtual1 >= 19 && temperaturaAtual1 <= 24) {
       medicaoAlertT.style.backgroundColor = "green";
 
-    } else if (temperaturaAtual1 >= 10 && temperaturaAtual1 <= 30) {
+    } else if (temperaturaAtual1 >= 12 && temperaturaAtual1 <= 28) {
       medicaoAlertT.style.backgroundColor = "yellow";
     } else {
       medicaoAlertT.style.backgroundColor = "red";
